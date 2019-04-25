@@ -16,6 +16,19 @@ Powered on:
 - MS Access 97 and MS Access 2000
 
 
+Compatible with Windows XP SP3 [x86] 
+
+
+# Other dependency
+
+1) Serial Solution Device Driver Suite
+
+Version: 8.1
+
+Publisher: Brainboxes Ltd
+
+URL: http://www.BrainBoxes.com/
+
 
 # Missed/Broken FRX files
 
@@ -74,16 +87,10 @@ FRX files differ in that they only save binary data for forms created with Visua
 # Databases in MS Access 97 format
 
 1) ProtocolBase.mdb
-
+2) BookKeepingBase.mdb
 
 
 # Database in MS Access 2000 format
 
 1) SettingsBase.mdb
 2) WorkBase.mdb
-
-
-
-# NOT MS Access databases
-
-1) BookKeepingBase.mdb
