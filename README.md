@@ -23,11 +23,11 @@ Compatible with Windows XP SP3 [x86]
 
 1) Serial Solution Device Driver Suite
 
-Version: 8.1
+    Version: 8.1
 
-Publisher: Brainboxes Ltd
+    Publisher: Brainboxes Ltd
 
-URL: http://www.BrainBoxes.com/
+    URL: http://www.BrainBoxes.com/
 
 
 # Missed/Broken FRX files
