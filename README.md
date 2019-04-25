@@ -35,36 +35,36 @@ URL: http://www.BrainBoxes.com/
 
 1) frmDataAccessOut.frx
 
-  Line 260: Property Picture in imgCalendar could not be set.
+    Line 260: Property Picture in imgCalendar could not be set.
   
-  Line 270: Property Picture in imgTime could not be set.
+    Line 270: Property Picture in imgTime could not be set.
   
-  Line 280: Property Picture in imgMoneyFree could not be set.
+    Line 280: Property Picture in imgMoneyFree could not be set.
   
-  Line 303: Property Picture in imgFamily could not be set.
+    Line 303: Property Picture in imgFamily could not be set.
   
-  Line 311: Property Picture in imgConvoy could not be set.
+    Line 311: Property Picture in imgConvoy could not be set.
   
-  Line 319: Property Picture in imgHuman could not be set.
+    Line 319: Property Picture in imgHuman could not be set.
   
-  Line 327: Property Picture in imgBaby could not be set.
+    Line 327: Property Picture in imgBaby could not be set.
   
-  Line 442: Property Picture in imgDocument could not be set.
+    Line 442: Property Picture in imgDocument could not be set.
   
-  Line 491: Property Picture in imgAccessOut could not be set.
+    Line 491: Property Picture in imgAccessOut could not be set.
   
 
 2) frmDataParkingIn.frx
 
-  Line 252: Property Picture in imgMoneyFree could not be set.
+    Line 252: Property Picture in imgMoneyFree could not be set.
   
-  Line 261: Property Picture in imgTime could not be set.
+    Line 261: Property Picture in imgTime could not be set.
   
-  Line 269: Property Picture in imgCalendar could not be set.
+    Line 269: Property Picture in imgCalendar could not be set.
   
-  Line 387: Property Picture in imgParkingIn could not be set.
+    Line 387: Property Picture in imgParkingIn could not be set.
   
-  Line 500: Property Picture in imgDocument could not be set.
+    Line 500: Property Picture in imgDocument could not be set.
 
 
 FRX is a file extension for a form stash file format used by Visual Basic. 
