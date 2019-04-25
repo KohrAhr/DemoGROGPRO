@@ -87,16 +87,10 @@ FRX files differ in that they only save binary data for forms created with Visua
 # Databases in MS Access 97 format
 
 1) ProtocolBase.mdb
-
+2) BookKeepingBase.mdb
 
 
 # Database in MS Access 2000 format
 
 1) SettingsBase.mdb
 2) WorkBase.mdb
-
-
-
-# NOT MS Access databases
-
-1) BookKeepingBase.mdb
