@@ -19,6 +19,17 @@ Powered on:
 Compatible with Windows XP SP3 [x86] 
 
 
+# Other dependency
+
+1) Serial Solution Device Driver Suite
+
+Version: 8.1
+
+Publisher: Brainboxes Ltd
+
+URL: http://www.BrainBoxes.com/
+
+
 # Missed/Broken FRX files
 
 
