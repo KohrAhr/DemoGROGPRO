@@ -74,13 +74,13 @@ FRX files differ in that they only save binary data for forms created with Visua
 
 
 
-# Other known issue during compilation
+# Other known issues during compilation
 
 1) frmDemo.frm				
 
- - function "ArchiveCopy" not found
+    function "ArchiveCopy" not found
 
- - object "frmTableInfo" not found
+    object "frmTableInfo" not found
 
 
 
