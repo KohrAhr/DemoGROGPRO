@@ -13,7 +13,7 @@ Powered on:
 
 - MSMQ
 
-- MS Access 97 or 2000
+- MS Access 97 and MS Access 2000
 
 
 
@@ -22,7 +22,23 @@ Powered on:
 
 1) frmDataAccessOut.frx
 
+  Line 260: Property Picture in imgCalendar could not be set.
+  Line 270: Property Picture in imgTime could not be set.
+  Line 280: Property Picture in imgMoneyFree could not be set.
+  Line 303: Property Picture in imgFamily could not be set.
+  Line 311: Property Picture in imgConvoy could not be set.
+  Line 319: Property Picture in imgHuman could not be set.
+  Line 327: Property Picture in imgBaby could not be set.
+  Line 442: Property Picture in imgDocument could not be set.
+  Line 491: Property Picture in imgAccessOut could not be set.
+
 2) frmDataParkingIn.frx
+
+  Line 252: Property Picture in imgMoneyFree could not be set.
+  Line 261: Property Picture in imgTime could not be set.
+  Line 269: Property Picture in imgCalendar could not be set.
+  Line 387: Property Picture in imgParkingIn could not be set.
+  Line 500: Property Picture in imgDocument could not be set.
 
 
 FRX is a file extension for a form stash file format used by Visual Basic. 
@@ -31,11 +47,30 @@ FRX files differ in that they only save binary data for forms created with Visua
 
 
 
+
 # Other known issue during compilation
 
 1) frmDemo.frm				
 
-- function "ArchiveCopy" not found
+ - function "ArchiveCopy" not found
 
-- object "frmTableInfo" not found
+ - object "frmTableInfo" not found
 
+
+
+# Databases in MS Access 97 format
+
+1) ProtocolBase.mdb
+
+
+
+# Database in MS Access 2000 format
+
+1) SettingsBase.mdb
+2) WorkBase.mdb
+
+
+
+# NOT MS Access databases
+
+1) BookKeepingBase.mdb
