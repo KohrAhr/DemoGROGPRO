@@ -14,10 +14,9 @@ Powered on:
 - MS Access 97 or 2000
 
 
+
 ===========================================
-
 Missed/Broken FRX* files
-
 ===========================================
 
 
@@ -26,18 +25,14 @@ Missed/Broken FRX* files
 2) frmDataParkingIn.frx
 
 
-* -- FRX is a file extension for a form stash file format used by Visual Basic. 
-
+** -- FRX is a file extension for a form stash file format used by Visual Basic. 
 FRX files store icons and graphics much like an FRM file. 
-
 FRX files differ in that they only save binary data for forms created with Visual Basic.
 
 
 
 ===========================================
-
 Other known issue during compilation
-
 ===========================================
 
 
