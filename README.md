@@ -1,5 +1,7 @@
 # "GROG PRO"
-Description: This is OLD (legacy) car parking software, Riga, LATVIA. Estimated year: 1998..2007
+Description: This is OLD (legacy) car parking software from Riga, LATVIA, EU. 
+
+Estimated years of active development and support: 1998..2007
 
 Developed (Mr. Oleg) die few years ago (before Y2017). 
 Some files with source code could be missed. Application might be not compilable :)
@@ -15,9 +17,7 @@ Powered on:
 
 
 
-===========================================
-Missed/Broken FRX* files
-===========================================
+# Missed/Broken FRX files
 
 
 1) frmDataAccessOut.frx
@@ -25,16 +25,13 @@ Missed/Broken FRX* files
 2) frmDataParkingIn.frx
 
 
-** -- FRX is a file extension for a form stash file format used by Visual Basic. 
+FRX is a file extension for a form stash file format used by Visual Basic. 
 FRX files store icons and graphics much like an FRM file. 
 FRX files differ in that they only save binary data for forms created with Visual Basic.
 
 
 
-===========================================
-Other known issue during compilation
-===========================================
-
+# Other known issue during compilation
 
 1) frmDemo.frm				
 
