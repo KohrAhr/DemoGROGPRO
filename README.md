@@ -16,6 +16,8 @@ Powered on:
 - MS Access 97 and MS Access 2000
 
 
+Compatible with Windows XP SP3 [x86] 
+
 
 # Missed/Broken FRX files
 
