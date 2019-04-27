@@ -9,7 +9,7 @@ Some files with source code could be missed. Application might be not compilable
 
 Powered on:
 
-- Microsoft Visual Basic 6
+- Microsoft Visual Basic 6 (SP6)
 
 - MSMQ
 
