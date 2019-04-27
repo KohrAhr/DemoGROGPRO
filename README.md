@@ -13,7 +13,9 @@ Powered on:
 
 - MSMQ
 
-- MS Access 97 and MS Access 2000
+- Databases: MS Access 97 and MS Access 2000
+
+- Office 97 Pro - required for MS Calendar ActiveX component
 
 
 Compatible with Windows XP SP3 [x86] 
