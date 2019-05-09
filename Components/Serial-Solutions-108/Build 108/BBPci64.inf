@@ -1,0 +1,1580 @@
+
+;**********************************************************
+;**********************************************************
+;
+;	Brainboxes Multiport Adapter INF file 
+;
+;	Copyright (C)   Brainboxes 2010
+;
+;**********************************************************
+
+[Version]
+Signature=$CHICAGO$
+Class = MultiPortSerial
+ClassGuid = {50906CB8-BA12-11D1-BF5D-0000F805F530}
+Provider=%String0%
+CatalogFile.nt = BBPCI64.cat 
+DriverVer=11/05/2012, 8.1.108.0
+
+[SourceDisksFiles]
+SsUnistAMD64.exe=1
+SsInstalAMD64.sys=1,SsWin\drivers
+SsCardAMD64.dll=1,SsWin\dlls
+SsCard.chm=1,SsWin\help
+SsCoInstAMD64.dll = 1,SsWin\DLLS,,
+
+
+[PCI_2S_STD.NTAMD64]
+CopyFiles=DriverFiles_AMD64,HelpFiles_AMD64,System32Files_AMD64
+AddReg=BB.reg,Uninstall.NT.Reg
+
+
+[PCI_2S_STD.NTAMD64.Services]
+AddService=SsInstal,2,BrainBoxes.Service,BrainBoxes.EventLog
+
+
+[PCI_2S_STD.NTAMD64.CoInstallers]
+AddReg 		= CoInst_Addreg
+CopyFiles	= CoInstallers_CopyFiles_AMD64
+
+
+[PCI_2S_VEL.NTAMD64]
+CopyFiles=DriverFiles_AMD64,HelpFiles_AMD64,System32Files_AMD64
+AddReg=BB.reg,Uninstall.NT.Reg
+
+
+[PCI_2S_VEL.NTAMD64.Services]
+AddService=SsInstal,2,BrainBoxes.Service,BrainBoxes.EventLog
+
+
+[PCI_2S_VEL.NTAMD64.CoInstallers]
+AddReg 		= CoInst_Addreg
+CopyFiles	= CoInstallers_CopyFiles_AMD64
+
+
+[PCI_4S_STD.NTAMD64]
+CopyFiles=DriverFiles_AMD64,HelpFiles_AMD64,System32Files_AMD64
+AddReg=BB.reg,Uninstall.NT.Reg
+
+
+[PCI_4S_STD.NTAMD64.Services]
+AddService=SsInstal,2,BrainBoxes.Service,BrainBoxes.EventLog
+
+
+[PCI_4S_STD.NTAMD64.CoInstallers]
+AddReg 		= CoInst_Addreg
+CopyFiles	= CoInstallers_CopyFiles_AMD64
+
+
+[PCI_8S_STD.NTAMD64]
+CopyFiles=DriverFiles_AMD64,HelpFiles_AMD64,System32Files_AMD64
+AddReg=BB.reg,Uninstall.NT.Reg
+
+
+[PCI_8S_STD.NTAMD64.Services]
+AddService=SsInstal,2,BrainBoxes.Service,BrainBoxes.EventLog
+
+
+[PCI_8S_STD.NTAMD64.CoInstallers]
+AddReg 		= CoInst_Addreg
+CopyFiles	= CoInstallers_CopyFiles_AMD64
+
+
+[PCI_2S_485.NTAMD64]
+CopyFiles=DriverFiles_AMD64,HelpFiles_AMD64,System32Files_AMD64
+AddReg=BB.reg,Uninstall.NT.Reg
+
+
+[PCI_2S_485.NTAMD64.Services]
+AddService=SsInstal,2,BrainBoxes.Service,BrainBoxes.EventLog
+
+
+[PCI_2S_485.NTAMD64.CoInstallers]
+AddReg 		= CoInst_Addreg
+CopyFiles	= CoInstallers_CopyFiles_AMD64
+
+
+[PCI_2S_PHOT.NTAMD64]
+CopyFiles=DriverFiles_AMD64,HelpFiles_AMD64,System32Files_AMD64
+AddReg=BB.reg,Uninstall.NT.Reg
+
+
+[PCI_2S_PHOT.NTAMD64.Services]
+AddService=SsInstal,2,BrainBoxes.Service,BrainBoxes.EventLog
+
+
+[PCI_2S_PHOT.NTAMD64.CoInstallers]
+AddReg 		= CoInst_Addreg
+CopyFiles	= CoInstallers_CopyFiles_AMD64
+
+
+[PCI_4S_PHOT.NTAMD64]
+CopyFiles=DriverFiles_AMD64,HelpFiles_AMD64,System32Files_AMD64
+AddReg=BB.reg,Uninstall.NT.Reg
+
+
+[PCI_4S_PHOT.NTAMD64.Services]
+AddService=SsInstal,2,BrainBoxes.Service,BrainBoxes.EventLog
+
+
+[PCI_4S_PHOT.NTAMD64.CoInstallers]
+AddReg 		= CoInst_Addreg
+CopyFiles	= CoInstallers_CopyFiles_AMD64
+
+
+[PCI_8S_PHOT.NTAMD64]
+CopyFiles=DriverFiles_AMD64,HelpFiles_AMD64,System32Files_AMD64
+AddReg=BB.reg,Uninstall.NT.Reg
+
+
+[PCI_8S_PHOT.NTAMD64.Services]
+AddService=SsInstal,2,BrainBoxes.Service,BrainBoxes.EventLog
+
+
+[PCI_8S_PHOT.NTAMD64.CoInstallers]
+AddReg 		= CoInst_Addreg
+CopyFiles	= CoInstallers_CopyFiles_AMD64
+
+
+[PCI_1S_STD.NTAMD64]
+CopyFiles=DriverFiles_AMD64,HelpFiles_AMD64,System32Files_AMD64
+AddReg=BB.reg,Uninstall.NT.Reg
+
+
+[PCI_1S_STD.NTAMD64.Services]
+AddService=SsInstal,2,BrainBoxes.Service,BrainBoxes.EventLog
+
+
+[PCI_1S_STD.NTAMD64.CoInstallers]
+AddReg 		= CoInst_Addreg
+CopyFiles	= CoInstallers_CopyFiles_AMD64
+
+
+[PCI_1S_485.NTAMD64]
+CopyFiles=DriverFiles_AMD64,HelpFiles_AMD64,System32Files_AMD64
+AddReg=BB.reg,Uninstall.NT.Reg
+
+
+[PCI_1S_485.NTAMD64.Services]
+AddService=SsInstal,2,BrainBoxes.Service,BrainBoxes.EventLog
+
+
+[PCI_1S_485.NTAMD64.CoInstallers]
+AddReg 		= CoInst_Addreg
+CopyFiles	= CoInstallers_CopyFiles_AMD64
+
+
+[PCI_4S_485.NTAMD64]
+CopyFiles=DriverFiles_AMD64,HelpFiles_AMD64,System32Files_AMD64
+AddReg=BB.reg,Uninstall.NT.Reg
+
+
+[PCI_4S_485.NTAMD64.Services]
+AddService=SsInstal,2,BrainBoxes.Service,BrainBoxes.EventLog
+
+
+[PCI_4S_485.NTAMD64.CoInstallers]
+AddReg 		= CoInst_Addreg
+CopyFiles	= CoInstallers_CopyFiles_AMD64
+
+
+[PCI_2S_VEL_485.NTAMD64]
+CopyFiles=DriverFiles_AMD64,HelpFiles_AMD64,System32Files_AMD64
+AddReg=BB.reg,Uninstall.NT.Reg
+
+
+[PCI_2S_VEL_485.NTAMD64.Services]
+AddService=SsInstal,2,BrainBoxes.Service,BrainBoxes.EventLog
+
+
+[PCI_2S_VEL_485.NTAMD64.CoInstallers]
+AddReg 		= CoInst_Addreg
+CopyFiles	= CoInstallers_CopyFiles_AMD64
+
+
+[PCI_3S_STD.NTAMD64]
+CopyFiles=DriverFiles_AMD64,HelpFiles_AMD64,System32Files_AMD64
+AddReg=BB.reg,Uninstall.NT.Reg
+
+
+[PCI_3S_STD.NTAMD64.Services]
+AddService=SsInstal,2,BrainBoxes.Service,BrainBoxes.EventLog
+
+
+[PCI_3S_STD.NTAMD64.CoInstallers]
+AddReg 		= CoInst_Addreg
+CopyFiles	= CoInstallers_CopyFiles_AMD64
+
+
+[PCI_2S_9&25.NTAMD64]
+CopyFiles=DriverFiles_AMD64,HelpFiles_AMD64,System32Files_AMD64
+AddReg=BB.reg,Uninstall.NT.Reg
+
+
+[PCI_2S_9&25.NTAMD64.Services]
+AddService=SsInstal,2,BrainBoxes.Service,BrainBoxes.EventLog
+
+
+[PCI_2S_9&25.NTAMD64.CoInstallers]
+AddReg 		= CoInst_Addreg
+CopyFiles	= CoInstallers_CopyFiles_AMD64
+
+
+[PCI_1L_STD.NTAMD64]
+CopyFiles=DriverFiles_AMD64,HelpFiles_AMD64,System32Files_AMD64
+AddReg=BB.reg,Uninstall.NT.Reg
+
+
+[PCI_1L_STD.NTAMD64.Services]
+AddService=SsInstal,2,BrainBoxes.Service,BrainBoxes.EventLog
+
+
+[PCI_1L_STD.NTAMD64.CoInstallers]
+AddReg 		= CoInst_Addreg
+CopyFiles	= CoInstallers_CopyFiles_AMD64
+
+
+
+[CoInst_Addreg]
+HKR,,CoInstallers32,0x10000,"SsCoInst.dll,SsCoInstall"
+
+[BB.reg]
+HKR,,EnumPropPages32,%ADDREG_SZ%,"SsCard.dll,SsExtensionPropSheetPageProc"
+
+[BrainBoxes.Service]
+DisplayName="Brainboxes Limited Service"
+ServiceType=1
+StartType=1
+ErrorControl=1
+LoadOrderGroup=Extended base
+ServiceBinary=%10%\System32\Drivers\SsInstal.sys
+AddReg=BrainBoxes_Templates.reg
+
+[BrainBoxes.EventLog]
+AddReg=BrainBoxes.EventLog.reg
+
+[BrainBoxes.EventLog.reg]
+HKR,,EventMessageFile,%ADDREG_EXPAND_SZ%,"%%SystemRoot%%\System32\IoLogMsg.dll;%%SystemRoot%%\System32\drivers\SsInstal.sys"
+HKR,,TypesSupported,%ADDREG_DWORD%,7
+
+[DriverFiles_AMD64]
+SsInstal.sys, SsInstalAMD64.sys
+
+[HelpFiles_AMD64]
+SsCard.chm
+
+[System32Files_AMD64]
+SsCard.dll, SsCardAMD64.dll
+SsUnist.exe, SsUnistAMD64.exe
+
+[CoInstallers_CopyFiles_AMD64]
+SsCoInst.dll, SsCoInstAMD64.dll
+
+[BrainBoxes_Templates.reg]
+HKR,%BusPath%"1","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI Quad RS232 Photon Card (CC-618)"
+HKR,%BusPath%"1","DeviceID",%ADDREG_DWORD%,0x1c0
+HKR,%BusPath%"1","nComPorts",%ADDREG_DWORD%,4
+HKR,%BusPath%"1","ClockFrequency",%ADDREG_DWORD%,0x708000
+HKR,%BusPath%"1","MaximumBaudrate",%ADDREG_DWORD%,230400
+HKR,%BusPath%"1","SoftTxLimit",%ADDREG_DWORD%,25
+
+HKR,%BusPath%"2","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI Quad RS232 P.O.S. Card"
+HKR,%BusPath%"2","DeviceID",%ADDREG_DWORD%,0x160
+HKR,%BusPath%"2","nComPorts",%ADDREG_DWORD%,4
+HKR,%BusPath%"2","ClockFrequency",%ADDREG_DWORD%,0x384000
+
+HKR,%BusPath%"3","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI Quad RS232 P.O.S. Card"
+HKR,%BusPath%"3","DeviceID",%ADDREG_DWORD%,0x161
+HKR,%BusPath%"3","nComPorts",%ADDREG_DWORD%,4
+HKR,%BusPath%"3","ClockFrequency",%ADDREG_DWORD%,0x384000
+
+HKR,%BusPath%"4","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI Velocity Dual RS232 Card (CC-302)"
+HKR,%BusPath%"4","DeviceID",%ADDREG_DWORD%,0xe0
+HKR,%BusPath%"4","nComPorts",%ADDREG_DWORD%,2
+HKR,%BusPath%"4","MaximumBaudrate",%ADDREG_DWORD%,921600
+HKR,%BusPath%"4","SoftTxLimit",%ADDREG_DWORD%,25
+
+HKR,%BusPath%"5","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI Velocity Dual RS232 Card (CC-302)"
+HKR,%BusPath%"5","DeviceID",%ADDREG_DWORD%,0xe1
+HKR,%BusPath%"5","nComPorts",%ADDREG_DWORD%,2
+HKR,%BusPath%"5","ClockFrequencyAdjustment",%ADDREG_DWORD%,0x1
+HKR,%BusPath%"5","PlxBaudClockType",%ADDREG_DWORD%,2
+HKR,%BusPath%"5","PlxBaudClockOffset",%ADDREG_DWORD%,0x50
+HKR,%BusPath%"5","PlxBaudClockDivisor",%ADDREG_DWORD%,1
+HKR,%BusPath%"5","MaximumBaudrate",%ADDREG_DWORD%,921600
+HKR,%BusPath%"5","SoftTxLimit",%ADDREG_DWORD%,25
+
+HKR,%BusPath%"6","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI Velocity Dual RS422/485 Card (CC-313)"
+HKR,%BusPath%"6","DeviceID",%ADDREG_DWORD%,0xa0
+HKR,%BusPath%"6","nComPorts",%ADDREG_DWORD%,2
+HKR,%BusPath%"6","ClockFrequencyAdjustment",%ADDREG_DWORD%,0x1
+HKR,%BusPath%"6","PlxBaudClockType",%ADDREG_DWORD%,3
+HKR,%BusPath%"6","PlxBaudClockDivisor",%ADDREG_DWORD%,1
+HKR,%BusPath%"6","CtsTrue",%ADDREG_DWORD%,0
+HKR,%BusPath%"6","DuplexOperation",%ADDREG_DWORD%,7
+HKR,%BusPath%"6","AlwaysUsePortSpaceAccess",%ADDREG_DWORD%,0x1
+HKR,%BusPath%"6","MaximumBaudrate",%ADDREG_DWORD%,921600
+HKR,%BusPath%"6","SoftTxLimit",%ADDREG_DWORD%,25
+
+HKR,%BusPath%"7","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI Velocity Dual Opto-Isolated RS422/485 Card (CC-310)"
+HKR,%BusPath%"7","DeviceID",%ADDREG_DWORD%,0xc0
+HKR,%BusPath%"7","nComPorts",%ADDREG_DWORD%,2
+HKR,%BusPath%"7","ClockFrequencyAdjustment",%ADDREG_DWORD%,0x1
+HKR,%BusPath%"7","PlxBaudClockType",%ADDREG_DWORD%,3
+HKR,%BusPath%"7","PlxBaudClockDivisor",%ADDREG_DWORD%,1
+HKR,%BusPath%"7","CtsTrue",%ADDREG_DWORD%,0
+HKR,%BusPath%"7","DuplexOperation",%ADDREG_DWORD%,7
+HKR,%BusPath%"7","AlwaysUsePortSpaceAccess",%ADDREG_DWORD%,0x1
+HKR,%BusPath%"7","MaximumBaudrate",%ADDREG_DWORD%,921600
+HKR,%BusPath%"7","SoftTxLimit",%ADDREG_DWORD%,25
+
+HKR,%BusPath%"8","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI 15Mbaud Dual RS422/485 Card (CC-530)"
+HKR,%BusPath%"8","DeviceID",%ADDREG_DWORD%,0x200
+HKR,%BusPath%"8","nComPorts",%ADDREG_DWORD%,2
+HKR,%BusPath%"8","ClockFrequency",%ADDREG_DWORD%,0x3938700
+HKR,%BusPath%"8","ClockFrequencyAdjustment",%ADDREG_DWORD%,0x1
+HKR,%BusPath%"8","PlxBaudClockType",%ADDREG_DWORD%,6
+HKR,%BusPath%"8","CtsTrue",%ADDREG_DWORD%,0
+HKR,%BusPath%"8","DuplexOperation",%ADDREG_DWORD%,7
+HKR,%BusPath%"8","AlwaysUsePortSpaceAccess",%ADDREG_DWORD%,0x1
+HKR,%BusPath%"8","MaximumBaudrate",%ADDREG_DWORD%,15000000
+HKR,%BusPath%"8","SoftTxLimit",%ADDREG_DWORD%,13
+
+HKR,%BusPath%"9","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI Dual RS232 Photon Card (CC-607)"
+HKR,%BusPath%"9","DeviceID",%ADDREG_DWORD%,0x1a0
+HKR,%BusPath%"9","nComPorts",%ADDREG_DWORD%,2
+HKR,%BusPath%"9","ClockFrequency",%ADDREG_DWORD%,0x708000
+HKR,%BusPath%"9","MaximumBaudrate",%ADDREG_DWORD%,230400
+HKR,%BusPath%"9","SoftTxLimit",%ADDREG_DWORD%,25
+
+HKR,%BusPath%"10","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI Dual RS232 Photon Card (CC-607)"
+HKR,%BusPath%"10","DeviceID",%ADDREG_DWORD%,0x1a1
+HKR,%BusPath%"10","nComPorts",%ADDREG_DWORD%,2
+HKR,%BusPath%"10","ClockFrequency",%ADDREG_DWORD%,0x708000
+HKR,%BusPath%"10","MaximumBaudrate",%ADDREG_DWORD%,230400
+HKR,%BusPath%"10","SoftTxLimit",%ADDREG_DWORD%,25
+
+HKR,%BusPath%"11","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI LPT and RS232 (CC-475)"
+HKR,%BusPath%"11","DeviceID",%ADDREG_DWORD%,0x180
+HKR,%BusPath%"11","nComPorts",%ADDREG_DWORD%,2
+HKR,%BusPath%"11","nLptPorts",%ADDREG_DWORD%,1
+HKR,%BusPath%"11","ClockFrequency",%ADDREG_DWORD%,0x384000
+
+HKR,%BusPath%"12","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI Quad RS232 Card (CC-268)"
+HKR,%BusPath%"12","DeviceID",%ADDREG_DWORD%,0x40
+HKR,%BusPath%"12","nComPorts",%ADDREG_DWORD%,4
+HKR,%BusPath%"12","ClockFrequencyAdjustment",%ADDREG_DWORD%,0xfffffff8
+
+HKR,%BusPath%"13","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI Quad RS232 Card (CC-268)"
+HKR,%BusPath%"13","DeviceID",%ADDREG_DWORD%,0x42
+HKR,%BusPath%"13","nComPorts",%ADDREG_DWORD%,4
+HKR,%BusPath%"13","ClockFrequencyAdjustment",%ADDREG_DWORD%,0xfffffff8
+
+HKR,%BusPath%"14","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI Dual RS232 Card (CC-257)"
+HKR,%BusPath%"14","DeviceID",%ADDREG_DWORD%,0x60
+HKR,%BusPath%"14","nComPorts",%ADDREG_DWORD%,2
+HKR,%BusPath%"14","nLptPorts",%ADDREG_DWORD%,1
+HKR,%BusPath%"14","ClockFrequency",%ADDREG_DWORD%,0x384000
+
+HKR,%BusPath%"15","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI Dual RS232 Card (CC-257)"
+HKR,%BusPath%"15","DeviceID",%ADDREG_DWORD%,0x61
+HKR,%BusPath%"15","nComPorts",%ADDREG_DWORD%,2
+HKR,%BusPath%"15","nLptPorts",%ADDREG_DWORD%,1
+HKR,%BusPath%"15","ClockFrequency",%ADDREG_DWORD%,0x384000
+
+HKR,%BusPath%"16","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI Lynx 8-port RS232 Card (CC-279)"
+HKR,%BusPath%"16","DeviceID",%ADDREG_DWORD%,0x80
+HKR,%BusPath%"16","nComPorts",%ADDREG_DWORD%,8
+HKR,%BusPath%"16","ClockFrequencyAdjustment",%ADDREG_DWORD%,0xfffffff8
+
+HKR,%BusPath%"17","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI Lynx 8-port RS232 Card (CC-279)"
+HKR,%BusPath%"17","DeviceID",%ADDREG_DWORD%,0x81
+HKR,%BusPath%"17","nComPorts",%ADDREG_DWORD%,8
+HKR,%BusPath%"17","ClockFrequencyAdjustment",%ADDREG_DWORD%,0xfffffff8
+
+HKR,%BusPath%"18","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI 3-port RS232 Card (CC-431)"
+HKR,%BusPath%"18","DeviceID",%ADDREG_DWORD%,0x100
+HKR,%BusPath%"18","nComPorts",%ADDREG_DWORD%,3
+HKR,%BusPath%"18","ClockFrequencyAdjustment",%ADDREG_DWORD%,0xfffffff8
+
+HKR,%BusPath%"19","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI 3-port RS232 Card (CC-431)"
+HKR,%BusPath%"19","DeviceID",%ADDREG_DWORD%,0x101
+HKR,%BusPath%"19","nComPorts",%ADDREG_DWORD%,3
+HKR,%BusPath%"19","ClockFrequencyAdjustment",%ADDREG_DWORD%,0xfffffff8
+
+HKR,%BusPath%"20","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI 3+1 Port RS232 (CC-420)"
+HKR,%BusPath%"20","DeviceID",%ADDREG_DWORD%,0x120
+HKR,%BusPath%"20","nComPorts",%ADDREG_DWORD%,4
+HKR,%BusPath%"20","ClockFrequencyAdjustment",%ADDREG_DWORD%,0xfffffff8
+
+HKR,%BusPath%"21","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI 3+1 Port RS232 (CC-420)"
+HKR,%BusPath%"21","DeviceID",%ADDREG_DWORD%,0x121
+HKR,%BusPath%"21","nComPorts",%ADDREG_DWORD%,4 
+HKR,%BusPath%"21","ClockFrequencyAdjustment",%ADDREG_DWORD%,0xfffffff8
+
+HKR,%BusPath%"22","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI Photon 8-port RS232 Card (CC-629)"
+HKR,%BusPath%"22","DeviceID",%ADDREG_DWORD%,0x220
+HKR,%BusPath%"22","nComPorts",%ADDREG_DWORD%,8
+HKR,%BusPath%"22","ClockFrequency",%ADDREG_DWORD%,0x708000
+HKR,%BusPath%"22","MaximumBaudrate",%ADDREG_DWORD%,230400
+HKR,%BusPath%"22","SoftTxLimit",%ADDREG_DWORD%,25
+
+HKR,%BusPath%"23","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI Dual LPT and RS232 Card (CC-468)"
+HKR,%BusPath%"23","DeviceID",%ADDREG_DWORD%,0x1e0
+HKR,%BusPath%"23","nComPorts",%ADDREG_DWORD%,2
+HKR,%BusPath%"23","nLptPorts",%ADDREG_DWORD%,2
+HKR,%BusPath%"23","ClockFrequency",%ADDREG_DWORD%,0x384000
+
+HKR,%BusPath%"24","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI 1 Port RS232 Card (CC-246)"
+HKR,%BusPath%"24","DeviceID",%ADDREG_DWORD%,0x2a0
+HKR,%BusPath%"24","nComPorts",%ADDREG_DWORD%,1
+HKR,%BusPath%"24","ClockFrequency",%ADDREG_DWORD%,0x384000
+
+HKR,%BusPath%"25","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI Velocity 1 Port RS422/485 Autogating Card (CC-324)"
+HKR,%BusPath%"25","DeviceID",%ADDREG_DWORD%,0x260
+HKR,%BusPath%"25","nComPorts",%ADDREG_DWORD%,1
+HKR,%BusPath%"25","ClockFrequencyAdjustment",%ADDREG_DWORD%,0x1
+HKR,%BusPath%"25","PlxBaudClockType",%ADDREG_DWORD%,3
+HKR,%BusPath%"25","PlxBaudClockDivisor",%ADDREG_DWORD%,1
+HKR,%BusPath%"25","CtsTrue",%ADDREG_DWORD%,0
+HKR,%BusPath%"25","DuplexOperation",%ADDREG_DWORD%,7
+HKR,%BusPath%"25","AlwaysUsePortSpaceAccess",%ADDREG_DWORD%,0x1
+HKR,%BusPath%"25","MaximumBaudrate",%ADDREG_DWORD%,921600
+HKR,%BusPath%"25","SoftTxLimit",%ADDREG_DWORD%,25
+
+HKR,%BusPath%"26","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI 2 Port RS232 Card With 5V Power (EP-189)"
+HKR,%BusPath%"26","DeviceID",%ADDREG_DWORD%,0x2c0
+HKR,%BusPath%"26","nComPorts",%ADDREG_DWORD%,2
+HKR,%BusPath%"26","ClockFrequency",%ADDREG_DWORD%,0x384000
+
+HKR,%BusPath%"27","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI Velocity Quad RS422/485 Autogating Card (CC-346)"
+HKR,%BusPath%"27","DeviceID",%ADDREG_DWORD%,0x300
+HKR,%BusPath%"27","nComPorts",%ADDREG_DWORD%,4
+HKR,%BusPath%"27","ClockFrequencyAdjustment",%ADDREG_DWORD%,0x1
+HKR,%BusPath%"27","PlxBaudClockType",%ADDREG_DWORD%,8
+HKR,%BusPath%"27","PlxBaudClockDivisor",%ADDREG_DWORD%,1
+HKR,%BusPath%"27","CtsTrue",%ADDREG_DWORD%,0
+HKR,%BusPath%"27","DuplexOperation",%ADDREG_DWORD%,7
+HKR,%BusPath%"27","AlwaysUsePortSpaceAccess",%ADDREG_DWORD%,0x1
+HKR,%BusPath%"27","MaximumBaudrate",%ADDREG_DWORD%,921600
+HKR,%BusPath%"27","SoftTxLimit",%ADDREG_DWORD%,25
+
+HKR,%BusPath%"28","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI 18Mbaud Dual RS422/485 Card (CC-525)"
+HKR,%BusPath%"28","DeviceID",%ADDREG_DWORD%,0x360
+HKR,%BusPath%"28","nComPorts",%ADDREG_DWORD%,2
+HKR,%BusPath%"28","ClockFrequency",%ADDREG_DWORD%,72000000
+HKR,%BusPath%"28","ClockFrequencyAdjustment",%ADDREG_DWORD%,0x1
+HKR,%BusPath%"28","PlxBaudClockType",%ADDREG_DWORD%,6
+HKR,%BusPath%"28","CtsTrue",%ADDREG_DWORD%,0
+HKR,%BusPath%"28","DuplexOperation",%ADDREG_DWORD%,7
+HKR,%BusPath%"28","AlwaysUsePortSpaceAccess",%ADDREG_DWORD%,0x1
+HKR,%BusPath%"28","MaximumBaudrate",%ADDREG_DWORD%,18000000
+HKR,%BusPath%"28","SoftTxLimit",%ADDREG_DWORD%,13
+
+HKR,%BusPath%"29","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI 2 Port RS232 Card With 12V Power (EP-200)"
+HKR,%BusPath%"29","DeviceID",%ADDREG_DWORD%,0x320
+HKR,%BusPath%"29","nComPorts",%ADDREG_DWORD%,2
+HKR,%BusPath%"29","ClockFrequency",%ADDREG_DWORD%,0x384000
+
+HKR,%BusPath%"30","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI Velocity RS232 & RS422/485 Autogating Card (CC-357)"
+HKR,%BusPath%"30","DeviceID",%ADDREG_DWORD%,0x280
+HKR,%BusPath%"30","nComPorts",%ADDREG_DWORD%,2
+HKR,%BusPath%"30","ClockFrequencyAdjustment",%ADDREG_DWORD%,0x1
+HKR,%BusPath%"30","PlxBaudClockType",%ADDREG_DWORD%,9
+HKR,%BusPath%"30","PlxBaudClockDivisor",%ADDREG_DWORD%,1
+HKR,%BusPath%"30","CtsTrue",%ADDREG_DWORD%,0
+HKR,%BusPath%"30","DuplexOperation",%ADDREG_DWORD%,7
+HKR,%BusPath%"30","AlwaysUsePortSpaceAccess",%ADDREG_DWORD%,0x1
+HKR,%BusPath%"30","MaximumBaudrate",%ADDREG_DWORD%,921600
+HKR,%BusPath%"30","SoftTxLimit",%ADDREG_DWORD%,25
+
+HKR,%BusPath%"31","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI Dual RS232 9 + 25 Pin Card (CC-250)"
+HKR,%BusPath%"31","DeviceID",%ADDREG_DWORD%,0x2e0
+HKR,%BusPath%"31","nComPorts",%ADDREG_DWORD%,2
+HKR,%BusPath%"31","nLptPorts",%ADDREG_DWORD%,1
+HKR,%BusPath%"31","ClockFrequency",%ADDREG_DWORD%,0x384000
+
+HKR,%BusPath%"32","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI Velocity Quad Opto-Isolated RS422/485 autogating card (CC-368)"
+HKR,%BusPath%"32","DeviceID",%ADDREG_DWORD%,0x440
+HKR,%BusPath%"32","nComPorts",%ADDREG_DWORD%,4
+HKR,%BusPath%"32","ClockFrequencyAdjustment",%ADDREG_DWORD%,0x1
+HKR,%BusPath%"32","PlxBaudClockType",%ADDREG_DWORD%,8
+HKR,%BusPath%"32","PlxBaudClockDivisor",%ADDREG_DWORD%,1
+HKR,%BusPath%"32","CtsTrue",%ADDREG_DWORD%,0
+HKR,%BusPath%"32","DuplexOperation",%ADDREG_DWORD%,7
+HKR,%BusPath%"32","AlwaysUsePortSpaceAccess",%ADDREG_DWORD%,0x1
+HKR,%BusPath%"32","MaximumBaudrate",%ADDREG_DWORD%,921600
+HKR,%BusPath%"32","SoftTxLimit",%ADDREG_DWORD%,25
+
+HKR,%BusPath%"33","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI Dual RS232 Card (CC-253/CC-734)"
+HKR,%BusPath%"33","DeviceID",%ADDREG_DWORD%,0x4e0
+HKR,%BusPath%"33","nComPorts",%ADDREG_DWORD%,2
+HKR,%BusPath%"33","ClockFrequency",%ADDREG_DWORD%,0x384000
+
+HKR,%BusPath%"34","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI 3+1 Port RS232 (UC-420)"
+HKR,%BusPath%"34","DeviceID",%ADDREG_DWORD%,0x921
+HKR,%BusPath%"34","nComPorts",%ADDREG_DWORD%,4 
+HKR,%BusPath%"34","ClockFrequencyAdjustment",%ADDREG_DWORD%,0xfffffff8
+HKR,%BusPath%"34","SoftTxLimit",%ADDREG_DWORD%,25
+
+HKR,%BusPath%"35","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI 3-port RS232 Card (UC-431)"
+HKR,%BusPath%"35","DeviceID",%ADDREG_DWORD%,0x500
+HKR,%BusPath%"35","nComPorts",%ADDREG_DWORD%,3
+HKR,%BusPath%"35","ClockFrequency",%ADDREG_DWORD%,0x384000
+HKR,%BusPath%"35","SoftTxLimit",%ADDREG_DWORD%,25
+
+HKR,%BusPath%"36","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI Quad RS232 Card (UC-268)"
+HKR,%BusPath%"36","DeviceID",%ADDREG_DWORD%,0x520
+HKR,%BusPath%"36","nComPorts",%ADDREG_DWORD%,4
+HKR,%BusPath%"36","ClockFrequency",%ADDREG_DWORD%,0x384000
+HKR,%BusPath%"36","SoftTxLimit",%ADDREG_DWORD%,25
+
+HKR,%BusPath%"37","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI Quad RS232 Card (UC-268, UC-265, UC-701, UC-756, UC-260, UC-271)"
+HKR,%BusPath%"37","DeviceID",%ADDREG_DWORD%,0x841
+HKR,%BusPath%"37","nComPorts",%ADDREG_DWORD%,4
+HKR,%BusPath%"37","ClockFrequencyAdjustment",%ADDREG_DWORD%,0xfffffff8
+HKR,%BusPath%"37","SoftTxLimit",%ADDREG_DWORD%,25
+
+HKR,%BusPath%"38","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI Dual RS232 Card (UC-257, UC-249)"
+HKR,%BusPath%"38","DeviceID",%ADDREG_DWORD%,0x861
+HKR,%BusPath%"38","nComPorts",%ADDREG_DWORD%,2
+HKR,%BusPath%"38","nLptPorts",%ADDREG_DWORD%,1
+HKR,%BusPath%"38","ClockFrequencyAdjustment",%ADDREG_DWORD%,0xfffffff8
+HKR,%BusPath%"38","SoftTxLimit",%ADDREG_DWORD%,13
+
+HKR,%BusPath%"39","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI Lynx 8-port RS232 Card (UC-279, UC-275)"
+HKR,%BusPath%"39","DeviceID",%ADDREG_DWORD%,0x881
+HKR,%BusPath%"39","nComPorts",%ADDREG_DWORD%,8
+HKR,%BusPath%"39","ClockFrequencyAdjustment",%ADDREG_DWORD%,0xfffffff8
+HKR,%BusPath%"39","SoftTxLimit",%ADDREG_DWORD%,50
+
+HKR,%BusPath%"40","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI Velocity Dual RS422/485 Card (UC-313)"
+HKR,%BusPath%"40","DeviceID",%ADDREG_DWORD%,0x8a1
+HKR,%BusPath%"40","nComPorts",%ADDREG_DWORD%,2
+HKR,%BusPath%"40","ClockFrequencyAdjustment",%ADDREG_DWORD%,0x1
+HKR,%BusPath%"40","PlxBaudClockType",%ADDREG_DWORD%,10
+HKR,%BusPath%"40","CtsTrue",%ADDREG_DWORD%,0
+HKR,%BusPath%"40","DuplexOperation",%ADDREG_DWORD%,7
+HKR,%BusPath%"40","MaximumBaudrate",%ADDREG_DWORD%,921600
+HKR,%BusPath%"40","SoftTxLimit",%ADDREG_DWORD%,13
+
+HKR,%BusPath%"41","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI Velocity Dual Opto-Isolated RS422/485 Autogating Card (UC-310)"
+HKR,%BusPath%"41","DeviceID",%ADDREG_DWORD%,0x8c1
+HKR,%BusPath%"41","nComPorts",%ADDREG_DWORD%,2
+HKR,%BusPath%"41","ClockFrequencyAdjustment",%ADDREG_DWORD%,0x1
+HKR,%BusPath%"41","PlxBaudClockType",%ADDREG_DWORD%,10
+HKR,%BusPath%"41","CtsTrue",%ADDREG_DWORD%,0
+HKR,%BusPath%"41","DuplexOperation",%ADDREG_DWORD%,7
+HKR,%BusPath%"41","MaximumBaudrate",%ADDREG_DWORD%,921600
+HKR,%BusPath%"41","SoftTxLimit",%ADDREG_DWORD%,13
+
+HKR,%BusPath%"42","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI 3-port RS232 Card (UC-431)"
+HKR,%BusPath%"42","DeviceID",%ADDREG_DWORD%,0x901
+HKR,%BusPath%"42","nComPorts",%ADDREG_DWORD%,3
+HKR,%BusPath%"42","ClockFrequencyAdjustment",%ADDREG_DWORD%,0xfffffff8
+HKR,%BusPath%"42","SoftTxLimit",%ADDREG_DWORD%,25
+
+HKR,%BusPath%"43","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI LPT & RS232 Card (UC-475)"
+HKR,%BusPath%"43","DeviceID",%ADDREG_DWORD%,0x981
+HKR,%BusPath%"43","nComPorts",%ADDREG_DWORD%,2
+HKR,%BusPath%"43","nLptPorts",%ADDREG_DWORD%,1
+HKR,%BusPath%"43","ClockFrequencyAdjustment",%ADDREG_DWORD%,0xfffffff8
+HKR,%BusPath%"43","SoftTxLimit",%ADDREG_DWORD%,13
+
+HKR,%BusPath%"44","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI Velocity 1 Port RS422/485 Card (UC-324, UC-320)"
+HKR,%BusPath%"44","DeviceID",%ADDREG_DWORD%,0xA61
+HKR,%BusPath%"44","nComPorts",%ADDREG_DWORD%,1
+HKR,%BusPath%"44","ClockFrequencyAdjustment",%ADDREG_DWORD%,0x1
+HKR,%BusPath%"44","PlxBaudClockType",%ADDREG_DWORD%,10
+HKR,%BusPath%"44","CtsTrue",%ADDREG_DWORD%,0
+HKR,%BusPath%"44","DuplexOperation",%ADDREG_DWORD%,7
+HKR,%BusPath%"44","MaximumBaudrate",%ADDREG_DWORD%,921600
+HKR,%BusPath%"44","SoftTxLimit",%ADDREG_DWORD%,13
+
+HKR,%BusPath%"45","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI 1 Port RS232 Card (UC-246, UC-235)"
+HKR,%BusPath%"45","DeviceID",%ADDREG_DWORD%,0xaa1
+HKR,%BusPath%"45","nComPorts",%ADDREG_DWORD%,1
+HKR,%BusPath%"45","ClockFrequencyAdjustment",%ADDREG_DWORD%,0xfffffff8
+HKR,%BusPath%"45","SoftTxLimit",%ADDREG_DWORD%,13
+
+HKR,%BusPath%"46","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI Velocity RS232 & RS422/485 Autogating Card (UC-357)"
+HKR,%BusPath%"46","DeviceID",%ADDREG_DWORD%,0xa81
+HKR,%BusPath%"46","nComPorts",%ADDREG_DWORD%,2
+HKR,%BusPath%"46","ClockFrequencyAdjustment",%ADDREG_DWORD%,0x1
+HKR,%BusPath%"46","PlxBaudClockType",%ADDREG_DWORD%,13
+HKR,%BusPath%"46","PlxBaudClockDivisor",%ADDREG_DWORD%,1
+HKR,%BusPath%"46","CtsTrue",%ADDREG_DWORD%,0
+HKR,%BusPath%"46","DuplexOperation",%ADDREG_DWORD%,7
+HKR,%BusPath%"46","MaximumBaudrate",%ADDREG_DWORD%,921600
+HKR,%BusPath%"46","SoftTxLimit",%ADDREG_DWORD%,13
+
+HKR,%BusPath%"47","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI 4-Port RJ45 RS232 Card (UC-836)"
+HKR,%BusPath%"47","DeviceID",%ADDREG_DWORD%,0xd41
+HKR,%BusPath%"47","nComPorts",%ADDREG_DWORD%,4
+HKR,%BusPath%"47","ClockFrequencyAdjustment",%ADDREG_DWORD%,0xfffffff8
+HKR,%BusPath%"47","SoftTxLimit",%ADDREG_DWORD%,25
+
+HKR,%BusPath%"48","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI 4-port RS232 Low Profile Card (UC-260, UC-271, UC-701, UC-756)"
+HKR,%BusPath%"48","DeviceID",%ADDREG_DWORD%,0xD21
+HKR,%BusPath%"48","nComPorts",%ADDREG_DWORD%,4
+HKR,%BusPath%"48","ClockFrequencyAdjustment",%ADDREG_DWORD%,0xfffffff8
+HKR,%BusPath%"48","SoftTxLimit",%ADDREG_DWORD%,25
+
+HKR,%BusPath%"49","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI 1+1-port RS232 Card (UC-257, UC-249, UC-253)"
+HKR,%BusPath%"49","DeviceID",%ADDREG_DWORD%,0xBA1
+HKR,%BusPath%"49","nComPorts",%ADDREG_DWORD%,2
+HKR,%BusPath%"49","ClockFrequencyAdjustment",%ADDREG_DWORD%,0xfffffff8
+HKR,%BusPath%"49","SoftTxLimit",%ADDREG_DWORD%,13
+
+HKR,%BusPath%"50","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI 1+1-port RS232 and LPT Low Profile Card (UC-203)"
+HKR,%BusPath%"50","DeviceID",%ADDREG_DWORD%,0xBC1
+HKR,%BusPath%"50","nComPorts",%ADDREG_DWORD%,2
+HKR,%BusPath%"50","nLptPorts",%ADDREG_DWORD%,1
+HKR,%BusPath%"50","ClockFrequencyAdjustment",%ADDREG_DWORD%,0xfffffff8
+HKR,%BusPath%"50","SoftTxLimit",%ADDREG_DWORD%,13
+
+HKR,%BusPath%"51","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI Velocity Quad RS422/485 Autogating Card (UC-346)"
+HKR,%BusPath%"51","DeviceID",%ADDREG_DWORD%,0xB01
+HKR,%BusPath%"51","nComPorts",%ADDREG_DWORD%,4
+HKR,%BusPath%"51","ClockFrequencyAdjustment",%ADDREG_DWORD%,0x1
+HKR,%BusPath%"51","PlxBaudClockType",%ADDREG_DWORD%,10
+HKR,%BusPath%"51","PlxBaudClockDivisor",%ADDREG_DWORD%,1
+HKR,%BusPath%"51","CtsTrue",%ADDREG_DWORD%,0
+HKR,%BusPath%"51","DuplexOperation",%ADDREG_DWORD%,7
+HKR,%BusPath%"51","MaximumBaudrate",%ADDREG_DWORD%,921600
+HKR,%BusPath%"51","SoftTxLimit",%ADDREG_DWORD%,25
+
+HKR,%BusPath%"52","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI Velocity Quad Opto-Isolated RS422/485 Autogating Card (UC-368)"
+HKR,%BusPath%"52","DeviceID",%ADDREG_DWORD%,0xC41
+HKR,%BusPath%"52","nComPorts",%ADDREG_DWORD%,4
+HKR,%BusPath%"52","ClockFrequencyAdjustment",%ADDREG_DWORD%,0x1
+HKR,%BusPath%"52","PlxBaudClockType",%ADDREG_DWORD%,10
+HKR,%BusPath%"52","PlxBaudClockDivisor",%ADDREG_DWORD%,1
+HKR,%BusPath%"52","CtsTrue",%ADDREG_DWORD%,0
+HKR,%BusPath%"52","DuplexOperation",%ADDREG_DWORD%,7
+HKR,%BusPath%"52","MaximumBaudrate",%ADDREG_DWORD%,921600
+HKR,%BusPath%"52","SoftTxLimit",%ADDREG_DWORD%,25
+
+HKR,%BusPath%"53","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI Dual RS232 Card (UC-253/UC-734)"
+HKR,%BusPath%"53","DeviceID",%ADDREG_DWORD%,0xCA1
+HKR,%BusPath%"53","nComPorts",%ADDREG_DWORD%,2
+HKR,%BusPath%"53","ClockFrequencyAdjustment",%ADDREG_DWORD%,0xfffffff8
+HKR,%BusPath%"53","SoftTxLimit",%ADDREG_DWORD%,13
+
+HKR,%BusPath%"54","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI LPT Card (UC-146, UC-157)"
+HKR,%BusPath%"54","DeviceID",%ADDREG_DWORD%,0xBE1
+HKR,%BusPath%"54","nLptPorts",%ADDREG_DWORD%,1
+HKR,%BusPath%"54","nComPorts",%ADDREG_DWORD%,0
+
+HKR,%BusPath%"55","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI Dual RS232 POS 5V Card (UP-189)"
+HKR,%BusPath%"55","DeviceID",%ADDREG_DWORD%,0xAC1
+HKR,%BusPath%"55","nComPorts",%ADDREG_DWORD%,2
+HKR,%BusPath%"55","ClockFrequencyAdjustment",%ADDREG_DWORD%,0xfffffff8
+HKR,%BusPath%"55","SoftTxLimit",%ADDREG_DWORD%,13
+
+HKR,%BusPath%"56","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI Dual RS232 POS 12V Card (UP-200)"
+HKR,%BusPath%"56","DeviceID",%ADDREG_DWORD%,0xB21
+HKR,%BusPath%"56","nComPorts",%ADDREG_DWORD%,2
+HKR,%BusPath%"56","ClockFrequencyAdjustment",%ADDREG_DWORD%,0xfffffff8
+HKR,%BusPath%"56","SoftTxLimit",%ADDREG_DWORD%,13
+
+HKR,%BusPath%"57","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI Quad RS232 POS Card"
+HKR,%BusPath%"57","DeviceID",%ADDREG_DWORD%,0x941
+HKR,%BusPath%"57","nComPorts",%ADDREG_DWORD%,4
+HKR,%BusPath%"57","ClockFrequencyAdjustment",%ADDREG_DWORD%,0xfffffff8
+HKR,%BusPath%"57","SoftTxLimit",%ADDREG_DWORD%,25
+
+HKR,%BusPath%"58","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI 3+1 Port RS232 POS Card"
+HKR,%BusPath%"58","DeviceID",%ADDREG_DWORD%,0x961
+HKR,%BusPath%"58","nComPorts",%ADDREG_DWORD%,4
+HKR,%BusPath%"58","ClockFrequencyAdjustment",%ADDREG_DWORD%,0xfffffff8
+HKR,%BusPath%"58","SoftTxLimit",%ADDREG_DWORD%,25
+
+HKR,%BusPath%"59","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI Dual 9&15 RS232 POS Card"
+HKR,%BusPath%"59","DeviceID",%ADDREG_DWORD%,0xB41
+HKR,%BusPath%"59","nComPorts",%ADDREG_DWORD%,2
+HKR,%BusPath%"59","ClockFrequencyAdjustment",%ADDREG_DWORD%,0xfffffff8
+HKR,%BusPath%"59","SoftTxLimit",%ADDREG_DWORD%,13
+
+HKR,%BusPath%"60","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI Velocity 2 port RS232 Card (UC-302)"
+HKR,%BusPath%"60","DeviceID",%ADDREG_DWORD%,0x8E1
+HKR,%BusPath%"60","nComPorts",%ADDREG_DWORD%,2
+HKR,%BusPath%"60","ClockFrequencyAdjustment",%ADDREG_DWORD%,1 ;0xfffffff8
+HKR,%BusPath%"60","SoftTxLimit",%ADDREG_DWORD%,13
+HKR,%BusPath%"60","MaximumBaudrate",%ADDREG_DWORD%,921600
+HKR,%BusPath%"60","PlxBaudClockType",%ADDREG_DWORD%,12
+HKR,%BusPath%"60","PlxBaudClockOffset",%ADDREG_DWORD%,0x50
+HKR,%BusPath%"60","PlxBaudClockDivisor",%ADDREG_DWORD%,1
+
+HKR,%BusPath%"61","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI Dual RS232 Photon Card (UC-607)"
+HKR,%BusPath%"61","DeviceID",%ADDREG_DWORD%,0x9A1
+HKR,%BusPath%"61","nComPorts",%ADDREG_DWORD%,2
+HKR,%BusPath%"61","MaximumBaudrate",%ADDREG_DWORD%,230400
+HKR,%BusPath%"61","ClockFrequencyAdjustment",%ADDREG_DWORD%,0xfffffffc
+HKR,%BusPath%"61","SoftTxLimit",%ADDREG_DWORD%,13
+
+HKR,%BusPath%"62","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI Quad RS232 Photon Card"
+HKR,%BusPath%"62","DeviceID",%ADDREG_DWORD%,0x9C1
+HKR,%BusPath%"62","nComPorts",%ADDREG_DWORD%,4
+HKR,%BusPath%"62","MaximumBaudrate",%ADDREG_DWORD%,230400
+HKR,%BusPath%"62","SoftTxLimit",%ADDREG_DWORD%,25
+
+HKR,%BusPath%"63","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI Lynx RS232 Card"
+HKR,%BusPath%"63","DeviceID",%ADDREG_DWORD%,0xA21
+HKR,%BusPath%"63","nComPorts",%ADDREG_DWORD%,8
+HKR,%BusPath%"63","MaximumBaudrate",%ADDREG_DWORD%,230400
+HKR,%BusPath%"63","SoftTxLimit",%ADDREG_DWORD%,50
+
+HKR,%BusPath%"64","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI 4 port RS232 POS Card"
+HKR,%BusPath%"64","DeviceID",%ADDREG_DWORD%,0xB81
+HKR,%BusPath%"64","nComPorts",%ADDREG_DWORD%,4
+HKR,%BusPath%"64","ClockFrequencyAdjustment",%ADDREG_DWORD%,0xfffffff8
+HKR,%BusPath%"64","SoftTxLimit",%ADDREG_DWORD%,25
+
+HKR,%BusPath%"65","Description",%ADDREG_SZ%,"Brainboxes Limited - Universal PCI Dual RS232 POS 0.5 Amp Pinout Choice"
+HKR,%BusPath%"65","DeviceID",%ADDREG_DWORD%,0xC03
+HKR,%BusPath%"65","nComPorts",%ADDREG_DWORD%,2
+HKR,%BusPath%"65","ClockFrequencyAdjustment",%ADDREG_DWORD%,0xfffffff8
+HKR,%BusPath%"65","SoftTxLimit",%ADDREG_DWORD%,13
+
+HKR,%BusPath%"66","Description",%ADDREG_SZ%,"Brainboxes Limited - Universal PCI Dual RS232 POS 1 Amp Pinout Choice"
+HKR,%BusPath%"66","DeviceID",%ADDREG_DWORD%,0xC23
+HKR,%BusPath%"66","nComPorts",%ADDREG_DWORD%,2
+HKR,%BusPath%"66","ClockFrequencyAdjustment",%ADDREG_DWORD%,0xfffffff8
+HKR,%BusPath%"66","SoftTxLimit",%ADDREG_DWORD%,13
+
+HKR,%BusPath%"67","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI Express Lynx 8-port RS232 Card (PX-279, PX-275)"
+HKR,%BusPath%"67","DeviceID",%ADDREG_DWORD%,0xE40
+HKR,%BusPath%"67","nComPorts",%ADDREG_DWORD%,8
+HKR,%BusPath%"67","ClockFrequencyAdjustment",%ADDREG_DWORD%,1
+HKR,%BusPath%"67","MaximumBaudrate",%ADDREG_DWORD%,921600
+HKR,%BusPath%"67","SoftTxLimit",%ADDREG_DWORD%,50
+HKR,%BusPath%"67","PlxBaudClockType",%ADDREG_DWORD%,12
+HKR,%BusPath%"67","PlxBaudClockOffset",%ADDREG_DWORD%,0x50
+HKR,%BusPath%"67","PlxBaudClockDivisor",%ADDREG_DWORD%,1
+
+HKR,%BusPath%"68","Description",%ADDREG_SZ%,"Brainboxes Limited - PCI 3+1-port RS232 + LPT Card (UC-414)"
+HKR,%BusPath%"68","DeviceID",%ADDREG_DWORD%,0xE61
+HKR,%BusPath%"68","nComPorts",%ADDREG_DWORD%,4
+HKR,%BusPath%"68","nLptPorts",%ADDREG_DWORD%,1
+HKR,%BusPath%"68","ClockFrequencyAdjustment",%ADDREG_DWORD%,0xfffffff8
+HKR,%BusPath%"68","SoftTxLimit",%ADDREG_DWORD%,25
+
+
+;Shared Sections
+[Manufacturer]
+%String0%=CARDS, NTAMD64
+
+[SourceDisksNames]
+1=%String1%,,
+
+[DestinationDirs]
+DefaultDestDir=11,
+DriverFiles_AMD64=10,System32\Drivers
+System32Files_AMD64=11,
+HelpFiles_AMD64=18,
+
+
+
+[Uninstall.NT.Reg]
+HKLM,%UninstPath%
+HKLM,%UninstPath%,"DisplayName",%ADDREG_SZ%,"Serial Solutions Device Driver Suite"
+HKLM,%UninstPath%,"UninstallString",%ADDREG_EXPAND_SZ%,"SsUnist.exe"
+HKLM,%UninstPath%,"Publisher",%ADDREG_SZ%,"Brainboxes Ltd"
+HKLM,%UninstPath%,"URLInfoAbout",%ADDREG_SZ%,"http://www.brainboxes.com"
+HKLM,%UninstPath%,"HelpLink",%ADDREG_EXPAND_SZ%,"http://www.brainboxes.com/support/index.asp"
+HKLM,%UninstPath%,"URLUpdateInfo",%ADDREG_SZ%,"http://www.brainboxes.com/downloads/index.asp"
+HKLM,%UninstPath%,"DisplayVersion",%ADDREG_SZ%,"8.1"
+
+[Strings]
+String0="Serial Solutions"
+String1="Serial Solutions Install"
+String100="PCI Dual RS232 Card"
+String101="PCI Quad RS232 Card"
+String102="PCI Lynx RS232 Card"
+String103="PCI Velocity RS422/485 Card"
+String105="PCI Velocity Dual RS232 Card"
+String106="PCI Opto-Isolated Velocity RS422/485 Card"
+String107="PCI 3 Port RS232 Card"
+String108="PCI 3+1 Port RS232 Card"
+String109="PCI LPT & RS232 Card"
+String110="PCI DUAL LPT & RS232 Card"
+String111="PCI 15MBaud Dual RS422/485 Autogating Card"
+String112="PCI Photon 2 Port Card"
+String113="PCI Photon 4 Port Card"
+String114="PCI Photon 8 Port Card"
+String115="PCI 1 Port RS232 Card"
+String116="PCI 2 Port RS232 Card With 5V Power"
+String117="PCI 2 Port RS232 Card With 12V Power"
+String118="PCI Velocity 1 Port RS422/485 Autogating Card"
+String119="PCI Velocity Quad RS422/485 Autogating Card" 
+String120="PCI Velocity RS232 & RS422/485 Autogating Card" 
+String121="PCI 18MBaud Dual RS422/485 Autogating Card"
+String122="PCI Dual RS232 9 + 25 Pin Card"
+String123="PCI Velocity Quad Opto-Isolated RS422/485 autogating card"
+String124="PCI 4-Port RJ45 RS232 Card"
+String125="PCI 1+1-port RS232 Card"
+String126="PCI 1+1-port RS232 &LPT Card"
+String127="PCI LPT Card"
+String128="PCI Dual RS232 POS 5V"
+String129="PCI Dual RS232 POS 12V"
+String130="PCI Quad RS232 POS Card"
+String131="PCI 3+1 Port RS232 POS Card"
+String132="PCI Dual 9&15 RS232 POS Card"
+String133="PCI 2 Port RS232 Card With Selectable Power (low power)"
+String134="PCI 2 Port RS232 Card With Selectable Power (high power)"
+String135="PCI Express Velocity 8 Port RS232 Card"
+String136="PCI 3+1-Port RS232 + LPT Card"
+
+BusPath="Templates\Bus5\Card"
+UninstPath="Software\Microsoft\Windows\CurrentVersion\Uninstall\SerialSolutions"
+ADDREG_SZ=0x00000000
+ADDREG_MULTI_SZ=0x00010000
+ADDREG_APPEND=0x00000008
+ADDREG_EXPAND_SZ=0x00020000
+ADDREG_DWORD=0x00010001
+
+
+[CARDS]
+
+
+[CARDS.NTAMD64]
+;PCI 2 port card (DID 60-7F) (CC-257)
+%String100%=PCI_2S_STD,PCI\VEN_135A&DEV_0060
+%String100%=PCI_2S_STD,PCI\VEN_135A&DEV_0061&SUBSYS_0001135A
+%String100%=PCI_2S_STD,PCI\VEN_135A&DEV_0062
+%String100%=PCI_2S_STD,PCI\VEN_135A&DEV_0063
+%String100%=PCI_2S_STD,PCI\VEN_135A&DEV_0064
+%String100%=PCI_2S_STD,PCI\VEN_135A&DEV_0065
+%String100%=PCI_2S_STD,PCI\VEN_135A&DEV_0066
+%String100%=PCI_2S_STD,PCI\VEN_135A&DEV_0067
+%String100%=PCI_2S_STD,PCI\VEN_135A&DEV_0068
+%String100%=PCI_2S_STD,PCI\VEN_135A&DEV_0069
+%String100%=PCI_2S_STD,PCI\VEN_135A&DEV_006A
+
+;PCI 2 port card (DID 860-87F) (UC-257, UC-249, UC-253)
+%String100%=PCI_2S_STD,PCI\VEN_135A&DEV_0861&SUBSYS_0413135A
+%String100%=PCI_2S_STD,PCI\VEN_135A&DEV_0862&SUBSYS_0413135A
+%String100%=PCI_2S_STD,PCI\VEN_135A&DEV_0863&SUBSYS_0413135A
+%String100%=PCI_2S_STD,PCI\VEN_135A&DEV_0864&SUBSYS_0413135A
+%String100%=PCI_2S_STD,PCI\VEN_135A&DEV_0865&SUBSYS_0413135A
+%String100%=PCI_2S_STD,PCI\VEN_135A&DEV_0866&SUBSYS_0413135A
+%String100%=PCI_2S_STD,PCI\VEN_135A&DEV_0867&SUBSYS_0413135A
+%String100%=PCI_2S_STD,PCI\VEN_135A&DEV_0868&SUBSYS_0413135A
+%String100%=PCI_2S_STD,PCI\VEN_135A&DEV_0869&SUBSYS_0413135A
+%String100%=PCI_2S_STD,PCI\VEN_135A&DEV_086A&SUBSYS_0413135A
+
+;PCI LPT & RS232 card (DID 980-98F) (UC-475)
+%String109%=PCI_2S_STD,PCI\VEN_135A&DEV_0981&SUBSYS_0413135A
+%String109%=PCI_2S_STD,PCI\VEN_135A&DEV_0982&SUBSYS_0413135A
+%String109%=PCI_2S_STD,PCI\VEN_135A&DEV_0983&SUBSYS_0413135A
+%String109%=PCI_2S_STD,PCI\VEN_135A&DEV_0984&SUBSYS_0413135A
+%String109%=PCI_2S_STD,PCI\VEN_135A&DEV_0985&SUBSYS_0413135A
+%String109%=PCI_2S_STD,PCI\VEN_135A&DEV_0986&SUBSYS_0413135A
+%String109%=PCI_2S_STD,PCI\VEN_135A&DEV_0987&SUBSYS_0413135A
+%String109%=PCI_2S_STD,PCI\VEN_135A&DEV_0988&SUBSYS_0413135A
+%String109%=PCI_2S_STD,PCI\VEN_135A&DEV_0989&SUBSYS_0413135A
+%String109%=PCI_2S_STD,PCI\VEN_135A&DEV_098A&SUBSYS_0413135A
+
+;PCI Low Profile 2 port RS232 card (DID 4E1-4FF) (CC-253)
+%String100%=PCI_2S_STD,PCI\VEN_135A&DEV_04E0
+%String100%=PCI_2S_STD,PCI\VEN_135A&DEV_04E1&SUBSYS_0001135A
+%String100%=PCI_2S_STD,PCI\VEN_135A&DEV_04E2&SUBSYS_0411135A
+%String100%=PCI_2S_STD,PCI\VEN_135A&DEV_04E3
+%String100%=PCI_2S_STD,PCI\VEN_135A&DEV_04E4
+%String100%=PCI_2S_STD,PCI\VEN_135A&DEV_04E5
+%String100%=PCI_2S_STD,PCI\VEN_135A&DEV_04E6
+%String100%=PCI_2S_STD,PCI\VEN_135A&DEV_04E7
+%String100%=PCI_2S_STD,PCI\VEN_135A&DEV_04E8
+%String100%=PCI_2S_STD,PCI\VEN_135A&DEV_04E9
+%String100%=PCI_2S_STD,PCI\VEN_135A&DEV_04EA
+
+;PCI 4 port card (DID 40-5F) (CC-268)
+%String101%=PCI_4S_STD,PCI\VEN_135A&DEV_0040
+%String101%=PCI_4S_STD,PCI\VEN_135A&DEV_0041
+%String101%=PCI_4S_STD,PCI\VEN_135A&DEV_0042&SUBSYS_0001135A
+%String101%=PCI_4S_STD,PCI\VEN_135A&DEV_0043&SUBSYS_0431135A
+%String101%=PCI_4S_STD,PCI\VEN_135A&DEV_0043&SUBSYS_0001135A
+%String101%=PCI_4S_STD,PCI\VEN_135A&DEV_0044
+%String101%=PCI_4S_STD,PCI\VEN_135A&DEV_0045
+%String101%=PCI_4S_STD,PCI\VEN_135A&DEV_0046
+%String101%=PCI_4S_STD,PCI\VEN_135A&DEV_0047
+%String101%=PCI_4S_STD,PCI\VEN_135A&DEV_0048
+%String101%=PCI_4S_STD,PCI\VEN_135A&DEV_0049
+%String101%=PCI_4S_STD,PCI\VEN_135A&DEV_004A
+
+;PCI 4 port card (DID 520-53f) 	(See DIDs)
+%String101%=PCI_4S_STD,PCI\VEN_135A&DEV_0520
+%String101%=PCI_4S_STD,PCI\VEN_135A&DEV_0521
+%String101%=PCI_4S_STD,PCI\VEN_135A&DEV_0522
+
+;PCI 4 port card (DID 840-85f) (UC-268, UC-265)
+%String101%=PCI_4S_STD,PCI\VEN_135A&DEV_0841&SUBSYS_0431135A
+%String101%=PCI_4S_STD,PCI\VEN_135A&DEV_0842&SUBSYS_0431135A
+%String101%=PCI_4S_STD,PCI\VEN_135A&DEV_0843&SUBSYS_0431135A
+%String101%=PCI_4S_STD,PCI\VEN_135A&DEV_0844&SUBSYS_0431135A
+%String101%=PCI_4S_STD,PCI\VEN_135A&DEV_0845&SUBSYS_0431135A
+%String101%=PCI_4S_STD,PCI\VEN_135A&DEV_0846&SUBSYS_0431135A
+%String101%=PCI_4S_STD,PCI\VEN_135A&DEV_0847&SUBSYS_0431135A
+%String101%=PCI_4S_STD,PCI\VEN_135A&DEV_0848&SUBSYS_0431135A
+%String101%=PCI_4S_STD,PCI\VEN_135A&DEV_0849&SUBSYS_0431135A
+%String101%=PCI_4S_STD,PCI\VEN_135A&DEV_084A&SUBSYS_0431135A
+
+;PCI 4-Port RJ45 RS232 card (DID d40-d5f) (UC-836)
+%String124%=PCI_4S_STD,PCI\VEN_135A&DEV_0d41&SUBSYS_0431135A
+%String124%=PCI_4S_STD,PCI\VEN_135A&DEV_0d42&SUBSYS_0431135A
+%String124%=PCI_4S_STD,PCI\VEN_135A&DEV_0d43&SUBSYS_0431135A
+%String124%=PCI_4S_STD,PCI\VEN_135A&DEV_0d44&SUBSYS_0431135A
+%String124%=PCI_4S_STD,PCI\VEN_135A&DEV_0d45&SUBSYS_0431135A
+%String124%=PCI_4S_STD,PCI\VEN_135A&DEV_0d46&SUBSYS_0431135A
+%String124%=PCI_4S_STD,PCI\VEN_135A&DEV_0d47&SUBSYS_0431135A
+%String124%=PCI_4S_STD,PCI\VEN_135A&DEV_0d48&SUBSYS_0431135A
+%String124%=PCI_4S_STD,PCI\VEN_135A&DEV_0d49&SUBSYS_0431135A
+%String124%=PCI_4S_STD,PCI\VEN_135A&DEV_0d4A&SUBSYS_0431135A
+
+;PCI 8 port card (DID 80-9F) (CC-279)
+%String102%=PCI_8S_STD,PCI\VEN_135A&DEV_0080
+%String102%=PCI_8S_STD,PCI\VEN_135A&DEV_0081&SUBSYS_0001135A
+%String102%=PCI_8S_STD,PCI\VEN_135A&DEV_0082
+%String102%=PCI_8S_STD,PCI\VEN_135A&DEV_0083&SUBSYS_0001135A
+%String102%=PCI_8S_STD,PCI\VEN_135A&DEV_0084
+%String102%=PCI_8S_STD,PCI\VEN_135A&DEV_0085
+%String102%=PCI_8S_STD,PCI\VEN_135A&DEV_0086
+%String102%=PCI_8S_STD,PCI\VEN_135A&DEV_0087
+%String102%=PCI_8S_STD,PCI\VEN_135A&DEV_0088
+%String102%=PCI_8S_STD,PCI\VEN_135A&DEV_0089
+%String102%=PCI_8S_STD,PCI\VEN_135A&DEV_008A
+
+;PCI 8 port card (DID 880-89F) (UC-279, UC-275)
+%String102%=PCI_8S_STD,PCI\VEN_135A&DEV_0881&SUBSYS_0671135A
+%String102%=PCI_8S_STD,PCI\VEN_135A&DEV_0882&SUBSYS_0671135A
+%String102%=PCI_8S_STD,PCI\VEN_135A&DEV_0883&SUBSYS_0671135A
+%String102%=PCI_8S_STD,PCI\VEN_135A&DEV_0884&SUBSYS_0671135A
+%String102%=PCI_8S_STD,PCI\VEN_135A&DEV_0885&SUBSYS_0671135A
+%String102%=PCI_8S_STD,PCI\VEN_135A&DEV_0886&SUBSYS_0671135A
+%String102%=PCI_8S_STD,PCI\VEN_135A&DEV_0887&SUBSYS_0671135A
+%String102%=PCI_8S_STD,PCI\VEN_135A&DEV_0888&SUBSYS_0671135A
+%String102%=PCI_8S_STD,PCI\VEN_135A&DEV_0889&SUBSYS_0671135A
+%String102%=PCI_8S_STD,PCI\VEN_135A&DEV_088A&SUBSYS_0671135A
+
+;PCIe 8 port card (DID E40-E5F) (PX-279, PX-275)
+%String135%=PCI_8S_STD,PCI\VEN_135A&DEV_0E40&SUBSYS_0671135A
+%String135%=PCI_8S_STD,PCI\VEN_135A&DEV_0E41&SUBSYS_0671135A
+%String135%=PCI_8S_STD,PCI\VEN_135A&DEV_0E42&SUBSYS_0671135A
+%String135%=PCI_8S_STD,PCI\VEN_135A&DEV_0E43&SUBSYS_0671135A
+%String135%=PCI_8S_STD,PCI\VEN_135A&DEV_0E44&SUBSYS_0671135A
+%String135%=PCI_8S_STD,PCI\VEN_135A&DEV_0E45&SUBSYS_0671135A
+%String135%=PCI_8S_STD,PCI\VEN_135A&DEV_0E46&SUBSYS_0671135A
+%String135%=PCI_8S_STD,PCI\VEN_135A&DEV_0E47&SUBSYS_0671135A
+%String135%=PCI_8S_STD,PCI\VEN_135A&DEV_0E48&SUBSYS_0671135A
+%String135%=PCI_8S_STD,PCI\VEN_135A&DEV_0E49&SUBSYS_0671135A
+%String135%=PCI_8S_STD,PCI\VEN_135A&DEV_0E4A&SUBSYS_0671135A
+
+;PCI Velocity RS422/485 2-port card (DID A0-BF) 
+%String103%=PCI_2S_485,PCI\VEN_135A&DEV_00A0
+%String103%=PCI_2S_485,PCI\VEN_135A&DEV_00A1&SUBSYS_0003135A
+%String103%=PCI_2S_485,PCI\VEN_135A&DEV_00A2
+%String103%=PCI_2S_485,PCI\VEN_135A&DEV_00A3
+%String103%=PCI_2S_485,PCI\VEN_135A&DEV_00A4
+%String103%=PCI_2S_485,PCI\VEN_135A&DEV_00A5
+%String103%=PCI_2S_485,PCI\VEN_135A&DEV_00A6
+%String103%=PCI_2S_485,PCI\VEN_135A&DEV_00A7
+%String103%=PCI_2S_485,PCI\VEN_135A&DEV_00A8
+%String103%=PCI_2S_485,PCI\VEN_135A&DEV_00A9
+%String103%=PCI_2S_485,PCI\VEN_135A&DEV_00AA
+
+;PCI Velocity RS422/485 2-port card (DID 8A0-8BF) (UC-310)
+%String103%=PCI_2S_485,PCI\VEN_135A&DEV_08A1&SUBSYS_0413135A
+%String103%=PCI_2S_485,PCI\VEN_135A&DEV_08A2&SUBSYS_0413135A
+%String103%=PCI_2S_485,PCI\VEN_135A&DEV_08A3&SUBSYS_0413135A
+%String103%=PCI_2S_485,PCI\VEN_135A&DEV_08A4&SUBSYS_0413135A
+%String103%=PCI_2S_485,PCI\VEN_135A&DEV_08A5&SUBSYS_0413135A
+%String103%=PCI_2S_485,PCI\VEN_135A&DEV_08A6&SUBSYS_0413135A
+%String103%=PCI_2S_485,PCI\VEN_135A&DEV_08A7&SUBSYS_0413135A
+%String103%=PCI_2S_485,PCI\VEN_135A&DEV_08A8&SUBSYS_0413135A
+%String103%=PCI_2S_485,PCI\VEN_135A&DEV_08A9&SUBSYS_0413135A
+%String103%=PCI_2S_485,PCI\VEN_135A&DEV_08AA&SUBSYS_0413135A
+
+;PCI velocity 2-Port RS232 card (DID E0-FF) (CC-302)
+%String105%=PCI_2S_VEL,PCI\VEN_135A&DEV_00E0
+%String105%=PCI_2S_VEL,PCI\VEN_135A&DEV_00E1&SUBSYS_0413135A
+%String105%=PCI_2S_VEL,PCI\VEN_135A&DEV_00E2
+%String105%=PCI_2S_VEL,PCI\VEN_135A&DEV_00E3
+%String105%=PCI_2S_VEL,PCI\VEN_135A&DEV_00E4
+%String105%=PCI_2S_VEL,PCI\VEN_135A&DEV_00E5
+%String105%=PCI_2S_VEL,PCI\VEN_135A&DEV_00E6
+%String105%=PCI_2S_VEL,PCI\VEN_135A&DEV_00E7
+%String105%=PCI_2S_VEL,PCI\VEN_135A&DEV_00E8
+%String105%=PCI_2S_VEL,PCI\VEN_135A&DEV_00E9
+%String105%=PCI_2S_VEL,PCI\VEN_135A&DEV_00EA
+
+;PCI Opto-Isolated RS422/485 2-port card (DID C0-DF) (CC-618)
+%String106%=PCI_2S_485,PCI\VEN_135A&DEV_00C0
+%String106%=PCI_2S_485,PCI\VEN_135A&DEV_00C1
+%String106%=PCI_2S_485,PCI\VEN_135A&DEV_00C2&SUBSYS_0413135A
+%String106%=PCI_2S_485,PCI\VEN_135A&DEV_00C3
+%String106%=PCI_2S_485,PCI\VEN_135A&DEV_00C4
+%String106%=PCI_2S_485,PCI\VEN_135A&DEV_00C5
+%String106%=PCI_2S_485,PCI\VEN_135A&DEV_00C6
+%String106%=PCI_2S_485,PCI\VEN_135A&DEV_00C7
+%String106%=PCI_2S_485,PCI\VEN_135A&DEV_00C8
+%String106%=PCI_2S_485,PCI\VEN_135A&DEV_00C9
+%String106%=PCI_2S_485,PCI\VEN_135A&DEV_00CA
+
+;PCI Opto-Isolated RS422/485 2-port card (DID 8C0-8DF) (UC-368)
+%String106%=PCI_2S_485,PCI\VEN_135A&DEV_08C1&SUBSYS_0413135A
+%String106%=PCI_2S_485,PCI\VEN_135A&DEV_08C2&SUBSYS_0413135A
+%String106%=PCI_2S_485,PCI\VEN_135A&DEV_08C3&SUBSYS_0413135A
+%String106%=PCI_2S_485,PCI\VEN_135A&DEV_08C4&SUBSYS_0413135A
+%String106%=PCI_2S_485,PCI\VEN_135A&DEV_08C5&SUBSYS_0413135A
+%String106%=PCI_2S_485,PCI\VEN_135A&DEV_08C6&SUBSYS_0413135A
+%String106%=PCI_2S_485,PCI\VEN_135A&DEV_08C7&SUBSYS_0413135A
+%String106%=PCI_2S_485,PCI\VEN_135A&DEV_08C8&SUBSYS_0413135A
+%String106%=PCI_2S_485,PCI\VEN_135A&DEV_08C9&SUBSYS_0413135A
+%String106%=PCI_2S_485,PCI\VEN_135A&DEV_08CA&SUBSYS_0413135A
+
+;PCI RS232 3+1-port card (DID 120-13F) (CC-420)
+%String108%=PCI_4S_STD,PCI\VEN_135A&DEV_0120
+%String108%=PCI_4S_STD,PCI\VEN_135A&DEV_0121&SUBSYS_0632135A
+%String108%=PCI_4S_STD,PCI\VEN_135A&DEV_0122&SUBSYS_0632135A
+%String108%=PCI_4S_STD,PCI\VEN_135A&DEV_0123
+%String108%=PCI_4S_STD,PCI\VEN_135A&DEV_0124
+%String108%=PCI_4S_STD,PCI\VEN_135A&DEV_0125
+%String108%=PCI_4S_STD,PCI\VEN_135A&DEV_0126
+%String108%=PCI_4S_STD,PCI\VEN_135A&DEV_0127
+%String108%=PCI_4S_STD,PCI\VEN_135A&DEV_0128
+%String108%=PCI_4S_STD,PCI\VEN_135A&DEV_0129
+%String108%=PCI_4S_STD,PCI\VEN_135A&DEV_012A
+
+;PCI RS232 3+1-port card (DID 920-93F) (UC-420)
+%String108%=PCI_4S_STD,PCI\VEN_135A&DEV_0921&SUBSYS_0431135A
+%String108%=PCI_4S_STD,PCI\VEN_135A&DEV_0922&SUBSYS_0431135A
+%String108%=PCI_4S_STD,PCI\VEN_135A&DEV_0923&SUBSYS_0431135A
+%String108%=PCI_4S_STD,PCI\VEN_135A&DEV_0924&SUBSYS_0431135A
+%String108%=PCI_4S_STD,PCI\VEN_135A&DEV_0925&SUBSYS_0431135A
+%String108%=PCI_4S_STD,PCI\VEN_135A&DEV_0926&SUBSYS_0431135A
+%String108%=PCI_4S_STD,PCI\VEN_135A&DEV_0927&SUBSYS_0431135A
+%String108%=PCI_4S_STD,PCI\VEN_135A&DEV_0928&SUBSYS_0431135A
+%String108%=PCI_4S_STD,PCI\VEN_135A&DEV_0929&SUBSYS_0431135A
+%String108%=PCI_4S_STD,PCI\VEN_135A&DEV_092A&SUBSYS_0431135A
+
+;PCI LPT & RS232 (2 serial + 1 printer)	(CC-475)
+%String109%=PCI_2S_STD,PCI\VEN_135A&DEV_0180
+%String109%=PCI_2S_STD,PCI\VEN_135A&DEV_0181&SUBSYS_0411135A
+%String109%=PCI_2S_STD,PCI\VEN_135A&DEV_0182
+%String109%=PCI_2S_STD,PCI\VEN_135A&DEV_0183
+%String109%=PCI_2S_STD,PCI\VEN_135A&DEV_0184
+%String109%=PCI_2S_STD,PCI\VEN_135A&DEV_0185
+%String109%=PCI_2S_STD,PCI\VEN_135A&DEV_0186
+%String109%=PCI_2S_STD,PCI\VEN_135A&DEV_0187
+%String109%=PCI_2S_STD,PCI\VEN_135A&DEV_0188
+%String109%=PCI_2S_STD,PCI\VEN_135A&DEV_0189
+%String109%=PCI_2S_STD,PCI\VEN_135A&DEV_018A
+
+;PCI DUAL LPT & RS232 (2 serial + 2 printer) (CC-468)
+%String110%=PCI_2S_STD,PCI\VEN_135A&DEV_01E0
+%String110%=PCI_2S_STD,PCI\VEN_135A&DEV_01E1&SUBSYS_0001135A
+%String110%=PCI_2S_STD,PCI\VEN_135A&DEV_01E2
+%String110%=PCI_2S_STD,PCI\VEN_135A&DEV_01E3
+%String110%=PCI_2S_STD,PCI\VEN_135A&DEV_01E4
+%String110%=PCI_2S_STD,PCI\VEN_135A&DEV_01E5
+%String110%=PCI_2S_STD,PCI\VEN_135A&DEV_01E6
+%String110%=PCI_2S_STD,PCI\VEN_135A&DEV_01E7
+%String110%=PCI_2S_STD,PCI\VEN_135A&DEV_01E8
+%String110%=PCI_2S_STD,PCI\VEN_135A&DEV_01E9
+%String110%=PCI_2S_STD,PCI\VEN_135A&DEV_01EA         
+
+;PCI Quad Pos (DID 160-17F) (CC-302) - DIDs not used
+%String130%=PCI_4S_STD,PCI\VEN_135A&DEV_0160
+%String130%=PCI_4S_STD,PCI\VEN_135A&DEV_0161
+%String130%=PCI_4S_STD,PCI\VEN_135A&DEV_0162
+%String130%=PCI_4S_STD,PCI\VEN_135A&DEV_0163
+%String130%=PCI_4S_STD,PCI\VEN_135A&DEV_0164
+%String130%=PCI_4S_STD,PCI\VEN_135A&DEV_0165
+%String130%=PCI_4S_STD,PCI\VEN_135A&DEV_0166
+%String130%=PCI_4S_STD,PCI\VEN_135A&DEV_0167
+%String130%=PCI_4S_STD,PCI\VEN_135A&DEV_0168
+%String130%=PCI_4S_STD,PCI\VEN_135A&DEV_0169
+%String130%=PCI_4S_STD,PCI\VEN_135A&DEV_016A
+
+;PCI 2 Port Photon RS232 card (DID 1a0-1bf) (CC-607)
+%String112%=PCI_2S_PHOT,PCI\VEN_135A&DEV_01A0
+%String112%=PCI_2S_PHOT,PCI\VEN_135A&DEV_01A1&SUBSYS_0415135A
+%String112%=PCI_2S_PHOT,PCI\VEN_135A&DEV_01A2
+%String112%=PCI_2S_PHOT,PCI\VEN_135A&DEV_01A3
+%String112%=PCI_2S_PHOT,PCI\VEN_135A&DEV_01A4
+%String112%=PCI_2S_PHOT,PCI\VEN_135A&DEV_01A5
+%String112%=PCI_2S_PHOT,PCI\VEN_135A&DEV_01A6
+%String112%=PCI_2S_PHOT,PCI\VEN_135A&DEV_01A7
+%String112%=PCI_2S_PHOT,PCI\VEN_135A&DEV_01A8
+%String112%=PCI_2S_PHOT,PCI\VEN_135A&DEV_01A9
+%String112%=PCI_2S_PHOT,PCI\VEN_135A&DEV_01AA
+
+;PCI 4 port Photon RS232 card (DID 1c0-1df) (CC-618)
+%String113%=PCI_4S_PHOT,PCI\VEN_135A&DEV_01C0
+%String113%=PCI_4S_PHOT,PCI\VEN_135A&DEV_01C1
+%String113%=PCI_4S_PHOT,PCI\VEN_135A&DEV_01C2
+%String113%=PCI_4S_PHOT,PCI\VEN_135A&DEV_01C3&SUBSYS_0635135A
+%String113%=PCI_4S_PHOT,PCI\VEN_135A&DEV_01C4&SUBSYS_0635135A
+%String113%=PCI_4S_PHOT,PCI\VEN_135A&DEV_01C5
+%String113%=PCI_4S_PHOT,PCI\VEN_135A&DEV_01C6
+%String113%=PCI_4S_PHOT,PCI\VEN_135A&DEV_01C7
+%String113%=PCI_4S_PHOT,PCI\VEN_135A&DEV_01C8
+%String113%=PCI_4S_PHOT,PCI\VEN_135A&DEV_01C9
+%String113%=PCI_4S_PHOT,PCI\VEN_135A&DEV_01CA
+
+;PCI 8 port Photon RS232 card (DID 220-23F) (CC-629)
+%String114%=PCI_8S_PHOT,PCI\VEN_135A&DEV_0220
+%String114%=PCI_8S_PHOT,PCI\VEN_135A&DEV_0221
+%String114%=PCI_8S_PHOT,PCI\VEN_135A&DEV_0222
+%String114%=PCI_8S_PHOT,PCI\VEN_135A&DEV_0223&SUBSYS_0675135A
+%String114%=PCI_8S_PHOT,PCI\VEN_135A&DEV_0224&SUBSYS_0675135A
+%String114%=PCI_8S_PHOT,PCI\VEN_135A&DEV_0225
+%String114%=PCI_8S_PHOT,PCI\VEN_135A&DEV_0226
+%String114%=PCI_8S_PHOT,PCI\VEN_135A&DEV_0227
+%String114%=PCI_8S_PHOT,PCI\VEN_135A&DEV_0228
+%String114%=PCI_8S_PHOT,PCI\VEN_135A&DEV_0229
+%String114%=PCI_8S_PHOT,PCI\VEN_135A&DEV_022A
+
+;PCI 1 port card (DID 02a0 - 02bF) (CC-246)
+%String115%=PCI_1S_STD,PCI\VEN_135A&DEV_02A0	;&SUBSYS_FA01135A
+%String115%=PCI_1S_STD,PCI\VEN_135A&DEV_02A1
+%String115%=PCI_1S_STD,PCI\VEN_135A&DEV_02A2
+%String115%=PCI_1S_STD,PCI\VEN_135A&DEV_02A3&SUBSYS_0401135A
+%String115%=PCI_1S_STD,PCI\VEN_135A&DEV_02A4
+%String115%=PCI_1S_STD,PCI\VEN_135A&DEV_02A5
+%String115%=PCI_1S_STD,PCI\VEN_135A&DEV_02A6
+%String115%=PCI_1S_STD,PCI\VEN_135A&DEV_02A7
+%String115%=PCI_1S_STD,PCI\VEN_135A&DEV_02A8
+%String115%=PCI_1S_STD,PCI\VEN_135A&DEV_02A9
+%String115%=PCI_1S_STD,PCI\VEN_135A&DEV_02AA
+
+;PCI 1 port card (DID 0aa0 - 0abF) (UC-246, UC-235)
+%String115%=PCI_1S_STD,PCI\VEN_135A&DEV_0AA1&SUBSYS_0403135A
+%String115%=PCI_1S_STD,PCI\VEN_135A&DEV_0AA2&SUBSYS_0403135A
+%String115%=PCI_1S_STD,PCI\VEN_135A&DEV_0AA3&SUBSYS_0403135A
+%String115%=PCI_1S_STD,PCI\VEN_135A&DEV_0AA4&SUBSYS_0403135A
+%String115%=PCI_1S_STD,PCI\VEN_135A&DEV_0AA5&SUBSYS_0403135A
+%String115%=PCI_1S_STD,PCI\VEN_135A&DEV_0AA6&SUBSYS_0403135A
+%String115%=PCI_1S_STD,PCI\VEN_135A&DEV_0AA7&SUBSYS_0403135A
+%String115%=PCI_1S_STD,PCI\VEN_135A&DEV_0AA8&SUBSYS_0403135A
+%String115%=PCI_1S_STD,PCI\VEN_135A&DEV_0AA9&SUBSYS_0403135A
+%String115%=PCI_1S_STD,PCI\VEN_135A&DEV_0AAA&SUBSYS_0403135A
+
+;PCI 2 port card with 5V power (DID 02c0 - 02df) (EP-189)
+%String116%=PCI_2S_STD,PCI\VEN_135A&DEV_02C0
+%String116%=PCI_2S_STD,PCI\VEN_135A&DEV_02C1
+%String116%=PCI_2S_STD,PCI\VEN_135A&DEV_02C2
+%String116%=PCI_2S_STD,PCI\VEN_135A&DEV_02C3&SUBSYS_0411135A
+%String116%=PCI_2S_STD,PCI\VEN_135A&DEV_02C4
+%String116%=PCI_2S_STD,PCI\VEN_135A&DEV_02C5
+%String116%=PCI_2S_STD,PCI\VEN_135A&DEV_02C6
+%String116%=PCI_2S_STD,PCI\VEN_135A&DEV_02C7
+%String116%=PCI_2S_STD,PCI\VEN_135A&DEV_02C8
+%String116%=PCI_2S_STD,PCI\VEN_135A&DEV_02C9
+%String116%=PCI_2S_STD,PCI\VEN_135A&DEV_02CA
+
+;PCI 2 port card with 12V power (DID 0320 - 033F) (EP-200)
+%String117%=PCI_2S_STD,PCI\VEN_135A&DEV_0320
+%String117%=PCI_2S_STD,PCI\VEN_135A&DEV_0321
+%String117%=PCI_2S_STD,PCI\VEN_135A&DEV_0322
+%String117%=PCI_2S_STD,PCI\VEN_135A&DEV_0323&SUBSYS_0411135A
+%String117%=PCI_2S_STD,PCI\VEN_135A&DEV_0324
+%String117%=PCI_2S_STD,PCI\VEN_135A&DEV_0325
+%String117%=PCI_2S_STD,PCI\VEN_135A&DEV_0326
+%String117%=PCI_2S_STD,PCI\VEN_135A&DEV_0327
+%String117%=PCI_2S_STD,PCI\VEN_135A&DEV_0328
+%String117%=PCI_2S_STD,PCI\VEN_135A&DEV_0329
+%String117%=PCI_2S_STD,PCI\VEN_135A&DEV_032A
+
+;PCI 1-port Velocity RS422/485 card (DID 0260 - 027f) (CC-324)
+%String118%=PCI_1S_485,PCI\VEN_135A&DEV_0260
+%String118%=PCI_1S_485,PCI\VEN_135A&DEV_0261&SUBSYS_0403135A
+%String118%=PCI_1S_485,PCI\VEN_135A&DEV_0262
+%String118%=PCI_1S_485,PCI\VEN_135A&DEV_0263
+%String118%=PCI_1S_485,PCI\VEN_135A&DEV_0264
+%String118%=PCI_1S_485,PCI\VEN_135A&DEV_0265
+%String118%=PCI_1S_485,PCI\VEN_135A&DEV_0266
+%String118%=PCI_1S_485,PCI\VEN_135A&DEV_0267
+%String118%=PCI_1S_485,PCI\VEN_135A&DEV_0268
+%String118%=PCI_1S_485,PCI\VEN_135A&DEV_0269
+%String118%=PCI_1S_485,PCI\VEN_135A&DEV_026A
+
+;PCI 1-port Velocity RS422/485 card (DID 0A60 - 0A7f) (UC-324, UC-320)
+%String118%=PCI_1S_485,PCI\VEN_135A&DEV_0A60&SUBSYS_0403135A
+%String118%=PCI_1S_485,PCI\VEN_135A&DEV_0A61&SUBSYS_0403135A
+%String118%=PCI_1S_485,PCI\VEN_135A&DEV_0A62&SUBSYS_0403135A
+%String118%=PCI_1S_485,PCI\VEN_135A&DEV_0A63&SUBSYS_0403135A
+%String118%=PCI_1S_485,PCI\VEN_135A&DEV_0A64&SUBSYS_0403135A
+%String118%=PCI_1S_485,PCI\VEN_135A&DEV_0A65&SUBSYS_0403135A
+%String118%=PCI_1S_485,PCI\VEN_135A&DEV_0A66&SUBSYS_0403135A
+%String118%=PCI_1S_485,PCI\VEN_135A&DEV_0A67&SUBSYS_0403135A
+%String118%=PCI_1S_485,PCI\VEN_135A&DEV_0A68&SUBSYS_0403135A
+%String118%=PCI_1S_485,PCI\VEN_135A&DEV_0A69&SUBSYS_0403135A
+%String118%=PCI_1S_485,PCI\VEN_135A&DEV_0A6A&SUBSYS_0403135A
+
+;PCI RS232 3-port card (DID 100-11F) (CC-431)
+%String107%=PCI_3S_STD,PCI\VEN_135A&DEV_0100
+%String107%=PCI_3S_STD,PCI\VEN_135A&DEV_0101&SUBSYS_0622135A
+%String107%=PCI_3S_STD,PCI\VEN_135A&DEV_0102&SUBSYS_0622135A  
+%String107%=PCI_3S_STD,PCI\VEN_135A&DEV_0103  
+%String107%=PCI_3S_STD,PCI\VEN_135A&DEV_0104  
+%String107%=PCI_3S_STD,PCI\VEN_135A&DEV_0105  
+%String107%=PCI_3S_STD,PCI\VEN_135A&DEV_0106  
+%String107%=PCI_3S_STD,PCI\VEN_135A&DEV_0107  
+%String107%=PCI_3S_STD,PCI\VEN_135A&DEV_0108  
+%String107%=PCI_3S_STD,PCI\VEN_135A&DEV_0109  
+%String107%=PCI_3S_STD,PCI\VEN_135A&DEV_010A
+
+;PCI RS232 3-port card (DID 500-51F) (UC-431) (See DIDs)
+%String107%=PCI_3S_STD,PCI\VEN_135A&DEV_0500
+%String107%=PCI_3S_STD,PCI\VEN_135A&DEV_0501  
+%String107%=PCI_3S_STD,PCI\VEN_135A&DEV_0502  
+
+;PCI RS232 3-port card (DID 900-91F) (UC-431)
+%String107%=PCI_3S_STD,PCI\VEN_135A&DEV_0901&SUBSYS_0623135A
+%String107%=PCI_3S_STD,PCI\VEN_135A&DEV_0902&SUBSYS_0623135A
+%String107%=PCI_3S_STD,PCI\VEN_135A&DEV_0903&SUBSYS_0623135A
+%String107%=PCI_3S_STD,PCI\VEN_135A&DEV_0904&SUBSYS_0623135A
+%String107%=PCI_3S_STD,PCI\VEN_135A&DEV_0905&SUBSYS_0623135A
+%String107%=PCI_3S_STD,PCI\VEN_135A&DEV_0906&SUBSYS_0623135A
+%String107%=PCI_3S_STD,PCI\VEN_135A&DEV_0907&SUBSYS_0623135A
+%String107%=PCI_3S_STD,PCI\VEN_135A&DEV_0908&SUBSYS_0623135A
+%String107%=PCI_3S_STD,PCI\VEN_135A&DEV_0909&SUBSYS_0623135A
+%String107%=PCI_3S_STD,PCI\VEN_135A&DEV_090A&SUBSYS_0623135A
+
+;PCI Quad Velocity RS422/485 card (DID 0300 - 031f) (CC-346)
+%String119%=PCI_4S_485,PCI\VEN_135A&DEV_0300
+%String119%=PCI_4S_485,PCI\VEN_135A&DEV_0301&SUBSYS_0433135A
+%String119%=PCI_4S_485,PCI\VEN_135A&DEV_0302
+%String119%=PCI_4S_485,PCI\VEN_135A&DEV_0303
+%String119%=PCI_4S_485,PCI\VEN_135A&DEV_0304
+%String119%=PCI_4S_485,PCI\VEN_135A&DEV_0305
+%String119%=PCI_4S_485,PCI\VEN_135A&DEV_0306
+%String119%=PCI_4S_485,PCI\VEN_135A&DEV_0307
+%String119%=PCI_4S_485,PCI\VEN_135A&DEV_0308
+%String119%=PCI_4S_485,PCI\VEN_135A&DEV_0309
+%String119%=PCI_4S_485,PCI\VEN_135A&DEV_030A
+
+;PCI Velocity RS232 & RS422/485 Autogating Card (CC-357) 
+%String120%=PCI_2S_VEL_485,PCI\VEN_135A&DEV_0280
+%String120%=PCI_2S_VEL_485,PCI\VEN_135A&DEV_0281&SUBSYS_0403135A
+%String120%=PCI_2S_VEL_485,PCI\VEN_135A&DEV_0282
+%String120%=PCI_2S_VEL_485,PCI\VEN_135A&DEV_0283
+%String120%=PCI_2S_VEL_485,PCI\VEN_135A&DEV_0284
+%String120%=PCI_2S_VEL_485,PCI\VEN_135A&DEV_0285
+%String120%=PCI_2S_VEL_485,PCI\VEN_135A&DEV_0286
+%String120%=PCI_2S_VEL_485,PCI\VEN_135A&DEV_0287
+%String120%=PCI_2S_VEL_485,PCI\VEN_135A&DEV_0288
+%String120%=PCI_2S_VEL_485,PCI\VEN_135A&DEV_0289
+%String120%=PCI_2S_VEL_485,PCI\VEN_135A&DEV_028A
+
+;PCI Velocity RS232 & RS422/485 Autogating Card(UC-357) 
+%String120%=PCI_2S_VEL_485,PCI\VEN_135A&DEV_0a80&SUBSYS_0413135A
+%String120%=PCI_2S_VEL_485,PCI\VEN_135A&DEV_0a81&SUBSYS_0413135A
+%String120%=PCI_2S_VEL_485,PCI\VEN_135A&DEV_0a82&SUBSYS_0413135A
+%String120%=PCI_2S_VEL_485,PCI\VEN_135A&DEV_0a83&SUBSYS_0413135A
+%String120%=PCI_2S_VEL_485,PCI\VEN_135A&DEV_0a84&SUBSYS_0413135A
+%String120%=PCI_2S_VEL_485,PCI\VEN_135A&DEV_0a85&SUBSYS_0413135A
+%String120%=PCI_2S_VEL_485,PCI\VEN_135A&DEV_0a86&SUBSYS_0413135A
+%String120%=PCI_2S_VEL_485,PCI\VEN_135A&DEV_0a87&SUBSYS_0413135A
+%String120%=PCI_2S_VEL_485,PCI\VEN_135A&DEV_0a88&SUBSYS_0413135A
+%String120%=PCI_2S_VEL_485,PCI\VEN_135A&DEV_0a89&SUBSYS_0413135A
+%String120%=PCI_2S_VEL_485,PCI\VEN_135A&DEV_0a8A&SUBSYS_0413135A
+
+;15 Mega Baud Card (CC-530)
+%String111%=PCI_2S_485,PCI\VEN_135A&DEV_0200
+%String111%=PCI_2S_485,PCI\VEN_135A&DEV_0201&SUBSYS_0415135A
+%String111%=PCI_2S_485,PCI\VEN_135A&DEV_0202
+%String111%=PCI_2S_485,PCI\VEN_135A&DEV_0203
+%String111%=PCI_2S_485,PCI\VEN_135A&DEV_0204
+%String111%=PCI_2S_485,PCI\VEN_135A&DEV_0205
+%String111%=PCI_2S_485,PCI\VEN_135A&DEV_0206
+%String111%=PCI_2S_485,PCI\VEN_135A&DEV_0207
+%String111%=PCI_2S_485,PCI\VEN_135A&DEV_0208
+%String111%=PCI_2S_485,PCI\VEN_135A&DEV_0209
+%String111%=PCI_2S_485,PCI\VEN_135A&DEV_020A
+
+;18. MegaBaud Card (CC-525)
+%String121%=PCI_2S_485,PCI\VEN_135A&DEV_0360
+%String121%=PCI_2S_485,PCI\VEN_135A&DEV_0361&SUBSYS_0415135A
+%String121%=PCI_2S_485,PCI\VEN_135A&DEV_0362
+%String121%=PCI_2S_485,PCI\VEN_135A&DEV_0363
+%String121%=PCI_2S_485,PCI\VEN_135A&DEV_0364
+%String121%=PCI_2S_485,PCI\VEN_135A&DEV_0365
+%String121%=PCI_2S_485,PCI\VEN_135A&DEV_0366
+%String121%=PCI_2S_485,PCI\VEN_135A&DEV_0367
+%String121%=PCI_2S_485,PCI\VEN_135A&DEV_0368
+%String121%=PCI_2S_485,PCI\VEN_135A&DEV_0369
+%String121%=PCI_2S_485,PCI\VEN_135A&DEV_036A
+
+;Dual RS232 9 + 25 Pin Card (CC-250)
+%String122%=PCI_2S_9&25,PCI\VEN_135A&DEV_02E0
+%String122%=PCI_2S_9&25,PCI\VEN_135A&DEV_02E1&SUBSYS_0001135A
+%String122%=PCI_2S_9&25,PCI\VEN_135A&DEV_02E2
+%String122%=PCI_2S_9&25,PCI\VEN_135A&DEV_02E3
+%String122%=PCI_2S_9&25,PCI\VEN_135A&DEV_02E4
+%String122%=PCI_2S_9&25,PCI\VEN_135A&DEV_02E5
+%String122%=PCI_2S_9&25,PCI\VEN_135A&DEV_02E6
+%String122%=PCI_2S_9&25,PCI\VEN_135A&DEV_02E7
+%String122%=PCI_2S_9&25,PCI\VEN_135A&DEV_02E8
+%String122%=PCI_2S_9&25,PCI\VEN_135A&DEV_02E9
+%String122%=PCI_2S_9&25,PCI\VEN_135A&DEV_02EA
+
+;Velocity Quad Opto-Isolated RS422/485 autogating card (CC-368)
+%String123%=PCI_4S_485,PCI\VEN_135A&DEV_0440
+%String123%=PCI_4S_485,PCI\VEN_135A&DEV_0441&SUBSYS_0433135A
+%String123%=PCI_4S_485,PCI\VEN_135A&DEV_0442
+%String123%=PCI_4S_485,PCI\VEN_135A&DEV_0443
+%String123%=PCI_4S_485,PCI\VEN_135A&DEV_0444
+%String123%=PCI_4S_485,PCI\VEN_135A&DEV_0445
+%String123%=PCI_4S_485,PCI\VEN_135A&DEV_0446
+%String123%=PCI_4S_485,PCI\VEN_135A&DEV_0447
+%String123%=PCI_4S_485,PCI\VEN_135A&DEV_0448
+%String123%=PCI_4S_485,PCI\VEN_135A&DEV_0449
+%String123%=PCI_4S_485,PCI\VEN_135A&DEV_044a
+
+;PCI 4-port RS232 Low Profile Card (DID 0D20 - 0D2F) (UC-260, UC-271, UC-701, UC-756)
+%String101%=PCI_4S_STD,PCI\VEN_135A&DEV_0D21&SUBSYS_0633135A
+%String101%=PCI_4S_STD,PCI\VEN_135A&DEV_0D22&SUBSYS_0633135A
+%String101%=PCI_4S_STD,PCI\VEN_135A&DEV_0D23&SUBSYS_0633135A
+%String101%=PCI_4S_STD,PCI\VEN_135A&DEV_0D24&SUBSYS_0633135A
+%String101%=PCI_4S_STD,PCI\VEN_135A&DEV_0D25&SUBSYS_0633135A
+%String101%=PCI_4S_STD,PCI\VEN_135A&DEV_0D26&SUBSYS_0633135A
+%String101%=PCI_4S_STD,PCI\VEN_135A&DEV_0D27&SUBSYS_0633135A
+%String101%=PCI_4S_STD,PCI\VEN_135A&DEV_0D28&SUBSYS_0633135A
+%String101%=PCI_4S_STD,PCI\VEN_135A&DEV_0D29&SUBSYS_0633135A
+%String101%=PCI_4S_STD,PCI\VEN_135A&DEV_0D2A&SUBSYS_0633135A
+
+;PCI 1+1-port RS232 Card (DID 0BA0 - 0BAF) (UC-257, UC-249, UC-253)
+%String125%=PCI_2S_STD,PCI\VEN_135A&DEV_0BA1&SUBSYS_0413135A
+%String125%=PCI_2S_STD,PCI\VEN_135A&DEV_0BA2&SUBSYS_0413135A
+%String125%=PCI_2S_STD,PCI\VEN_135A&DEV_0BA3&SUBSYS_0413135A
+%String125%=PCI_2S_STD,PCI\VEN_135A&DEV_0BA4&SUBSYS_0413135A
+%String125%=PCI_2S_STD,PCI\VEN_135A&DEV_0BA5&SUBSYS_0413135A
+%String125%=PCI_2S_STD,PCI\VEN_135A&DEV_0BA6&SUBSYS_0413135A
+%String125%=PCI_2S_STD,PCI\VEN_135A&DEV_0BA7&SUBSYS_0413135A
+%String125%=PCI_2S_STD,PCI\VEN_135A&DEV_0BA8&SUBSYS_0413135A
+%String125%=PCI_2S_STD,PCI\VEN_135A&DEV_0BA9&SUBSYS_0413135A
+%String125%=PCI_2S_STD,PCI\VEN_135A&DEV_0BAA&SUBSYS_0413135A
+
+;PCI 1+1-port RS232 and LPT Low Profile Card (DID 0BC0 - 0BCF) (UC-203)
+%String126%=PCI_2S_STD,PCI\VEN_135A&DEV_0BC1&SUBSYS_0413135A
+%String126%=PCI_2S_STD,PCI\VEN_135A&DEV_0BC2&SUBSYS_0413135A
+%String126%=PCI_2S_STD,PCI\VEN_135A&DEV_0BC3&SUBSYS_0413135A
+%String126%=PCI_2S_STD,PCI\VEN_135A&DEV_0BC4&SUBSYS_0413135A
+%String126%=PCI_2S_STD,PCI\VEN_135A&DEV_0BC5&SUBSYS_0413135A
+%String126%=PCI_2S_STD,PCI\VEN_135A&DEV_0BC6&SUBSYS_0413135A
+%String126%=PCI_2S_STD,PCI\VEN_135A&DEV_0BC7&SUBSYS_0413135A
+%String126%=PCI_2S_STD,PCI\VEN_135A&DEV_0BC8&SUBSYS_0413135A
+%String126%=PCI_2S_STD,PCI\VEN_135A&DEV_0BC9&SUBSYS_0413135A
+%String126%=PCI_2S_STD,PCI\VEN_135A&DEV_0BCA&SUBSYS_0413135A
+
+;PCI Quad Velocity RS422/485 card (DID 0B00 - 0B1F) (UC-346)
+%String119%=PCI_4S_485,PCI\VEN_135A&DEV_0B01&SUBSYS_0433135A
+%String119%=PCI_4S_485,PCI\VEN_135A&DEV_0B02&SUBSYS_0433135A
+%String119%=PCI_4S_485,PCI\VEN_135A&DEV_0B03&SUBSYS_0433135A
+%String119%=PCI_4S_485,PCI\VEN_135A&DEV_0B04&SUBSYS_0433135A
+%String119%=PCI_4S_485,PCI\VEN_135A&DEV_0B05&SUBSYS_0433135A
+%String119%=PCI_4S_485,PCI\VEN_135A&DEV_0B06&SUBSYS_0433135A
+%String119%=PCI_4S_485,PCI\VEN_135A&DEV_0B07&SUBSYS_0433135A
+%String119%=PCI_4S_485,PCI\VEN_135A&DEV_0B08&SUBSYS_0433135A
+%String119%=PCI_4S_485,PCI\VEN_135A&DEV_0B09&SUBSYS_0433135A
+%String119%=PCI_4S_485,PCI\VEN_135A&DEV_0B0A&SUBSYS_0433135A
+
+;PCI Quad Velocity RS422/485 card (DID 0C40 - 0C5F) (UC-368)
+%String123%=PCI_4S_485,PCI\VEN_135A&DEV_0C41&SUBSYS_0433135A
+%String123%=PCI_4S_485,PCI\VEN_135A&DEV_0C42&SUBSYS_0433135A
+%String123%=PCI_4S_485,PCI\VEN_135A&DEV_0C43&SUBSYS_0433135A
+%String123%=PCI_4S_485,PCI\VEN_135A&DEV_0C44&SUBSYS_0433135A
+%String123%=PCI_4S_485,PCI\VEN_135A&DEV_0C45&SUBSYS_0433135A
+%String123%=PCI_4S_485,PCI\VEN_135A&DEV_0C46&SUBSYS_0433135A
+%String123%=PCI_4S_485,PCI\VEN_135A&DEV_0C47&SUBSYS_0433135A
+%String123%=PCI_4S_485,PCI\VEN_135A&DEV_0C48&SUBSYS_0433135A
+%String123%=PCI_4S_485,PCI\VEN_135A&DEV_0C49&SUBSYS_0433135A
+%String123%=PCI_4S_485,PCI\VEN_135A&DEV_0C4A&SUBSYS_0433135A
+
+;PCI Dual RS232 Card (DID 0CA0 - 0CBF) (UC-253/UC-734)
+%String100%=PCI_2S_STD,PCI\VEN_135A&DEV_0CA1&SUBSYS_0413135A
+%String100%=PCI_2S_STD,PCI\VEN_135A&DEV_0CA2&SUBSYS_0413135A
+%String100%=PCI_2S_STD,PCI\VEN_135A&DEV_0CA3&SUBSYS_0413135A
+%String100%=PCI_2S_STD,PCI\VEN_135A&DEV_0CA4&SUBSYS_0413135A
+%String100%=PCI_2S_STD,PCI\VEN_135A&DEV_0CA5&SUBSYS_0413135A
+%String100%=PCI_2S_STD,PCI\VEN_135A&DEV_0CA6&SUBSYS_0413135A
+%String100%=PCI_2S_STD,PCI\VEN_135A&DEV_0CA7&SUBSYS_0413135A
+%String100%=PCI_2S_STD,PCI\VEN_135A&DEV_0CA8&SUBSYS_0413135A
+%String100%=PCI_2S_STD,PCI\VEN_135A&DEV_0CA9&SUBSYS_0413135A
+%String100%=PCI_2S_STD,PCI\VEN_135A&DEV_0CAA&SUBSYS_0413135A
+
+;PCI LPT Card (DID 0BE0 - 0BFF) (UC-146, UC-157)
+%String127%=PCI_1L_STD,PCI\VEN_135A&DEV_0BE1&SUBSYS_0000135A
+%String127%=PCI_1L_STD,PCI\VEN_135A&DEV_0BE2&SUBSYS_0000135A
+%String127%=PCI_1L_STD,PCI\VEN_135A&DEV_0BE3&SUBSYS_0000135A
+%String127%=PCI_1L_STD,PCI\VEN_135A&DEV_0BE4&SUBSYS_0000135A
+%String127%=PCI_1L_STD,PCI\VEN_135A&DEV_0BE5&SUBSYS_0000135A
+%String127%=PCI_1L_STD,PCI\VEN_135A&DEV_0BE6&SUBSYS_0000135A
+%String127%=PCI_1L_STD,PCI\VEN_135A&DEV_0BE7&SUBSYS_0000135A
+%String127%=PCI_1L_STD,PCI\VEN_135A&DEV_0BE8&SUBSYS_0000135A
+%String127%=PCI_1L_STD,PCI\VEN_135A&DEV_0BE9&SUBSYS_0000135A
+%String127%=PCI_1L_STD,PCI\VEN_135A&DEV_0BEA&SUBSYS_0000135A
+
+;PCI Dual RS232 POS 5V (DID 0AC1 - 0ADF) (UP-189)
+%String128%=PCI_2S_STD,PCI\VEN_135A&DEV_0AC1&SUBSYS_0413135A
+%String128%=PCI_2S_STD,PCI\VEN_135A&DEV_0AC2&SUBSYS_0413135A
+%String128%=PCI_2S_STD,PCI\VEN_135A&DEV_0AC3&SUBSYS_0413135A
+%String128%=PCI_2S_STD,PCI\VEN_135A&DEV_0AC4&SUBSYS_0413135A
+%String128%=PCI_2S_STD,PCI\VEN_135A&DEV_0AC5&SUBSYS_0413135A
+%String128%=PCI_2S_STD,PCI\VEN_135A&DEV_0AC6&SUBSYS_0413135A
+%String128%=PCI_2S_STD,PCI\VEN_135A&DEV_0AC7&SUBSYS_0413135A
+%String128%=PCI_2S_STD,PCI\VEN_135A&DEV_0AC8&SUBSYS_0413135A
+%String128%=PCI_2S_STD,PCI\VEN_135A&DEV_0AC9&SUBSYS_0413135A
+%String128%=PCI_2S_STD,PCI\VEN_135A&DEV_0ACA&SUBSYS_0413135A
+
+;PCI Dual RS232 POS 5V (DID 0B21 - 0B3F) (UP-200)
+%String129%=PCI_2S_STD,PCI\VEN_135A&DEV_0B21&SUBSYS_0413135A
+%String129%=PCI_2S_STD,PCI\VEN_135A&DEV_0B22&SUBSYS_0413135A
+%String129%=PCI_2S_STD,PCI\VEN_135A&DEV_0B23&SUBSYS_0413135A
+%String129%=PCI_2S_STD,PCI\VEN_135A&DEV_0B24&SUBSYS_0413135A
+%String129%=PCI_2S_STD,PCI\VEN_135A&DEV_0B25&SUBSYS_0413135A
+%String129%=PCI_2S_STD,PCI\VEN_135A&DEV_0B26&SUBSYS_0413135A
+%String129%=PCI_2S_STD,PCI\VEN_135A&DEV_0B27&SUBSYS_0413135A
+%String129%=PCI_2S_STD,PCI\VEN_135A&DEV_0B28&SUBSYS_0413135A
+%String129%=PCI_2S_STD,PCI\VEN_135A&DEV_0B29&SUBSYS_0413135A
+%String129%=PCI_2S_STD,PCI\VEN_135A&DEV_0B2A&SUBSYS_0413135A
+
+;PCI Quad RS232 POS (DID 0940 - 095F) - DIDs not used
+%String130%=PCI_4S_STD,PCI\VEN_135A&DEV_0941
+%String130%=PCI_4S_STD,PCI\VEN_135A&DEV_0942
+%String130%=PCI_4S_STD,PCI\VEN_135A&DEV_0943
+%String130%=PCI_4S_STD,PCI\VEN_135A&DEV_0944
+%String130%=PCI_4S_STD,PCI\VEN_135A&DEV_0945
+%String130%=PCI_4S_STD,PCI\VEN_135A&DEV_0946
+%String130%=PCI_4S_STD,PCI\VEN_135A&DEV_0947
+%String130%=PCI_4S_STD,PCI\VEN_135A&DEV_0948
+%String130%=PCI_4S_STD,PCI\VEN_135A&DEV_0949
+%String130%=PCI_4S_STD,PCI\VEN_135A&DEV_094A
+
+;PCI 3+1 Port RS232 POS (DID 0960 - 097F) - DIDs not used
+%String131%=PCI_4S_STD,PCI\VEN_135A&DEV_0961
+%String131%=PCI_4S_STD,PCI\VEN_135A&DEV_0962
+%String131%=PCI_4S_STD,PCI\VEN_135A&DEV_0963
+%String131%=PCI_4S_STD,PCI\VEN_135A&DEV_0964
+%String131%=PCI_4S_STD,PCI\VEN_135A&DEV_0965
+%String131%=PCI_4S_STD,PCI\VEN_135A&DEV_0966
+%String131%=PCI_4S_STD,PCI\VEN_135A&DEV_0967
+%String131%=PCI_4S_STD,PCI\VEN_135A&DEV_0968
+%String131%=PCI_4S_STD,PCI\VEN_135A&DEV_0969
+%String131%=PCI_4S_STD,PCI\VEN_135A&DEV_096A
+
+;PCI Dual 9&15 RS232 POS (DID 0B40 - 0B5F) - DIDs not used
+%String132%=PCI_2S_STD,PCI\VEN_135A&DEV_0B41
+%String132%=PCI_2S_STD,PCI\VEN_135A&DEV_0B42
+%String132%=PCI_2S_STD,PCI\VEN_135A&DEV_0B43
+%String132%=PCI_2S_STD,PCI\VEN_135A&DEV_0B44
+%String132%=PCI_2S_STD,PCI\VEN_135A&DEV_0B45
+%String132%=PCI_2S_STD,PCI\VEN_135A&DEV_0B46
+%String132%=PCI_2S_STD,PCI\VEN_135A&DEV_0B47
+%String132%=PCI_2S_STD,PCI\VEN_135A&DEV_0B48
+%String132%=PCI_2S_STD,PCI\VEN_135A&DEV_0B49
+%String132%=PCI_2S_STD,PCI\VEN_135A&DEV_0B4A
+
+;PCI velocity 2-Port RS232 card(DID 08E0-08FF)(UC-302)
+%String105%=PCI_2S_VEL,PCI\VEN_135A&DEV_08E1&SUBSYS_0413135A
+%String105%=PCI_2S_VEL,PCI\VEN_135A&DEV_08E2&SUBSYS_0413135A
+%String105%=PCI_2S_VEL,PCI\VEN_135A&DEV_08E3&SUBSYS_0413135A
+%String105%=PCI_2S_VEL,PCI\VEN_135A&DEV_08E4&SUBSYS_0413135A
+%String105%=PCI_2S_VEL,PCI\VEN_135A&DEV_08E5&SUBSYS_0413135A
+%String105%=PCI_2S_VEL,PCI\VEN_135A&DEV_08E6&SUBSYS_0413135A
+%String105%=PCI_2S_VEL,PCI\VEN_135A&DEV_08E7&SUBSYS_0413135A
+%String105%=PCI_2S_VEL,PCI\VEN_135A&DEV_08E8&SUBSYS_0413135A
+%String105%=PCI_2S_VEL,PCI\VEN_135A&DEV_08E9&SUBSYS_0413135A
+%String105%=PCI_2S_VEL,PCI\VEN_135A&DEV_08EA&SUBSYS_0413135A
+
+;PCI 2 Port Photon RS232 card (DID 9a0-9bf) (UC-607)
+%String112%=PCI_2S_PHOT,PCI\VEN_135A&DEV_09A1&SUBSYS_0413135A
+%String112%=PCI_2S_PHOT,PCI\VEN_135A&DEV_09A2&SUBSYS_0413135A
+%String112%=PCI_2S_PHOT,PCI\VEN_135A&DEV_09A3&SUBSYS_0413135A
+%String112%=PCI_2S_PHOT,PCI\VEN_135A&DEV_09A4&SUBSYS_0413135A
+%String112%=PCI_2S_PHOT,PCI\VEN_135A&DEV_09A5&SUBSYS_0413135A
+%String112%=PCI_2S_PHOT,PCI\VEN_135A&DEV_09A6&SUBSYS_0413135A
+%String112%=PCI_2S_PHOT,PCI\VEN_135A&DEV_09A7&SUBSYS_0413135A
+%String112%=PCI_2S_PHOT,PCI\VEN_135A&DEV_09A8&SUBSYS_0413135A
+%String112%=PCI_2S_PHOT,PCI\VEN_135A&DEV_09A9&SUBSYS_0413135A
+%String112%=PCI_2S_PHOT,PCI\VEN_135A&DEV_09AA&SUBSYS_0413135A
+
+;PCI 4 port Photon RS232 card (DID 9c0-9df) - DIDs not used
+%String113%=PCI_4S_PHOT,PCI\VEN_135A&DEV_09C1
+%String113%=PCI_4S_PHOT,PCI\VEN_135A&DEV_09C2
+%String113%=PCI_4S_PHOT,PCI\VEN_135A&DEV_09C3
+%String113%=PCI_4S_PHOT,PCI\VEN_135A&DEV_09C4
+%String113%=PCI_4S_PHOT,PCI\VEN_135A&DEV_09C5
+%String113%=PCI_4S_PHOT,PCI\VEN_135A&DEV_09C6
+%String113%=PCI_4S_PHOT,PCI\VEN_135A&DEV_09C7
+%String113%=PCI_4S_PHOT,PCI\VEN_135A&DEV_09C8
+%String113%=PCI_4S_PHOT,PCI\VEN_135A&DEV_09C9
+%String113%=PCI_4S_PHOT,PCI\VEN_135A&DEV_09CA
+
+;PCI 8 port Lynx card (DID A20-A3F) - DIDs not used
+%String102%=PCI_8S_STD,PCI\VEN_135A&DEV_0A21
+%String102%=PCI_8S_STD,PCI\VEN_135A&DEV_0A22
+%String102%=PCI_8S_STD,PCI\VEN_135A&DEV_0A23
+%String102%=PCI_8S_STD,PCI\VEN_135A&DEV_0A24
+%String102%=PCI_8S_STD,PCI\VEN_135A&DEV_0A25
+%String102%=PCI_8S_STD,PCI\VEN_135A&DEV_0A26
+%String102%=PCI_8S_STD,PCI\VEN_135A&DEV_0A27
+%String102%=PCI_8S_STD,PCI\VEN_135A&DEV_0A28
+%String102%=PCI_8S_STD,PCI\VEN_135A&DEV_0A29
+%String102%=PCI_8S_STD,PCI\VEN_135A&DEV_0A2A
+
+;PCI 4 port RS232 POS (DID 0B80 - 0B9F) - DIDs not used
+%String130%=PCI_4S_STD,PCI\VEN_135A&DEV_0B81
+%String130%=PCI_4S_STD,PCI\VEN_135A&DEV_0B82
+%String130%=PCI_4S_STD,PCI\VEN_135A&DEV_0B83
+%String130%=PCI_4S_STD,PCI\VEN_135A&DEV_0B84
+%String130%=PCI_4S_STD,PCI\VEN_135A&DEV_0B85
+%String130%=PCI_4S_STD,PCI\VEN_135A&DEV_0B86
+%String130%=PCI_4S_STD,PCI\VEN_135A&DEV_0B87
+%String130%=PCI_4S_STD,PCI\VEN_135A&DEV_0B88
+%String130%=PCI_4S_STD,PCI\VEN_135A&DEV_0B89
+%String130%=PCI_4S_STD,PCI\VEN_135A&DEV_0B8A
+
+;Universal PCI Dual RS232 POS 0.5 Amp Pinout Choice (DID 0C00 - 0C0F)
+%String133%=PCI_2S_STD,PCI\VEN_135A&DEV_0C01&SUBSYS_0413135A
+%String133%=PCI_2S_STD,PCI\VEN_135A&DEV_0C02&SUBSYS_0413135A
+%String133%=PCI_2S_STD,PCI\VEN_135A&DEV_0C03&SUBSYS_0413135A
+%String133%=PCI_2S_STD,PCI\VEN_135A&DEV_0C04&SUBSYS_0413135A
+%String133%=PCI_2S_STD,PCI\VEN_135A&DEV_0C05&SUBSYS_0413135A
+%String133%=PCI_2S_STD,PCI\VEN_135A&DEV_0C06&SUBSYS_0413135A
+%String133%=PCI_2S_STD,PCI\VEN_135A&DEV_0C07&SUBSYS_0413135A
+%String133%=PCI_2S_STD,PCI\VEN_135A&DEV_0C08&SUBSYS_0413135A
+%String133%=PCI_2S_STD,PCI\VEN_135A&DEV_0C09&SUBSYS_0413135A
+%String133%=PCI_2S_STD,PCI\VEN_135A&DEV_0C0A&SUBSYS_0413135A
+
+;Universal PCI Dual RS232 POS 1 Amp Pinout Choice (DID 0C20 - 0C2F)
+%String134%=PCI_2S_STD,PCI\VEN_135A&DEV_0C21&SUBSYS_0413135A
+%String134%=PCI_2S_STD,PCI\VEN_135A&DEV_0C22&SUBSYS_0413135A
+%String134%=PCI_2S_STD,PCI\VEN_135A&DEV_0C23&SUBSYS_0413135A
+%String134%=PCI_2S_STD,PCI\VEN_135A&DEV_0C24&SUBSYS_0413135A
+%String134%=PCI_2S_STD,PCI\VEN_135A&DEV_0C25&SUBSYS_0413135A
+%String134%=PCI_2S_STD,PCI\VEN_135A&DEV_0C26&SUBSYS_0413135A
+%String134%=PCI_2S_STD,PCI\VEN_135A&DEV_0C27&SUBSYS_0413135A
+%String134%=PCI_2S_STD,PCI\VEN_135A&DEV_0C28&SUBSYS_0413135A
+%String134%=PCI_2S_STD,PCI\VEN_135A&DEV_0C29&SUBSYS_0413135A
+%String134%=PCI_2S_STD,PCI\VEN_135A&DEV_0C2A&SUBSYS_0413135A
+
+;Universal PCI 3+1-port RS232 + LPT Card (DID 0E60 - 0E7F) (UC-414)
+%String136%=PCI_4S_STD,PCI\VEN_135A&DEV_0E61&SUBSYS_0433135A
+%String136%=PCI_4S_STD,PCI\VEN_135A&DEV_0E62&SUBSYS_0433135A
+%String136%=PCI_4S_STD,PCI\VEN_135A&DEV_0E63&SUBSYS_0433135A
+%String136%=PCI_4S_STD,PCI\VEN_135A&DEV_0E64&SUBSYS_0433135A
+%String136%=PCI_4S_STD,PCI\VEN_135A&DEV_0E65&SUBSYS_0433135A
+%String136%=PCI_4S_STD,PCI\VEN_135A&DEV_0E66&SUBSYS_0433135A
+%String136%=PCI_4S_STD,PCI\VEN_135A&DEV_0E67&SUBSYS_0433135A
+%String136%=PCI_4S_STD,PCI\VEN_135A&DEV_0E68&SUBSYS_0433135A
+%String136%=PCI_4S_STD,PCI\VEN_135A&DEV_0E69&SUBSYS_0433135A
+%String136%=PCI_4S_STD,PCI\VEN_135A&DEV_0E6A&SUBSYS_0433135A
+
+
+[ControlFlags]
+ExcludeFromSelect=*
+

@@ -1,0 +1,433 @@
+
+;*****************************************************************************************************
+;*****************************************************************************************************
+;
+;	Brainboxes Ports INF file 
+;
+;	Copyright (C)   Brainboxes 2010
+;
+;*****************************************************************************************************
+;*****************************************************************************************************
+;
+; Version section has to be on top of every INF file :
+;
+[Version]
+Signature = "$CHICAGO$"
+Class = Ports
+ClassGuid = {4D36E978-E325-11CE-BFC1-08002BE10318}
+Provider = %BrainBoxes%
+CatalogFile.nt = BBPort.cat				
+DriverVer=11/05/2012, 8.1.108.0
+
+[ClassInstall32]
+AddReg = PortsClass.AddReg
+
+[PortsClass.AddReg]
+HKR,,,,%PortsClassName%
+
+[DestinationDirs]
+DefaultDestDir  = 11,
+DriverFilesDirectory_2K = 10,System32\Drivers
+DriverFilesDirectory_XP = 10,System32\Drivers
+DriverFilesDirectory_AMD64 = 10,System32\Drivers
+HelpFilesDirectory = 18,
+System32Files = 11,
+System32Files_XP = 11,
+System32Files_AMD64 = 11,
+
+;
+; These two sections specify where the necessary files are located :
+;
+[SourceDisksNames]		
+1 = %Installation_Disk_Name%,,		; Commas NOT optional in Win9x!
+
+[SourceDisksFiles]
+SsPort.sys = 1,SsWin\DRIVERS,,
+SsPortAMD64.sys = 1,SsWin\DRIVERS,,
+SsPar2000.sys = 1,SsWin\DRIVERS,,
+SsParXP.sys = 1,SsWin\DRIVERS,,
+SsParAMD64.sys = 1,SsWin\DRIVERS,,
+SsEnum.sys = 1,SsWin\DRIVERS,,
+SsEnumAMD64.sys = 1,SsWin\DRIVERS,,
+SsCoInst.dll = 1,SsWin\DLLS,,
+SsCoInstAMD64.dll = 1,SsWin\DLLS,,
+SsPorts.dll = 1,SsWin\DLLS,,
+SsPortsAMD64.dll = 1,SsWin\DLLS,,
+
+;*****************************************************************************************************
+;
+; 'Ports' class installation
+;
+
+[ClassInstall32.NT]
+AddReg = PortsClass.NT.AddReg
+
+[PortsClass.NT.AddReg]
+HKR,,,,%PortsClassName%
+HKR,,Icon,,"-23"
+HKR,,Installer32,,"MsPorts.Dll,PortsClassInstaller"
+
+;*****************************************************************************************************
+;
+; Any Model specified with ExcludeFromSelect will not be displayed to the user in the 
+; Add New Hardware wizard :
+;
+[ControlFlags]
+ExcludeFromSelect = *
+;*****************************************************************************************************
+;
+; PnP ID -> installation mapping
+;
+[Manufacturer]
+;%MFCName% = Ports
+%BrainBoxes% = BrainBoxesModels, NTx86.5.1, NTAMD64
+
+[BrainBoxesModels]
+%String1%=Pcmcia232,MF\PCMCIA232,*PNP0500,*PNP0501
+%String1%=Pcmcia232ASIC_REV5,MF\PCMCIA232_ASIC_REV5,*PNP0500,*PNP0501
+%String2%=Pcmcia422,MF\PCMCIA422,*PNP0500,*PNP0501
+%String2%=Pcmcia422ASIC_REV5,MF\PCMCIA422_ASIC_REV5,*PNP0500,*PNP0501
+%String1%=PcmciaVel232,MF\PCMCIAVEL232,*PNP0500,*PNP0501
+%String1%=PcmciaVel232_ST,MF\PCMCIAVEL232_ST,*PNP0500,*PNP0501
+%BrainBoxes.DeviceDesc% = ComPort, Ports\BrainBoxesComPort
+%BrainBoxesLptPort% = Lpt, Ports\BrainBoxesLptPort
+
+[BrainBoxesModels.NT]
+%BrainBoxes.DeviceDesc% = ComPort.NT, Ports\BrainBoxesComPort
+%BrainBoxesLptPort% = Lpt.NT, Ports\BrainBoxesLptPort
+
+[BrainBoxesModels.NTx86.5.1]
+%BrainBoxes.DeviceDesc% = ComPort.NTx86.5.1, Ports\BrainBoxesComPort
+%BrainBoxesLptPort% = Lpt.NTx86.5.1, Ports\BrainBoxesLptPort
+
+[BrainBoxesModels.NTAMD64]
+%BrainBoxes.DeviceDesc% = ComPort, Ports\BrainBoxesComPort
+%BrainBoxesLptPort% = Lpt, Ports\BrainBoxesLptPort
+
+
+;#####################################################################################################
+; Windows 9x Section
+[PcmciaVel232]
+AddReg = StdPortAddReg,PcmciaVel232.AddReg
+
+[PcmciaVel232_ST]
+AddReg = StdPortAddReg,PcmciaVel232_ST.AddReg
+
+[Pcmcia232ASIC_REV5]
+AddReg = StdPortAddReg,Pcmcia232.AddReg, NoClkSettings.AddReg
+
+[Pcmcia232ASIC_REV5.PosDup]
+*PNP0500,*PNP0501
+
+[Pcmcia422ASIC_REV5]
+AddReg = StdPortAddReg,Pcmcia422.AddReg, NoClkSettings.AddReg
+
+[Pcmcia422ASIC_REV5.PosDup]
+*PNP0500,*PNP0501
+
+[PcmciaVel232.PosDup]
+*PNP0500,*PNP0501
+
+[PcmciaVel232.AddReg]
+HKR,,PortDriver,,sspcmcia.vxd
+HKR,,PreScaler,1,00
+HKR,,PreScalerType,1,01
+HKR,,PrescalerOffset,1,06
+HKR,,BaudTimes,1,00
+HKR,,ConfigDialog,0,ss232prt.dll
+HKR,,EnumPropPages,0,ss232prt.dll
+HKR,,bPcmVel,1,07
+HKR,,bPCMCIA,1,01
+HKR,,bCtrlReg,1,07
+
+[PcmciaVel232_ST.PosDup]
+*PNP0500,*PNP0501
+
+[PcmciaVel232_ST.AddReg]
+HKR,,PortDriver,,sspcmcia.vxd
+HKR,,PreScaler,1,00
+HKR,,PreScalerType,1,02
+HKR,,PrescalerOffset,1,06
+HKR,,BaudTimes,1,00
+HKR,,ConfigDialog,0,ss232prt.dll
+HKR,,EnumPropPages,0,ss232prt.dll
+HKR,,bPcmVel,1,07
+HKR,,bPCMCIA,1,01
+HKR,,bCtrlReg,1,07
+
+[Pcmcia232]
+AddReg = StdPortAddReg,Pcmcia232.AddReg
+
+[Pcmcia232.PosDup]
+*PNP0500,*PNP0501
+
+[StdPortAddReg]
+HKR,,DevLoader,0,*vcomm
+HKR,,Enumerator,0,serenum.vxd
+HKR,,Contention,0,*vcd
+HKR,,DCB,3,1c,00,00,00,80,25,00,00,11,33,00,00,00,00,0a,00,0a,00,08,00,00,11,13,00,00,00
+HKR,,PortSubClass,1,01
+HKR,,Settings,1,02,10,00,80
+
+[Pcmcia232.AddReg]
+HKR,,PortDriver,,sspcmcia.vxd
+HKR,,PreScaler,1,00
+HKR,,PreScalerType,1,01
+HKR,,PrescalerOffset,1,06
+HKR,,BaudTimes,1,00
+HKR,,ConfigDialog,0,ss232prt.dll
+HKR,,EnumPropPages,0,ss232prt.dll
+
+[Pcmcia422]
+AddReg=StdPortAddReg,Pcmcia422.AddReg
+
+[Pcmcia422.PosDup]
+*PNP0500,*PNP0501
+
+[Pcmcia422.AddReg]
+HKR,,PortDriver,,sspcmcia.vxd
+HKR,,PreScaler,1,00
+HKR,,PreScalerType,1,02
+HKR,,PrescalerOffset,1,06
+HKR,,BaudTimes,1,00
+HKR,,bPCMCIA,1,01
+HKR,,b485,1,01
+HKR,,bCtrlReg,1,07
+HKR,,ConfigDialog,0,sspcmprt.dll
+HKR,,EnumPropPages,0,sspcmprt.dll
+
+[NoClkSettings.AddReg]
+HKR,,NoClockSettings,1,01
+
+; Windows 9x Section end
+;#####################################################################################################
+;*****************************************************************************************************
+;
+; COM port installation
+;
+
+[ComPort.NT]
+CopyFiles = DriverFilesDirectory_2K, HelpFilesDirectory, System32Files
+AddReg = ComPort_AddReg
+
+[ComPort.NT.HW]
+AddReg = ComPort_HW_AddReg
+
+[ComPort.NT.Services]
+AddService = SsPort, 0x00000002, Serial_Service_Inst, Serial_EventLog_Inst
+AddService = SsEnum,,SsEnum_Service_Inst
+
+[ComPort.NT.CoInstallers]
+AddReg = CoInstallers_AddReg
+CopyFiles	= CoInstallers_CopyFiles
+;////////////////////////////////////////////////////////////////
+
+[ComPort.NTx86.5.1]
+CopyFiles = DriverFilesDirectory_XP, HelpFilesDirectory, System32Files_XP
+AddReg = ComPort_AddReg
+
+[ComPort.NTx86.5.1.HW]
+AddReg = ComPort_HW_AddReg
+
+[ComPort.NTx86.5.1.Services]
+AddService = SsPort, 0x00000002, Serial_Service_Inst, Serial_EventLog_Inst
+AddService = SsEnum,,SsEnum_Service_Inst
+
+[ComPort.NTx86.5.1.CoInstallers]
+AddReg = CoInstallers_AddReg
+CopyFiles	= CoInstallers_CopyFiles
+
+;////////////////////////////////////////////////////////////////
+
+[ComPort.NTAMD64]
+CopyFiles = DriverFilesDirectory_AMD64, HelpFilesDirectory, System32Files_AMD64
+AddReg = ComPort_AddReg
+
+[ComPort.NTAMD64.HW]
+AddReg = ComPort_HW_AddReg
+
+[ComPort.NTAMD64.Services]
+AddService = SsPort, 0x00000002, Serial_Service_Inst, Serial_EventLog_Inst
+AddService = SsEnum,,SsEnum_Service_Inst
+
+
+[ComPort.NTAMD64.CoInstallers]
+AddReg = CoInstallers_AddReg
+CopyFiles	= CoInstallers_CopyFiles
+;////////////////////////////////////////////////////////////////
+
+[Lpt.NT]
+CopyFiles = DriverFilesDirectory_2K, HelpFilesDirectory, System32Files
+AddReg = BBLptPort_reg
+
+[Lpt.NT.HW]
+AddReg = BBLptPort_reg_HW
+
+[Lpt.NT.Services]
+AddService = SsPar, 2, BBLptPort.Service, BBLptPort.EventLog
+
+;////////////////////////////////////////////////////////////////
+
+[Lpt.NTx86.5.1]
+CopyFiles = DriverFilesDirectory_XP, HelpFilesDirectory, System32Files_XP
+AddReg = BBLptPort_reg
+
+[Lpt.NTx86.5.1.HW]
+AddReg = BBLptPort_reg_HW
+
+[Lpt.NTx86.5.1.Services]
+AddService = SsPar, 2, BBLptPort.Service, BBLptPort.EventLog
+
+[Lpt.NTx86.5.1.CoInstallers]
+AddReg 		= CoInstallers_AddReg
+CopyFiles	= CoInstallers_CopyFiles
+
+
+
+;////////////////////////////////////////////////////////////////
+
+[Lpt.NTAMD64]
+CopyFiles = DriverFilesDirectory_AMD64, HelpFilesDirectory, System32Files_AMD64
+AddReg = BBLptPort_reg
+
+[Lpt.NTAMD64.HW]
+AddReg = BBLptPort_reg_HW
+
+[Lpt.NTAMD64.Services]
+AddService = SsPar, 2, BBLptPort.Service, BBLptPort.EventLog
+
+;*****************************************************************************************************
+
+[ComPort_AddReg]
+HKR,,EnumPropPages32,,"MsPorts.dll,SerialPortPropPageProvider"
+
+[ComPort_HW_AddReg]
+HKR,,"UpperFilters",0x00010000,"ssenum"
+
+[BBLptPort_reg]
+; Goes into HKLM\System\ControlSet\Control\Class\{Ports}\000x :
+HKR,,EnumPropPages32, %ADDREG_SZ%, "ssports.dll,ParallelPortPropPageProvider"
+HKR,,PortSubClass,1,00
+HKR,,ECPDevice,1,00
+
+[BBLptPort_reg_HW]
+; Goes into HKLM\System\ControlSet\Enum\Ports\{DeviceID}\{InstanceID} :
+
+;*****************************************************************************************************
+
+[CoInstallers_AddReg]
+HKR,,CoInstallers32,0x10000,"SsCoInst.dll,SsCoInstall"
+
+[CoInstallers_CopyFiles]
+;SsCoInst.dll,,,0x10
+
+;*****************************************************************************************************
+
+;   Serial Port Driver install sections
+[Serial_Service_Inst]
+DisplayName = "Brainboxes Serial Port Service"
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_SYSTEM_START (this driver may do detection)
+ErrorControl   = 1
+ServiceBinary  = %10%\System32\Drivers\SsPort.sys
+LoadOrderGroup = Extended base
+
+;   SsEnum Driver install section
+[SsEnum_Service_Inst]
+DisplayName    = %SsEnum.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START 
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %10%\System32\Drivers\ssenum.sys
+LoadOrderGroup = PNP Filter
+
+[Serial_EventLog_Inst]
+AddReg = Serial_EventLog_AddReg
+
+[Serial_EventLog_AddReg]
+HKR,,EventMessageFile,0x00020000,"%%SystemRoot%%\System32\IoLogMsg.dll;%%SystemRoot%%\System32\drivers\SsPort.sys"
+HKR,,TypesSupported,0x00010001,7
+
+;//////////////////////////////////////////////////////////
+
+[BBLptPort.Service]
+; Goes into HKLM\System\ControlSet\Services\SsPar :
+DisplayName = "Brainboxes Parallel Port Service"
+ServiceType = 1
+StartType = 3
+ErrorControl = 1
+LoadOrderGroup = Extended base
+ServiceBinary = %10%\System32\Drivers\SsPar.sys
+
+[BBLptPort.EventLog]
+AddReg = BBLptPort.EventLog.reg
+
+[BBLptPort.EventLog.reg]
+HKR,, EventMessageFile, %ADDREG_EXPAND_SZ%, "%%SystemRoot%%\System32\IoLogMsg.dll;%%SystemRoot%%\System32\drivers\SsPar.sys"
+HKR,, TypesSupported, %ADDREG_DWORD%, 7
+
+;//////////////////////////////////////////////////////////
+
+[DriverFilesDirectory_2K]
+SsPort.sys
+SsPar.sys, SsPar2000.sys
+SsEnum.sys
+
+[DriverFilesDirectory_XP]
+SsPort.sys
+SsPar.sys, SsParXP.sys
+SsEnum.sys
+
+[DriverFilesDirectory_AMD64]
+SsPort.sys, SsPortAMD64.sys
+SsPar.sys, SsParAMD64.sys
+SsEnum.sys, SsEnumAMD64.sys
+
+[HelpFilesDirectory]
+
+[System32Files]
+
+[System32Files_XP]
+SsCoInst.dll
+SsPorts.dll
+
+[System32Files_AMD64]
+SsCoInst.dll, SsCoInstAMD64.dll
+SsPorts.dll, SsPortsAMD64.dll
+
+
+;*****************************************************************************************************
+;
+; In the Strings section all file-global strings are defined :
+;
+[Strings]
+Installation_Disk_Name = "Brainboxes Installation Disk"
+
+Std = "(Standard port types)"
+PortsClassName = "Ports (COM & LPT)"
+
+*PNP0500.DeviceDesc = "Communications Port"
+*PNP0501.DeviceDesc = "Communications Port"
+
+BrainBoxes="Brainboxes Limited"
+BrainBoxes.DeviceDesc = "Brainboxes Serial Port"
+BrainBoxes-0131.DeviceDesc="Brainboxes RS232 Serial Port"
+BrainBoxesLptPort = "Brainboxes Parallel Port"
+
+Serial.SVCDESC   = "Serial Port Driver"
+SsEnum.SVCDESC = "SsEnum Filter Driver"
+MFCName="Serial Solutions"
+String1="PCMCIA RS232 Port"
+String2="PCMCIA RS422/485 PORT"
+
+ADDREG_SZ = 0x00000000 			; The given value entry and/or value is of type REG_SZ. Note that this is the default type for a specified value entry, so the flags value can be omitted from any reg-root= line in an add-registry section that operates on a value entry of this type. 
+ADDREG_BINARY = 0x00000001		; The given value is "raw" data. (This value is identical to the Windows 2000-specific FLG_ADDREG_TYPE_BINARY.) 
+ADDREG_NOCLOBBER = 0x00000002		; Prevent a given value from replacing the value of an existing value entry. 
+ADDREG_DELVAL = 0x00000004		; Delete the given subkey from the registry, or delete the specified value-entry-name from the specified registry subkey. 
+ADDREG_KEYONLY = 0x00000010		; Create the given subkey, but ignore any supplied value-entry-name and/or value. 
+ADDREG_OVERWRITEONLY = 0x00000020	; Reset to the supplied value only if the specified value-entry-name already exists in the given subkey. 
+ADDREG_MULTI_SZ = 0x00010000		; The given value entry and/or value is of the registry type REG_MULTI_SZ. This specification does not require any NUL terminator for a given string value. 
+ADDREG_APPEND = 0x00000008		; Append a given value to that of an existing named value entry. This flag is valid only for value entries of type REG_MULTI_SZ. 
+ADDREG_EXPAND_SZ = 0x00020000		; The given value entry and/or value is of the registry type REG_EXPAND_SZ. 
+ADDREG_DWORD = 0x00010001		; The given value entry and/or value is of the registry type REG_DWORD. 
+ADDREG_NONE = 0x00020001		; The given value entry and/or value is of the Windows 2000 registry type REG_NONE.

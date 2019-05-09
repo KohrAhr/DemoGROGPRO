@@ -1,0 +1,1284 @@
+
+;*****************************************************************************************************
+;*****************************************************************************************************
+;
+;	Brainboxes PCMCIA & Multi-Function INF file 
+;
+;	Copyright (C)   Brainboxes 2011
+;
+;*****************************************************************************************************
+;*****************************************************************************************************
+;
+[Version]
+Signature = "$CHICAGO$"
+Class = MultiPortSerial
+ClassGuid = {50906CB8-BA12-11D1-BF5D-0000F805F530}
+Provider = %String0%
+;@ REPLACE CatalogFile.nt = BBPCMCIA64.cat
+CatalogFile.nt = BBPCMCIA.cat 			
+DriverVer=11/05/2012, 8.1.108.0
+
+[DestinationDirs]
+DefaultDestDir = 11,				; System32 directory
+HelpFiles_9x = 18,
+;@ REPLACE DriverFiles_AMD64=10,System32\Drivers
+DriverFiles_2K=10,System32\Drivers
+HelpFilesDirectory = 18,			; Help file directory
+;@ REPLACE System32Files_AMD64=11,
+System32Files_2K=11,
+
+;@ Remove Section
+
+[SourceDisksFiles]
+SsUnist.ext = 1,,,
+SsPortui.dll = 1,SsWin9x,,
+Sspcmcd.dll = 1,SsWin9x,,
+sspcmprt.dll = 1,SsWin9x,,
+ss232prt.dll = 1,SsWin9x,,
+sspcmcia.vxd = 1,SsWin9x,,
+serial.vxd = 1,SsWin9x,,
+sshelpui.hlp = 1,SsWin9x,,
+ssun9x.exe=1,SsWin9x,,
+SsInstal.sys = 1,SsWin\DRIVERS,,
+
+
+[CARDS.NTAMD64]
+
+
+;@ Remove Section end
+
+[SourceDisksNames]
+1 = %Installation_Disk_Name%,,
+
+[Manufacturer]
+;@ REPLACE %CompanyName% = CARDS, NTAMD64
+%CompanyName% = CARDS, NTAMD64
+
+;@ INSERT [CARDS]
+
+;@ DEVID Section
+[CARDS]
+%String10%=1941.mf,pcmcia\brain_boxes-1port_rs232card-1941
+%String10%=594C.mf,pcmcia\brain_boxes-1port_rs232card-594C
+%String12%=D101.mf,pcmcia\brain_boxes-1port_rs422card-D101
+%String18%=205A.mf,pcmcia\brain_boxes-1-port_rs422/485_card-205A
+%String19%=A1EE.mf,pcmcia\brain_boxes-1-port_rs232_card-A1EE
+
+%String11%=2RS232,pcmcia\brain_boxes-2port_rs232card-BC30,*PNP0D00
+%String14%=BC03_1,pcmcia\brain_boxes-2port_rs232card-Dev0-BC30
+%String15%=BC03_2,pcmcia\brain_boxes-2port_rs232card-Dev1-BC30
+
+%String13%=2RS422,pcmcia\brain_boxes-2port_rs422card-409D,*PNP0D00
+%String16%=409D_1,pcmcia\brain_boxes-2port_rs422card-Dev0-409D
+%String17%=409D_2,pcmcia\brain_boxes-2port_rs422card-Dev1-409D
+
+%String20%=2RS232R5,pcmcia\Brain_Boxes-2-Port_RS232_card-6A87
+%String14%=2RS232R5_P1,pcmcia\brain_boxes-2port_rs232card-Dev0-6A87
+%String15%=2RS232R5_P2,pcmcia\brain_boxes-2port_rs232card-Dev1-6A87
+
+"Brainboxes Limited - 2 Port PCMCIA 232 Card" = MF_PCMCIA_Install, MF\pcmcia#brain_boxes-2port_rs232card-BC30\1#Child0000
+"Brainboxes Limited - 2 Port PCMCIA 232 Card" = MF_PCMCIA_Install, MF\pcmcia#brain_boxes-2port_rs232card-BC30\1#Child0001
+"Brainboxes Limited - 2 Port PCMCIA 232 Card" = MF_PCMCIA_Install, MF\pcmcia#brain_boxes-2port_rs232card-BC30\1#Child00
+"Brainboxes Limited - 2 Port PCMCIA 232 Card" = MF_PCMCIA_Install, MF\pcmcia#brain_boxes-2port_rs232card-BC30\1#Child01
+"Brainboxes Limited - 2 Port PCMCIA 232 Card Port 1" = MF_PCMCIA_Install, MF\BB-2port_rs232card-BC30_DEV0
+"Brainboxes Limited - 2 Port PCMCIA 232 Card Port 2" = MF_PCMCIA_Install, MF\BB-2port_rs232card-BC30_DEV1
+
+"Brainboxes Limited - 2 Port PCMCIA 422/485 Card" = MF_PCMCIA_Install, MF\pcmcia#brain_boxes-2port_rs422card-409D\1#Child0000
+"Brainboxes Limited - 2 Port PCMCIA 422/485 Card" = MF_PCMCIA_Install, MF\pcmcia#brain_boxes-2port_rs422card-409D\1#Child0001
+"Brainboxes Limited - 2 Port PCMCIA 422/485 Card" = MF_PCMCIA_Install, MF\pcmcia#brain_boxes-2port_rs422card-409D\1#Child00
+"Brainboxes Limited - 2 Port PCMCIA 422/485 Card" = MF_PCMCIA_Install, MF\pcmcia#brain_boxes-2port_rs422card-409D\1#Child01
+"Brainboxes Limited - 2 Port PCMCIA 422/485 Card Port 1" = MF_PCMCIA_Install, MF\BB-2port_rs422card-409D_DEV0
+"Brainboxes Limited - 2 Port PCMCIA 422/485 Card Port 2" = MF_PCMCIA_Install, MF\BB-2port_rs422card-409D_DEV1
+
+
+;@ DEVID Section end
+
+[ControlFlags]
+ExcludeFromSelect = *
+
+;*****************************************************************************************************
+;@ Cards Section
+
+[MF_PCMCIA_Install.NT]
+;CopyInf = bbport.inf
+AddReg = BrainBoxes.reg,Uninstall.Reg
+
+[MF_PCMCIA_Install.NT.Services]
+AddService = SsInstal, 2, BrainBoxes.Service, BrainBoxes.EventLog
+
+[MF_PCMCIA_Install.NT.HW]
+; AddReg = BrainBoxes_Templates.reg
+
+
+;@ Cards Section end
+;*****************************************************************************************************
+
+[PCMCIA_Install_NT]
+CopyInf = bbport.inf
+AddReg = BrainBoxes.reg,Uninstall.Reg
+
+[PCMCIA_Install_NT_Services]
+AddService = SsInstal, 2, BrainBoxes.Service, BrainBoxes.EventLog
+
+[PCMCIA_Install_NT_HW]
+; AddReg = BrainBoxes_Templates.reg
+
+[CoInstallers_Addreg]
+HKR,,CoInstallers32,0x10000,"SsCoInst.dll,SsCoInstall"
+
+[BrainBoxes.reg]
+HKR,, EnumPropPages32, %ADDREG_SZ%, "SsCard.dll,SsExtensionPropSheetPageProc"
+HKLM, SYSTEM\CurrentControlSet\Services\Pcmcia\Parameters, DisableIsaToPciRouting,0x00010003, 0
+HKR,,PcmciaExclusiveIrq,0x00010001,0
+
+[BrainBoxes.Service]
+DisplayName = "Brainboxes Limited Service"
+ServiceType = 1
+StartType = 3
+ErrorControl = 1
+LoadOrderGroup = Extended base
+ServiceBinary = %10%\System32\Drivers\SsInstal.sys
+AddReg = BrainBoxes_Templates.reg
+
+[BrainBoxes_Templates.reg]
+;
+; Card 1 - 1 Port PCMCIA 232 Card (PM-020)
+;
+HKR, "Templates\Bus8\Card1", "Description", %ADDREG_SZ%, "Brainboxes Limited - 1 Port PCMCIA 232 Card (PM-020)"
+HKR, "Templates\Bus8\Card1", "HardwareID", %ADDREG_MULTI_SZ%, "pcmcia\brain_boxes-1port_rs232card-1941"
+HKR, "Templates\Bus8\Card1", "nComPorts", %ADDREG_DWORD%, 1
+HKR, "Templates\Bus8\Card1", "nLptPorts", %ADDREG_DWORD%, 0
+HKR, "Templates\Bus8\Card1", "ClockFrequency", %ADDREG_DWORD%, 0xe10000
+HKR, "Templates\Bus8\Card1", "ClockFrequencyAdjustment", %ADDREG_DWORD%, 0x1
+HKR, "Templates\Bus8\Card1", "ComBaseAddressAlignment", %ADDREG_DWORD%, 8 
+HKR, "Templates\Bus8\Card1", "SoftTxLimit", %ADDREG_DWORD%, 0x18
+HKR, "Templates\Bus8\Card1", "PlxBaudClockType", %ADDREG_DWORD%, 7
+HKR, "Templates\Bus8\Card1", "PlxBaudClockDivisor", %ADDREG_DWORD%, 1
+HKR, "Templates\Bus8\Card1", "MaximumBaudrate", %ADDREG_DWORD%, 921600
+
+;
+; Card 2 - 1 Port PCMCIA 232 Card (PM-020)
+;
+HKR, "Templates\Bus8\Card2", "Description", %ADDREG_SZ%, "Brainboxes Limited - 1 Port PCMCIA 232 Card (PM-020)"
+HKR, "Templates\Bus8\Card2", "HardwareID", %ADDREG_MULTI_SZ%, "pcmcia\brain_boxes-1port_rs232card-594C"
+HKR, "Templates\Bus8\Card2", "nComPorts", %ADDREG_DWORD%, 1
+HKR, "Templates\Bus8\Card2", "nLptPorts", %ADDREG_DWORD%, 0
+HKR, "Templates\Bus8\Card2", "ClockFrequency", %ADDREG_DWORD%, 0xe10000
+HKR, "Templates\Bus8\Card2", "ClockFrequencyAdjustment", %ADDREG_DWORD%, 0x1
+HKR, "Templates\Bus8\Card2", "ComBaseAddressAlignment", %ADDREG_DWORD%, 8 
+HKR, "Templates\Bus8\Card2", "SoftTxLimit", %ADDREG_DWORD%, 0x18
+HKR, "Templates\Bus8\Card2", "PlxBaudClockType", %ADDREG_DWORD%, 7
+HKR, "Templates\Bus8\Card2", "PlxBaudClockDivisor", %ADDREG_DWORD%, 1
+HKR, "Templates\Bus8\Card2", "MaximumBaudrate", %ADDREG_DWORD%, 921600
+
+;
+; Card 3 - 2 Port PCMCIA 232 Card (PM-010) "Multi-function card" 
+;
+HKR, "Templates\Bus8\Card3", "Description", %ADDREG_SZ%, "Brainboxes Limited - 2 Port PCMCIA 232 Card (PM-010)"
+HKR, "Templates\Bus8\Card3", "HardwareID", %ADDREG_MULTI_SZ%, "pcmcia\brain_boxes-2port_rs232card-BC30"
+HKR, "Templates\Bus8\Card3", "nComPorts", %ADDREG_DWORD%, 1
+HKR, "Templates\Bus8\Card3", "nLptPorts", %ADDREG_DWORD%, 0
+HKR, "Templates\Bus8\Card3", "ClockFrequency", %ADDREG_DWORD%, 0xe10000
+HKR, "Templates\Bus8\Card3", "ClockFrequencyAdjustment", %ADDREG_DWORD%, 0x1
+HKR, "Templates\Bus8\Card3", "ComBaseAddressAlignment", %ADDREG_DWORD%, 8 
+HKR, "Templates\Bus8\Card3", "SoftTxLimit", %ADDREG_DWORD%, 0x18
+HKR, "Templates\Bus8\Card3", "PlxBaudClockType", %ADDREG_DWORD%, 7
+HKR, "Templates\Bus8\Card3", "PlxBaudClockDivisor", %ADDREG_DWORD%, 1
+HKR, "Templates\Bus8\Card3", "MaximumBaudrate", %ADDREG_DWORD%, 921600
+;
+; Card 4 - 2 Port PCMCIA 422/485 Card (PM-121) "Multi-function card"
+;
+HKR, "Templates\Bus8\Card4", "Description", %ADDREG_SZ%, "Brainboxes Limited - 2 Port PCMCIA 422/485 Card (PM-121)"
+HKR, "Templates\Bus8\Card4", "HardwareID", %ADDREG_MULTI_SZ%, "pcmcia\brain_boxes-2port_rs422card-409D"
+HKR, "Templates\Bus8\Card4", "nComPorts", %ADDREG_DWORD%, 1
+HKR, "Templates\Bus8\Card4", "nLptPorts", %ADDREG_DWORD%, 0
+HKR, "Templates\Bus8\Card4", "ClockFrequency", %ADDREG_DWORD%, 0xe10000
+HKR, "Templates\Bus8\Card4", "ClockFrequencyAdjustment", %ADDREG_DWORD%, 0x1
+HKR, "Templates\Bus8\Card4", "ComBaseAddressAlignment", %ADDREG_DWORD%, 8 
+HKR, "Templates\Bus8\Card4", "SoftTxLimit", %ADDREG_DWORD%, 0x18
+HKR, "Templates\Bus8\Card4", "PlxBaudClockType", %ADDREG_DWORD%, 5
+HKR, "Templates\Bus8\Card4", "PlxBaudClockDivisor", %ADDREG_DWORD%, 1
+HKR, "Templates\Bus8\Card4", "CtsTrue", %ADDREG_DWORD%, 0
+HKR, "Templates\Bus8\Card4", "DuplexOperation", %ADDREG_DWORD%, 7
+HKR, "Templates\Bus8\Card4", "MaximumBaudrate", %ADDREG_DWORD%, 921600
+
+;
+; Card 5 - 1 Port PCMCIA 422/485 Card (PM-120)
+;
+HKR, "Templates\Bus8\Card5", "Description", %ADDREG_SZ%, "Brainboxes Limited - 1 Port PCMCIA 422/485 Card (PM-120)"
+HKR, "Templates\Bus8\Card5", "HardwareID", %ADDREG_MULTI_SZ%, "pcmcia\brain_boxes-1-port_rs422/485_card-205A"
+HKR, "Templates\Bus8\Card5", "nComPorts", %ADDREG_DWORD%, 1
+HKR, "Templates\Bus8\Card5", "nLptPorts", %ADDREG_DWORD%, 0
+HKR, "Templates\Bus8\Card5", "ClockFrequency", %ADDREG_DWORD%, 0xe10000
+HKR, "Templates\Bus8\Card5", "ClockFrequencyAdjustment", %ADDREG_DWORD%, 0x1
+HKR, "Templates\Bus8\Card5", "ComBaseAddressAlignment", %ADDREG_DWORD%, 8 
+HKR, "Templates\Bus8\Card5", "SoftTxLimit", %ADDREG_DWORD%, 0x18
+HKR, "Templates\Bus8\Card5", "PlxBaudClockType", %ADDREG_DWORD%, 10
+HKR, "Templates\Bus8\Card5", "PlxBaudClockDivisor", %ADDREG_DWORD%, 1
+HKR, "Templates\Bus8\Card5", "CtsTrue", %ADDREG_DWORD%, 0
+HKR, "Templates\Bus8\Card5", "DuplexOperation", %ADDREG_DWORD%, 7
+HKR, "Templates\Bus8\Card5", "MaximumBaudrate", %ADDREG_DWORD%, 921600
+
+;
+; Card 6 - 1 Port PCMCIA 422/485 Card (PM-120)
+;
+HKR, "Templates\Bus8\Card6", "Description", %ADDREG_SZ%, "Brainboxes Limited - 1 Port PCMCIA 422/485 Card (PM-120)"
+HKR, "Templates\Bus8\Card6", "HardwareID", %ADDREG_MULTI_SZ%, "pcmcia\brain_boxes-1port_rs422card-d101"
+HKR, "Templates\Bus8\Card6", "nComPorts", %ADDREG_DWORD%, 1
+HKR, "Templates\Bus8\Card6", "nLptPorts", %ADDREG_DWORD%, 0
+HKR, "Templates\Bus8\Card6", "ClockFrequency", %ADDREG_DWORD%, 0xe10000
+HKR, "Templates\Bus8\Card6", "ClockFrequencyAdjustment", %ADDREG_DWORD%, 0x1
+HKR, "Templates\Bus8\Card6", "ComBaseAddressAlignment", %ADDREG_DWORD%, 8 
+HKR, "Templates\Bus8\Card6", "SoftTxLimit", %ADDREG_DWORD%, 0x18
+HKR, "Templates\Bus8\Card6", "PlxBaudClockType", %ADDREG_DWORD%, 5
+HKR, "Templates\Bus8\Card6", "PlxBaudClockDivisor", %ADDREG_DWORD%, 1
+HKR, "Templates\Bus8\Card6", "CtsTrue", %ADDREG_DWORD%, 0
+HKR, "Templates\Bus8\Card6", "DuplexOperation", %ADDREG_DWORD%, 7
+HKR, "Templates\Bus8\Card6", "MaximumBaudrate", %ADDREG_DWORD%, 921600
+
+;
+; Card 7 - 1 Port PCMCIA 232 Card (PM-020)
+;
+HKR, "Templates\Bus8\Card7", "Description", %ADDREG_SZ%, "Brainboxes Limited - 1 Port PCMCIA 232 Card (PM-020)"
+HKR, "Templates\Bus8\Card7", "HardwareID", %ADDREG_MULTI_SZ%, "pcmcia\brain_boxes-1-port_rs232_card-A1EE"
+HKR, "Templates\Bus8\Card7", "nComPorts", %ADDREG_DWORD%, 1
+HKR, "Templates\Bus8\Card7", "nLptPorts", %ADDREG_DWORD%, 0
+HKR, "Templates\Bus8\Card7", "ClockFrequency", %ADDREG_DWORD%, 0xe10000
+HKR, "Templates\Bus8\Card7", "ClockFrequencyAdjustment", %ADDREG_DWORD%, 0x1
+HKR, "Templates\Bus8\Card7", "ComBaseAddressAlignment", %ADDREG_DWORD%, 8 
+HKR, "Templates\Bus8\Card7", "SoftTxLimit", %ADDREG_DWORD%, 0x18
+HKR, "Templates\Bus8\Card7", "PlxBaudClockType", %ADDREG_DWORD%, 7
+HKR, "Templates\Bus8\Card7", "PlxBaudClockDivisor", %ADDREG_DWORD%, 1
+HKR, "Templates\Bus8\Card7", "MaximumBaudrate", %ADDREG_DWORD%, 921600
+
+;
+; Card 8 - 2 Port PCMCIA 232 Card (PM-010) "Single-Function"
+;
+HKR, "Templates\Bus8\Card8", "Description", %ADDREG_SZ%, "Brainboxes Limited - 2 Port PCMCIA 232 Card (PM-010)"
+HKR, "Templates\Bus8\Card8", "HardwareID", %ADDREG_MULTI_SZ%, "pcmcia\brain_boxes-2-port_rs232_card-6A87"
+HKR, "Templates\Bus8\Card8", "nComPorts", %ADDREG_DWORD%, 2
+HKR, "Templates\Bus8\Card8", "nLptPorts", %ADDREG_DWORD%, 0
+HKR, "Templates\Bus8\Card8", "ClockFrequency", %ADDREG_DWORD%, 0xe10000
+HKR, "Templates\Bus8\Card8", "ClockFrequencyAdjustment", %ADDREG_DWORD%, 0x1
+HKR, "Templates\Bus8\Card8", "ComBaseAddressAlignment", %ADDREG_DWORD%, 8 
+HKR, "Templates\Bus8\Card8", "SoftTxLimit", %ADDREG_DWORD%, 0x18
+HKR, "Templates\Bus8\Card8", "PlxBaudClockType", %ADDREG_DWORD%, 7
+HKR, "Templates\Bus8\Card8", "PlxBaudClockDivisor", %ADDREG_DWORD%, 1
+HKR, "Templates\Bus8\Card8", "MaximumBaudrate", %ADDREG_DWORD%, 921600
+
+;
+; This is the Event Logging service for the SsInstal driver :
+;
+[BrainBoxes.EventLog]
+AddReg = BrainBoxes.EventLog.reg
+
+[BrainBoxes.EventLog.reg]
+HKR,, EventMessageFile, %ADDREG_EXPAND_SZ%, "%%SystemRoot%%\System32\IoLogMsg.dll;%%SystemRoot%%\System32\drivers\SsInstal.sys"
+HKR,, TypesSupported, %ADDREG_DWORD%, 7
+
+;@ Files Section
+[DriverFiles_2K]
+;@ ADAPT AFTER , SsInstal
+SsInstal.sys, SsInstal.sys
+;@ Files Section end
+
+[HelpFilesDirectory]
+SsCard.chm
+
+;@ Files Section
+[System32Files_2K]
+;@ ADAPT AFTER , SsCard
+SsCard.dll, SsCard.dll
+;@ ADAPT AFTER , SsUnist
+SsUnist.exe, SsUnist.exe
+;@ Files Section end
+
+;@ Files Section
+[CoInstallers_CopyFiles_2K]
+;@ ADAPT AFTER , SsCoInst
+SsCoInst.dll, SsCoInst.dll
+;@ Files Section end
+
+
+;*****************************************************************************************************
+;@ Remove Section
+
+[DriverFiles_9x]
+sspcmcia.vxd      
+
+[HelpFiles_9x]
+SsHelpUi.hlp
+
+[CardUiFiles_9x]
+Sspcmcd.dll
+
+[BrainBoxesFiles_9x]
+ssPortUi.dll
+sspcmprt.dll
+ss232prt.dll
+ssunist.exe, ssun9x.exe
+;@ Remove Section end
+
+;*****************************************************************************************************
+
+;@ Cards Section
+
+[2RS422.NT]
+CopyFiles = DriverFiles_2K, HelpFilesDirectory, System32Files_2K
+Include = mf.inf        ; specify that this device requires mf.sys
+needs = PCMCIA_Install_NT
+Needs = MFINSTALL.mf
+
+[2RS422.NT.HW]
+AddReg = 2RS422_RegHW
+
+[2RS422.NT.CoInstallers]
+AddReg 		= CoInstallers_Addreg
+CopyFiles	= CoInstallers_CopyFiles_2K
+
+[2RS422.NT.Services]
+Include = mf.inf
+Needs = MFINSTALL.mf.Services
+;AddService = mf, 2, mf_Service_Inst
+
+[2RS422.NT.LogConfigOverride]
+LogConfig = BrainBoxes.mf.Override6
+LogConfig = BrainBoxes.mf.Override5
+LogConfig = BrainBoxes.mf.Override4
+LogConfig = BrainBoxes.mf.Override3
+LogConfig = BrainBoxes.mf.Override2
+LogConfig = BrainBoxes.mf.Override1
+LogConfig = BrainBoxes.mf.Override0
+;LogConfig = BrainBoxes.mf.OverrideAll
+
+[2RS422_RegHW]
+HKR, Child0000, HardwareID,  %ADDREG_MULTI_SZ%, MF\BB-2port_rs422card-409D_DEV1 ; port1
+HKR, Child0000, ResourceMap, 1, 00,02,03,05
+HKR, Child0001, HardwareID,  %ADDREG_MULTI_SZ%, MF\BB-2port_rs422card-409D_DEV0 ; port2
+HKR, Child0001, ResourceMap, 1, 01,02,03,04
+
+;**********************************************
+
+[2RS232.NT]
+CopyFiles = DriverFiles_2K, HelpFilesDirectory, System32Files_2K
+Include = mf.inf        ; specify that this device requires mf.sys
+needs = PCMCIA_Install_NT
+Needs = MFINSTALL.mf
+
+[2RS232.NT.HW]
+AddReg = 2RS232_RegHW
+
+[2RS232.NT.CoInstallers]
+AddReg 		= CoInstallers_Addreg
+CopyFiles	= CoInstallers_CopyFiles_2K
+
+[2RS232.NT.Services]
+Include = mf.inf
+Needs = MFINSTALL.mf.Services
+;AddService = mf, 2, mf_Service_Inst
+
+[2RS232.NT.LogConfigOverride]
+LogConfig = BrainBoxes.mf.Override6
+LogConfig = BrainBoxes.mf.Override5
+LogConfig = BrainBoxes.mf.Override4
+LogConfig = BrainBoxes.mf.Override3
+LogConfig = BrainBoxes.mf.Override2
+LogConfig = BrainBoxes.mf.Override1
+LogConfig = BrainBoxes.mf.Override0
+;LogConfig = BrainBoxes.mf.OverrideAll
+
+[2RS232_RegHW]
+HKR, Child0000, HardwareID,  %ADDREG_MULTI_SZ%, MF\BB-2port_rs232card-BC30_DEV1 ; port1
+HKR, Child0000, ResourceMap, 1, 00,02,03,05
+HKR, Child0001, HardwareID,  %ADDREG_MULTI_SZ%, MF\BB-2port_rs232card-BC30_DEV0 ; port2
+HKR, Child0001, ResourceMap, 1, 01,02,03,04
+
+;**********************************************
+; Single Function 2 port card
+
+[2RS232R5.NT]
+CopyFiles = DriverFiles_2K, HelpFilesDirectory, System32Files_2K
+needs = PCMCIA_Install_NT
+
+[2RS232R5.NT.HW]
+; AddReg = BrainBoxes_Templates.reg
+
+[2RS232R5.NT.CoInstallers]
+AddReg 		= CoInstallers_Addreg
+CopyFiles	= CoInstallers_CopyFiles_2K
+
+[2RS232R5.NT.Services]
+needs = PCMCIA_Install_NT_Services
+
+[2RS232R5.NT.LogConfigOverride]
+LogConfig = ASIC_REV5.mf.Override6
+LogConfig = ASIC_REV5.mf.Override5
+LogConfig = ASIC_REV5.mf.Override4
+LogConfig = ASIC_REV5.mf.Override3
+LogConfig = ASIC_REV5.mf.Override2
+LogConfig = ASIC_REV5.mf.Override1
+LogConfig = ASIC_REV5.mf.Override0
+LogConfig = ASIC_REV5.mf.OverrideAll
+
+;**********************************************
+
+[1941.mf.NT]
+CopyFiles = DriverFiles_2K, HelpFilesDirectory, System32Files_2K
+needs = PCMCIA_Install_NT
+
+[1941.mf.NT.HW]
+needs = PCMCIA_Install_NT_HW
+
+[1941.mf.NT.CoInstallers]
+AddReg 		= CoInstallers_Addreg
+CopyFiles	= CoInstallers_CopyFiles_2K
+
+[1941.mf.NT.Services]
+needs = PCMCIA_Install_NT_Services
+
+[1941.mf.NT.LogConfigOverride]
+LogConfig = BrainBoxes_1.mf.Override6
+LogConfig = BrainBoxes_1.mf.Override5
+LogConfig = BrainBoxes_1.mf.Override4
+LogConfig = BrainBoxes_1.mf.Override3
+LogConfig = BrainBoxes_1.mf.Override2
+LogConfig = BrainBoxes_1.mf.Override1
+LogConfig = BrainBoxes_1.mf.Override0
+LogConfig = BrainBoxes_1.mf.OverrideAll
+
+;**********************************************
+
+[594C.mf.NT]
+CopyFiles = DriverFiles_2K, HelpFilesDirectory, System32Files_2K
+needs = PCMCIA_Install_NT
+
+[594C.mf.NT.HW]
+needs = PCMCIA_Install_NT_HW
+
+[594C.mf.NT.CoInstallers]
+AddReg 		= CoInstallers_Addreg
+CopyFiles	= CoInstallers_CopyFiles_2K
+
+[594C.mf.NT.Services]
+needs = PCMCIA_Install_NT_Services
+
+[594C.mf.NT.LogConfigOverride]
+LogConfig = BrainBoxes_1.mf.Override6
+LogConfig = BrainBoxes_1.mf.Override5
+LogConfig = BrainBoxes_1.mf.Override4
+LogConfig = BrainBoxes_1.mf.Override3
+LogConfig = BrainBoxes_1.mf.Override2
+LogConfig = BrainBoxes_1.mf.Override1
+LogConfig = BrainBoxes_1.mf.Override0
+LogConfig = BrainBoxes_1.mf.OverrideAll
+
+;**********************************************
+
+[A1EE.mf.NT]
+CopyFiles = DriverFiles_2K, HelpFilesDirectory, System32Files_2K
+needs = PCMCIA_Install_NT
+
+[A1EE.mf.NT.HW]
+needs = PCMCIA_Install_NT_HW
+
+[A1EE.mf.NT.CoInstallers]
+AddReg 		= CoInstallers_Addreg
+CopyFiles	= CoInstallers_CopyFiles_2K
+
+[A1EE.mf.NT.Services]
+needs = PCMCIA_Install_NT_Services
+
+[A1EE.mf.NT.LogConfigOverride]
+LogConfig = ASIC_REV5_1.mf.Override6
+LogConfig = ASIC_REV5_1.mf.Override5
+LogConfig = ASIC_REV5_1.mf.Override4
+LogConfig = ASIC_REV5_1.mf.Override3
+LogConfig = ASIC_REV5_1.mf.Override2
+LogConfig = ASIC_REV5_1.mf.Override1
+LogConfig = ASIC_REV5_1.mf.Override0
+LogConfig = ASIC_REV5_1.mf.OverrideAll
+
+;**********************************************
+
+[D101.mf.NT]
+CopyFiles = DriverFiles_2K, HelpFilesDirectory, System32Files_2K
+needs = PCMCIA_Install_NT
+
+[D101.mf.NT.HW]
+needs = PCMCIA_Install_NT_HW
+
+[D101.mf.NT.Services]
+needs = PCMCIA_Install_NT_Services
+
+[D101.mf.NT.CoInstallers]
+AddReg 		= CoInstallers_Addreg
+CopyFiles	= CoInstallers_CopyFiles_2K
+
+[D101.mf.NT.LogConfigOverride]
+LogConfig = BrainBoxes_1.mf.Override6
+LogConfig = BrainBoxes_1.mf.Override5
+LogConfig = BrainBoxes_1.mf.Override4
+LogConfig = BrainBoxes_1.mf.Override3
+LogConfig = BrainBoxes_1.mf.Override2
+LogConfig = BrainBoxes_1.mf.Override1
+LogConfig = BrainBoxes_1.mf.Override0
+LogConfig = BrainBoxes_1.mf.OverrideAll
+
+;**********************************************
+
+[205A.mf.NT]
+CopyFiles = DriverFiles_2K, HelpFilesDirectory, System32Files_2K
+needs = PCMCIA_Install_NT
+
+[205A.mf.NT.HW]
+needs = PCMCIA_Install_NT_HW
+
+[205A.mf.NT.Services]
+needs = PCMCIA_Install_NT_Services
+
+[205A.mf.NT.CoInstallers]
+AddReg 		= CoInstallers_Addreg
+CopyFiles	= CoInstallers_CopyFiles_2K
+
+[205A.mf.NT.LogConfigOverride]
+LogConfig = ASIC_REV5_1.mf.Override6
+LogConfig = ASIC_REV5_1.mf.Override5
+LogConfig = ASIC_REV5_1.mf.Override4
+LogConfig = ASIC_REV5_1.mf.Override3
+LogConfig = ASIC_REV5_1.mf.Override2
+LogConfig = ASIC_REV5_1.mf.Override1
+LogConfig = ASIC_REV5_1.mf.Override0
+LogConfig = ASIC_REV5_1.mf.OverrideAll
+
+;**********************************************
+
+[2RS232R5_P1.NT]
+CopyFiles = DriverFiles_2K, HelpFilesDirectory, System32Files_2K
+needs = PCMCIA_Install_NT
+
+[2RS232R5_P1.NT.HW]
+needs = PCMCIA_Install_NT_HW
+
+[2RS232R5_P1.NT.Services]
+needs = PCMCIA_Install_NT_Services
+
+[2RS232R5_P1.NT.CoInstallers]
+AddReg 		= CoInstallers_Addreg
+CopyFiles	= CoInstallers_CopyFiles_2K
+
+;**********************************************
+
+[2RS232R5_P2.NT]
+CopyFiles = DriverFiles_2K, HelpFilesDirectory, System32Files_2K
+needs = PCMCIA_Install_NT
+
+[2RS232R5_P2.NT.HW]
+needs = PCMCIA_Install_NT_HW
+
+[2RS232R5_P2.NT.Services]
+needs = PCMCIA_Install_NT_Services
+
+[2RS232R5_P2.NT.CoInstallers]
+AddReg 		= CoInstallers_Addreg
+CopyFiles	= CoInstallers_CopyFiles_2K
+
+;**********************************************
+
+[BC03_1.NT]
+CopyFiles = DriverFiles_2K, HelpFilesDirectory, System32Files_2K
+needs = PCMCIA_Install_NT
+
+[BC03_1.NT.HW]
+needs = PCMCIA_Install_NT_HW
+
+[BC03_1.NT.Services]
+needs = PCMCIA_Install_NT_Services
+
+[BC03_1.NT.CoInstallers]
+AddReg 		= CoInstallers_Addreg
+CopyFiles	= CoInstallers_CopyFiles_2K
+
+;**********************************************
+
+[409D_1.NT]
+CopyFiles = DriverFiles_2K, HelpFilesDirectory, System32Files_2K
+needs = PCMCIA_Install_NT
+
+[409D_1.NT.HW]
+needs = PCMCIA_Install_NT_HW
+
+[409D_1.NT.Services]
+needs = PCMCIA_Install_NT_Services
+
+[409D_1.NT.CoInstallers]
+AddReg 		= CoInstallers_Addreg
+CopyFiles	= CoInstallers_CopyFiles_2K
+
+;**********************************************
+
+[BC03_2.NT]
+CopyFiles = DriverFiles_2K, HelpFilesDirectory, System32Files_2K
+needs = PCMCIA_Install_NT
+
+[BC03_2.NT.HW]
+needs = PCMCIA_Install_NT_HW
+
+[BC03_2.NT.Services]
+needs = PCMCIA_Install_NT_Services
+
+[BC03_2.NT.CoInstallers]
+AddReg 		= CoInstallers_Addreg
+CopyFiles	= CoInstallers_CopyFiles_2K
+
+;**********************************************
+
+[409D_2.NT]
+CopyFiles = DriverFiles_2K, HelpFilesDirectory, System32Files_2K
+needs = PCMCIA_Install_NT
+
+[409D_2.NT.HW]
+needs = PCMCIA_Install_NT_HW
+
+[409D_2.NT.Services]
+needs = PCMCIA_Install_NT_Services
+
+[409D_2.NT.CoInstallers]
+AddReg 		= CoInstallers_Addreg
+CopyFiles	= CoInstallers_CopyFiles_2K
+
+;@ Cards Section end
+;*****************************************************************************************************
+;@ Remove Section
+
+; No Win9x section for [2RS422] - not needed.
+; No Win9x section for [2RS232] - not needed.
+
+[2RS232R5]
+CopyFiles = CardUIFiles_9x,HelpFiles_9x,BrainBoxesFiles_9x,DriverFiles_9x
+AddReg = 2RS232R5_ASIC_Override,Uninstall.Reg
+
+[2RS232R5.HW]
+AddReg = 2RS232R5.RegHW
+
+[2RS232R5.RegHW]
+HKR,Child0000,HardwareID,,pcmcia\brain_boxes-2port_rs232card-Dev0-6A87
+HKR,Child0000,ResourceMap,1,00,02,03
+HKR,Child0001,HardwareID,,pcmcia\brain_boxes-2port_rs232card-Dev1-6A87
+HKR,Child0001,ResourceMap,1,01,02,03
+HKR,,nPorts,1,02
+
+[ISA_1S_232STD.mf.RegHW]
+HKR,Child0000,HardwareID,,*PNP0501
+HKR,Child0000,ResourceMap,1,00,01
+HKR,,nPorts,1,01
+
+[1941.mf]
+CopyFiles = CardUIFiles_9x,HelpFiles_9x
+AddReg = PCMCIAStdMF.Reg,Uninstall.Reg
+LogConfig = 1941_0.mf.log,1941_1.mf.log,1941_2.mf.log,1941_3.mf.log 
+
+[1941.mf.HW]
+AddReg = ISA_1S_232STD.mf.RegHW
+
+[1941.mf.RegHW]
+HKR,Child0000,HardwareID,,*PNP0501
+HKR,Child0000,ResourceMap,1,00,01
+HKR,,nPorts,1,01
+
+[1941_0.mf.log]
+ConfigPriority = NORMAL
+IOConfig = 8@2f8-2ff%fff8(ffff::)
+IRQConfig = 3
+
+; COM1
+[1941_1.mf.log]
+ConfigPriority = NORMAL
+IOConfig = 8@3f8-3ff%fff8(ffff::)
+IRQConfig = 4
+
+; COM3
+[1941_2.mf.log]
+ConfigPriority = NORMAL
+IOConfig = 8@3e8-3ef%fff8(ffff::)
+IRQConfig = 3
+
+; any settings
+[1941_3.mf.log]
+ConfigPriority = NORMAL
+IOConfig = 8@100-3ff%fff8(ffff::)
+IRQConfig = 3,4,5,7,9,10,11,12,14,15
+
+[594C.mf]
+CopyFiles = CardUIFiles_9x,HelpFiles_9x,BrainBoxesFiles_9x,DriverFiles_9x
+AddReg = PCMCIAStdMF.Reg,Uninstall.Reg
+
+[594C.mf.HW]
+AddReg = 594C.mf.RegHW
+
+[594C.mf.RegHW]
+HKR,Child0000,HardwareID,,MF\PCMCIAVEL232_ST
+HKR,Child0000,ResourceMap,1,00,01
+HKR,,nPorts,1,01
+
+[A1EE.mf]
+CopyFiles = CardUIFiles_9x,HelpFiles_9x,BrainBoxesFiles_9x,DriverFiles_9x
+AddReg = BB_BT_ASIC_Override,Uninstall.Reg
+
+[A1EE.mf.HW]
+AddReg = A1EE.mf.RegHW
+
+
+[A1EE.mf.RegHW]
+HKR,Child0000,HardwareID,,MF\PCMCIA232_ASIC_REV5
+HKR,Child0000,ResourceMap,1,00,01
+HKR,,nPorts,1,01
+
+[D101.mf]
+CopyFiles = CardUIFiles_9x,HelpFiles_9x,BrainBoxesFiles_9x,DriverFiles_9x
+AddReg = PCMCIAStdMF.Reg,Uninstall.Reg
+
+[D101.mf.HW]
+AddReg = D101.mf.RegHW
+
+[D101.mf.RegHW]
+HKR,Child0000,HardwareID,,MF\PCMCIA422
+HKR,Child0000,ResourceMap,1,00,01
+HKR,,nPorts,1,01
+
+[205A.mf]
+CopyFiles = CardUIFiles_9x,HelpFiles_9x,BrainBoxesFiles_9x,DriverFiles_9x
+AddReg = BB_BT_ASIC_Override,Uninstall.Reg
+
+[205A.mf.HW]
+AddReg = 205A.mf.RegHW
+
+[205A.mf.RegHW]
+HKR,Child0000,HardwareID,,MF\PCMCIA422_ASIC_REV5
+HKR,Child0000,ResourceMap,1,00,01
+HKR,,nPorts,1,01
+
+;[205A.mf.RegHW]
+;HKR, Child0000, HardwareID,  %ADDREG_MULTI_SZ%, MF\BB-1port_rs422card-205A_DEV0 ; port1
+;HKR, Child0000, ResourceMap, 1, 00,02,03,04
+
+[2RS232R5_P1]
+CopyFiles = CardUIFiles_9x,HelpFiles_9x,BrainBoxesFiles_9x,DriverFiles_9x
+AddReg = 2RS232R5_ASIC_Override_1,Uninstall.Reg
+
+[2RS232R5_P1.HW]
+AddReg = 2RS232R5_P1.RegHW
+
+[2RS232R5_P1.RegHW]
+HKR,Child0000,HardwareID,,MF\PCMCIA232_ASIC_REV5
+HKR,Child0000,ResourceMap,1,00,01
+HKR,,nPorts,1,01
+
+[2RS232R5_P2]
+CopyFiles = CardUIFiles_9x,HelpFiles_9x,BrainBoxesFiles_9x,DriverFiles_9x
+AddReg = 2RS232R5_ASIC_Override_1,Uninstall.Reg
+
+[2RS232R5_P2.HW]
+AddReg = 2RS232R5_P2.RegHW
+
+[2RS232R5_P2.RegHW]
+HKR,Child0000,HardwareID,,MF\PCMCIA232_ASIC_REV5
+HKR,Child0000,ResourceMap,1,00,01
+HKR,,nPorts,1,01
+
+[BC03_1]
+; only need to copy card UI and its help
+CopyFiles = CardUIFiles_9x,HelpFiles_9x,BrainBoxesFiles_9x,DriverFiles_9x
+AddReg = PCMCIAStdMF.Reg,Uninstall.Reg
+
+[BC03_1.HW]
+AddReg = BC03_1.RegHW
+
+[BC03_1.RegHW]
+HKR,Child0000,HardwareID,,MF\PCMCIAVEL232
+HKR,Child0000,ResourceMap,1,00,01
+HKR,,nPorts,1,01
+
+[409D_1]
+; only need to copy card UI and its help
+CopyFiles = CardUIFiles_9x,HelpFiles_9x,BrainBoxesFiles_9x,DriverFiles_9x
+AddReg = PCMCIAStdMF.Reg,Uninstall.Reg
+
+[409D_1.HW]
+AddReg = 409D_1.RegHW
+
+[409D_1.RegHW]
+HKR,Child0000,HardwareID,,MF\PCMCIA422
+HKR,Child0000,ResourceMap,1,00,01
+HKR,,nPorts,1,01
+
+[BC03_2]
+; only need to copy card UI and its help
+CopyFiles = CardUIFiles_9x,HelpFiles_9x,BrainBoxesFiles_9x,DriverFiles_9x
+AddReg = PCMCIA2StdMF.Reg,Uninstall.Reg
+
+[BC03_2.HW]
+AddReg = BC03_2.RegHW
+
+[BC03_2.RegHW]
+HKR,Child0000,HardwareID,,MF\PCMCIAVEL232
+HKR,Child0000,ResourceMap,1,00,01
+HKR,,nPorts,1,01
+
+[409D_2]
+CopyFiles = CardUIFiles_9x,HelpFiles_9x,BrainBoxesFiles_9x,DriverFiles_9x
+AddReg = PCMCIA2StdMF.Reg,Uninstall.Reg
+
+[409D_2.HW]
+AddReg = 409D_2.RegHW
+
+[409D_2.RegHW]
+HKR,Child0000,HardwareID,,MF\PCMCIA422
+HKR,Child0000,ResourceMap,1,00,01
+HKR,,nPorts,1,01
+
+[BB_BT_ASIC_Override]
+; The following prevents Windows from allocating resources which are not actually available
+HKR,,DevLoader,0,*CONFIGMG
+HKR,,Enumerator,0,*CONFIGMG
+HKR,,EnumPropPages,0,Sspcmcd.dll,EnumPropPages
+
+HKR,,CMDrivFlags,1,03,00,00,00
+
+HKR,Override,0000,1,00,04,00,00,00,22,00,00,24,00,00,00,02,00,00,00,01,00,0c,00,00,00,\
+  00,00,00,00,00,00,f8,ff,08,00,a0,01,a7,01,00,00,00,00,a3,00,00,00,14,00,00,\
+  00,04,00,00,00,00,00,00,00,10,00,00,00,70,00,00,00,1e,00,00,00,7c,89,00,00,\
+  01,00,02,00,32,32,32,02,e0,00,00,00,00,00,00,03,03,00,00,00,00,00,00,00,00,\
+  00
+HKR,Override,0001,1,00,04,00,00,00,32,00,00,24,00,00,00,02,00,00,00,01,00,0c,00,00,00,\
+  00,00,00,00,00,00,f8,ff,08,00,a8,01,af,01,00,00,00,00,a3,00,00,00,14,00,00,\
+  00,04,00,00,00,00,00,00,00,ff,ff,00,00,70,00,00,00,1e,00,00,00,7c,89,00,00,\
+  01,00,02,00,32,32,32,02,e0,00,00,00,00,00,00,03,03,00,00,00,00,00,00,00,00,\
+  00
+HKR,Override,0002,1,00,04,00,00,00,3a,00,00,24,00,00,00,02,00,00,00,01,00,0c,00,00,00,\
+  00,00,00,00,00,00,f8,ff,08,00,b0,01,b7,01,00,00,00,00,a3,00,00,00,14,00,00,\
+  00,04,00,00,00,03,00,00,00,ff,ff,00,00,70,00,00,00,1e,00,00,00,7c,89,00,00,\
+  01,00,02,00,32,32,32,02,e0,00,00,00,00,00,00,03,03,00,00,00,00,00,00,00,00,\
+  00
+HKR,Override,0003,1,00,04,00,00,00,52,00,00,24,00,00,00,02,00,00,00,01,00,0c,00,00,00,\
+  00,00,00,00,00,00,f8,ff,08,00,b8,01,bf,01,00,00,00,00,23,00,00,00,14,00,00,\
+  00,04,00,00,00,00,00,00,00,ff,ff,00,00,70,00,00,00,1e,00,00,00,7c,89,00,00,\
+  01,00,02,00,32,32,32,02,e0,00,00,00,00,00,00,05,03,00,00,00,00,00,00,00,00,\
+  00
+HKR,Override,0004,1,00,04,00,00,00,5a,00,00,24,00,00,00,02,00,00,00,01,00,0c,00,00,00,\
+  00,00,00,00,00,00,f8,ff,08,00,00,00,ff,ff,00,00,00,00,23,00,00,00,14,00,00,\
+  00,04,00,00,00,03,00,00,00,ff,ff,00,00,70,00,00,00,1e,00,00,00,7c,89,00,00,\
+  01,00,02,00,32,32,32,02,e0,00,00,00,00,00,00,05,03,00,00,00,00,00,00,00,00,\
+  00
+
+[2RS232R5_ASIC_Override]
+; The following prevents Windows from allocating resources which are not actually available
+HKR,,DevLoader,0,*CONFIGMG
+HKR,,Enumerator,0,*CONFIGMG
+;HKR,,EnumPropPages,0,Sspcmcd.dll,EnumPropPages
+HKR,,CMDrivFlags,1,03,00,00,00
+
+HKR,Override,0000,1,00,04,00,00,00,00,00,00,24,00,00,00,02,00,00,00,02,00,0c,00,00,00, \
+ 	00,00,00,00,00,00,f8,ff,08,00,02,00,03,ff,00,00,00,00,a3,00,00,00,24,00,00,00, \
+	02,00,00,00,02,00,0c,00,00,00,00,00,00,00,00,00,f8,ff,08,00,02,00,03,ff,00,00, \
+	00,00,a3,00,00,00,14,00,00,00,04,00,00,00,00,00,00,00,ff,ff,00,00,70,00,00,00, \
+	1E,00,00,00,7c,89,00,00,00,00,02,00,32,32,32,02,e0,00,00,00,00,00,00,05,03,00, \
+	00,00,00,00,00,00,00,00
+
+[2RS232R5_ASIC_Override_1]
+; The following prevents Windows from allocating resources which are not actually available
+HKR,,DevLoader,0,*CONFIGMG
+HKR,,Enumerator,0,*CONFIGMG
+HKR,,EnumPropPages,0,Sspcmcd.dll,EnumPropPages
+HKR,,CMDrivFlags,1,03,00,00,00
+
+HKR,Override,0000,1,00,04,00,00,00,00,00,00,24,00,00,00,02,00,00,00,01,00,0c,00,00,00, \
+	00,00,00,00,00,00,f8,ff,08,00,02,00,03,ff,00,00,00,00,a3,00,00,00,14,00,00,00, \
+	04,00,00,00,00,00,00,00,FF,FF,00,00,70,00,00,00,1E,00,00,00,7c,89,00,00,00,00, \
+	02,00,32,32,32,02,e0,00,00,00,00,00,00,05,03,00,00,00,00,00,00,00,00,00
+
+[PCMCIAStdMF.Reg]
+HKR,,DevLoader,0,*CONFIGMG
+HKR,,Enumerator,0,*CONFIGMG
+HKR,,EnumPropPages,0,Sspcmcd.dll,EnumPropPages
+HKR,,CMDrivFlags,1,03,00,00,00
+
+HKR,Override,0003,1,00,04,00,00,00,30,00,00,14,00,00,00,04,00,00,00,00,00,00,00,FF,FF, \
+00,00,20,00,00,00,24,00,00,00,02,00,00,00,01,00,0C,00,00,00,00,00,00,00,00,00,F8,FF, \
+08,00,A0,01,A7,01,00,00,00,00,24,00,00,00,19,00,00,00,7C,89,00,00,00,00,02,00,32,32,32, \
+02,00,02,00,00,00,00,00,25,03,00,00,00,00
+
+HKR,Override,0002,1,00,04,00,00,00,30,00,00,14,00,00,00,04,00,00,00,00,00,00,00,FF,FF, \
+00,00,20,00,00,00,24,00,00,00,02,00,00,00,01,00,0C,00,00,00,00,00,00,00,00,00,F8,FF, \
+08,00,A8,01,AF,01,00,00,00,00,24,00,00,00,19,00,00,00,7C,89,00,00,00,00,02,00,32,32,32, \
+02,00,02,00,00,20,00,00,2D,03,00,00,00,00
+
+HKR,Override,0001,1,00,04,00,00,00,30,00,00,14,00,00,00,04,00,00,00,00,00,00,00,FF,FF, \
+00,00,20,00,00,00,24,00,00,00,02,00,00,00,01,00,0C,00,00,00,00,00,00,00,00,00,F8,FF, \
+08,00,B0,01,B7,01,00,00,00,00,24,00,00,00,19,00,00,00,7C,89,00,00,00,00,02,00,32,32,32, \
+02,00,02,00,00,20,00,00,35,03,00,00,00,00
+
+HKR,Override,0000,1,00,04,00,00,00,30,00,00,14,00,00,00,04,00,00,00,00,00,00,00,FF,FF, \
+00,00,20,00,00,00,24,00,00,00,02,00,00,00,01,00,0C,00,00,00,00,00,00,00,00,00,F8,FF, \
+08,00,B8,01,BF,01,00,00,00,00,24,00,00,00,19,00,00,00,7C,89,00,00,00,00,02,00,32,32,32, \
+02,F8,03,00,00,20,00,00,3D,03,00,00,00,00
+
+[PCMCIA2StdMF.Reg]
+HKR,,DevLoader,0,*CONFIGMG
+HKR,,Enumerator,0,*CONFIGMG
+HKR,,EnumPropPages,0,Sspcmcd.dll,EnumPropPages
+HKR,,CMDrivFlags,1,03,00,00,00
+
+HKR,Override,0003,1,00,04,00,00,00,20,00,00,14,00,00,00,04,00,00,00,01,00,00,00,FF,FF, \
+00,00,20,00,00,00,24,00,00,00,02,00,00,00,01,00,0C,00,00,00,00,00,00,00,00,00,F8,FF, \       
+08,00,A0,01,A7,01,00,00,00,00,24,00,00,00,19,00,00,00,7C,89,00,00,00,00,02,00,32,32,32, \
+02,00,03,00,00,00,00,00,25,03,00,00,00,00
+
+HKR,Override,0002,1,00,04,00,00,00,30,00,00,14,00,00,00,04,00,00,00,00,00,00,00,FF,FF, \
+00,00,20,00,00,00,24,00,00,00,02,00,00,00,01,00,0C,00,00,00,00,00,00,00,00,00,F8,FF, \
+08,00,A8,01,AF,01,00,00,00,00,24,00,00,00,19,00,00,00,7C,89,00,00,00,00,02,00,32,32,32, \
+02,00,03,00,00,00,00,00,2D,03,00,00,00,00
+
+HKR,Override,0001,1,00,04,00,00,00,30,00,00,14,00,00,00,04,00,00,00,00,00,00,00,FF,FF, \
+00,00,20,00,00,00,24,00,00,00,02,00,00,00,01,00,0C,00,00,00,00,00,00,00,00,00,F8,FF, \
+08,00,B0,01,B7,01,00,00,00,00,24,00,00,00,19,00,00,00,7C,89,00,00,00,00,02,00,32,32,32, \
+02,00,03,00,00,20,00,00,35,03,00,00,00,00
+
+HKR,Override,0000,1,00,04,00,00,00,30,00,00,14,00,00,00,04,00,00,00,00,00,00,00,FF,FF, \
+00,00,20,00,00,00,24,00,00,00,02,00,00,00,01,00,0C,00,00,00,00,00,00,00,00,00,F8,FF, \
+08,00,B8,01,BF,01,00,00,00,00,24,00,00,00,19,00,00,00,7C,89,00,00,00,00,02,00,32,32,32, \
+02,00,03,00,00,20,00,00,3D,03,00,00,00,00
+
+;@ Remove Section end
+;*****************************************************************************************************
+
+;@ REPLACE [SourceDisksFiles]
+[SourceDisksFiles.x86]
+;@ REPLACE SsUnistAMD64.exe = 1,,,
+SsUnist.exe = 1,,,
+;@ REPLACE SsInstalAMD64.sys=1,SsWin\drivers
+SsInstal.sys=1,SsWin\drivers
+;@ REPLACE SsCardAMD64.dll=1,SsWin\dlls
+SsCard.dll=1,SsWin\dlls
+SsCard.chm = 1,SsWin\HELP,,
+;@ REPLACE SsCoInstAMD64.dll = 1,SsWin\DLLS,,
+SsCoInst.dll = 1,SsWin\DLLS,,
+
+;*****************************************************************************************************
+
+[mf_Service_Inst]
+ServiceType    = 1
+StartType      = 3
+ErrorControl   = 1
+ServiceBinary  = %10%\System32\Drivers\mf.sys
+LoadOrderGroup = System Bus Extender
+
+;**********************************************
+
+[BrainBoxes.mf.OverrideAll]
+IOConfig     =    8@0000-FFFF%FFF8(FFFF::)   ; Com1
+IOConfig     =    8@0000-FFFF%FFF8(FFFF::)   ; Com1
+IRQConfig    =    3,4,5,7,9,10,11,14,15     ; IRQ
+PcCardConfig =5(W)
+MfCardConfig =    00E0:05:0
+MfCardConfig =    00E0:0D:1
+ConfigPriority = NORMAL
+
+[BrainBoxes.mf.Override0]
+IOConfig     =    3F8-3FF(FFFF::)   ; Com1
+IOConfig     =    2F8-2FF(FFFF::)   ; Com2	
+IRQConfig    =    3,4,5,7,9,10,11,14,15     ; IRQ
+PcCardConfig =0(W)
+MfCardConfig =    200:05:0
+MfCardConfig =    300:0D:1
+ConfigPriority = NORMAL
+
+[BrainBoxes.mf.Override1]
+IOConfig     =    2F8-2FF(FFFF::)   ; Com2
+IOConfig     =    3E8-3EF(FFFF::)   ; Com3	
+IRQConfig    =    3,4,5,7,9,10,11,14,15     ; IRQ
+PcCardConfig =0(W)
+MfCardConfig =    200:0D:0
+MfCardConfig =    300:15:1
+ConfigPriority = NORMAL
+
+[BrainBoxes.mf.Override2]
+IOConfig     =    3E8-3EF(FFFF::)   ; Com3
+IOConfig     =    2E8-2EF(FFFF::)   ; Com4	
+IRQConfig    =    3,4,5,7,9,10,11,14,15     ; IRQ
+PcCardConfig =0(W)
+MfCardConfig =    200:15:0
+MfCardConfig =    300:1D:1
+ConfigPriority = NORMAL
+
+[BrainBoxes.mf.Override3]
+IOConfig     =    2E8-2EF(FFFF::)   ; Com4
+IOConfig     =    1A0-1A7(FFFF::)   ; Com5	
+IRQConfig    =    3,4,5,7,9,10,11,14,15     ; IRQ
+PcCardConfig =0(W)
+MfCardConfig =    200:1D:0
+MfCardConfig =    300:25:1
+ConfigPriority = NORMAL
+
+[BrainBoxes.mf.Override4]
+IOConfig     =    1A0-1A7(FFFF::)   ; Com5
+IOConfig     =    1A8-1AF(FFFF::)   ; Com6	
+IRQConfig    =    3,4,5,7,9,10,11,14,15     ; IRQ
+PcCardConfig =0(W)
+MfCardConfig =    200:25:0
+MfCardConfig =    300:2D:1
+ConfigPriority = NORMAL
+
+[BrainBoxes.mf.Override5]
+IOConfig     =    1A8-1AF(FFFF::)   ; Com6
+IOConfig     =    1B0-1B7(FFFF::)   ; Com7	
+IRQConfig    =    3,4,5,7,9,10,11,14,15     ; IRQ
+PcCardConfig =0(W)
+MfCardConfig =    200:2D:0
+MfCardConfig =    300:35:1
+ConfigPriority = NORMAL
+
+[BrainBoxes.mf.Override6]
+IOConfig     =    1B0-1B7(FFFF::)   ; Com7
+IOConfig     =    1B8-1BF(FFFF::)   ; Com8	
+IRQConfig    =    3,4,5,7,9,10,11,14,15     ; IRQ
+PcCardConfig =0(W)
+MfCardConfig =    200:35:0
+MfCardConfig =    300:3D:1
+ConfigPriority = NORMAL
+
+
+
+
+;**********************************************
+
+[BrainBoxes_1.mf.OverrideAll]
+IOConfig     =    8@0000-FFFF%FFF8(FFFF::)   ; Com1
+IRQConfig    =    3,4,5,7,9,10,11,14,15     ; IRQ
+PcCardConfig =5(W)
+MfCardConfig =    00E0:05:0
+ConfigPriority = NORMAL
+
+[BrainBoxes_1.mf.Override0]
+IOConfig     =    3F8-3FF(FFFF::)   ; Com1
+IRQConfig    =    3,4,5,7,9,10,11,14,15     ; IRQ
+PcCardConfig =0(W)
+MfCardConfig =    200:05:0
+ConfigPriority = NORMAL
+
+[BrainBoxes_1.mf.Override1]
+IOConfig     =    2F8-2FF(FFFF::)   ; Com2
+IRQConfig    =    3,4,5,7,9,10,11,14,15     ; IRQ
+PcCardConfig =0(W)
+MfCardConfig =    200:0D:0
+ConfigPriority = NORMAL
+
+[BrainBoxes_1.mf.Override2]
+IOConfig     =    3E8-3EF(FFFF::)   ; Com3
+IRQConfig    =    3,4,5,7,9,10,11,14,15     ; IRQ
+PcCardConfig =0(W)
+MfCardConfig =    200:15:0
+ConfigPriority = NORMAL
+
+[BrainBoxes_1.mf.Override3]
+IOConfig     =    2E8-2EF(FFFF::)   ; Com4
+IRQConfig    =    3,4,5,7,9,10,11,14,15     ; IRQ
+PcCardConfig =0(W)
+MfCardConfig =    200:1D:0
+ConfigPriority = NORMAL
+
+[BrainBoxes_1.mf.Override4]
+IOConfig     =    1A0-1A7(FFFF::)   ; Com5
+IRQConfig    =    3,4,5,7,9,10,11,14,15     ; IRQ
+PcCardConfig =0(W)
+MfCardConfig =    200:25:0
+ConfigPriority = NORMAL
+
+[BrainBoxes_1.mf.Override5]
+IOConfig     =    1A8-1AF(FFFF::)   ; Com6
+IRQConfig    =    3,4,5,7,9,10,11,14,15     ; IRQ
+PcCardConfig =0(W)
+MfCardConfig =    200:2D:0
+ConfigPriority = NORMAL
+
+[BrainBoxes_1.mf.Override6]
+IOConfig     =    1B0-1B7(FFFF::)   ; Com7
+IRQConfig    =    3,4,5,7,9,10,11,14,15     ; IRQ
+PcCardConfig =0(W)
+MfCardConfig =    200:35:0
+ConfigPriority = NORMAL
+
+;**********************************************
+
+[ASIC_REV5.mf.OverrideAll]
+IOConfig     =    F@0000-FFFF%FFF8(FFFF::)   ; Com1
+IOConfig     =    F@0000-FFFF%FFF8(FFFF::)   ; Com1
+IRQConfig    =    3,4,5,7,9,10,11,14,15     ; IRQ
+PcCardConfig =5(W)
+MfCardConfig =    00E0:05:0
+ConfigPriority = NORMAL
+
+[ASIC_REV5.mf.Override0]
+IOConfig     =    3F8-3FF(FFFF::)   ; Com1
+IOConfig     =    2F8-2FF(FFFF::)   ; Com2
+IRQConfig    =    3,4,5,7,9,10,11,14,15     ; IRQ
+PcCardConfig =5(W)
+MfCardConfig =    00E0:05:0
+MfCardConfig =    00E0:0D:1
+ConfigPriority = NORMAL
+
+[ASIC_REV5.mf.Override1]
+IOConfig     =    2F8-2FF(FFFF::)   ; Com2
+IOConfig     =    3E8-3EF(FFFF::)   ; Com3	
+IRQConfig    =    3,4,5,7,9,10,11,14,15     ; IRQ
+PcCardConfig =5(W)
+MfCardConfig =    00E0:05:0
+MfCardConfig =    00E0:0D:1
+ConfigPriority = NORMAL
+
+[ASIC_REV5.mf.Override2]
+IOConfig     =    3E8-3EF(FFFF::)   ; Com3
+IOConfig     =    2E8-2EF(FFFF::)   ; Com4	
+IRQConfig    =    3,4,5,7,9,10,11,14,15     ; IRQ
+PcCardConfig =5(W)
+MfCardConfig =    00E0:05:0
+MfCardConfig =    00E0:0D:1
+ConfigPriority = NORMAL
+
+[ASIC_REV5.mf.Override3]
+IOConfig     =    2E8-2EF(FFFF::)  ; Com4
+IOConfig     =    1A0-1A7(FFFF::)   ; Com5	
+IRQConfig    =    3,4,5,7,9,10,11,14,15     ; IRQ
+PcCardConfig =5(W)
+MfCardConfig =    00E0:05:0
+MfCardConfig =    00E0:0D:1
+ConfigPriority = NORMAL
+
+[ASIC_REV5.mf.Override4]
+IOConfig     =    1A0-1A7(FFFF::)   ; Com5
+IOConfig     =    1A8-1AF(FFFF::)   ; Com6	
+IRQConfig    =    3,4,5,7,9,10,11,14,15     ; IRQ
+PcCardConfig =5(W)
+MfCardConfig =    00E0:05:0
+MfCardConfig =    00E0:0D:1
+ConfigPriority = NORMAL
+
+[ASIC_REV5.mf.Override5]
+IOConfig     =    1A8-1AF(FFFF::)   ; Com6
+IOConfig     =    1B0-1B7(FFFF::)   ; Com7	
+IRQConfig    =    3,4,5,7,9,10,11,14,15     ; IRQ
+PcCardConfig =5(W)
+MfCardConfig =    00E0:05:0
+MfCardConfig =    00E0:0D:1
+ConfigPriority = NORMAL
+
+[ASIC_REV5.mf.Override6]
+IOConfig     =    1B0-1B7(FFFF::)   ; Com7
+IOConfig     =    1B8-1BF(FFFF::)   ; Com8	
+IRQConfig    =    3,4,5,7,9,10,11,14,15     ; IRQ
+PcCardConfig =5(W)
+MfCardConfig =    00E0:05:0
+MfCardConfig =    00E0:0D:1
+ConfigPriority = NORMAL
+
+;**********************************************
+[ASIC_REV5_1.mf.OverrideAll]
+IOConfig     =    F@0000-FFFF%FFF8(FFFF::)   ; Com1
+IRQConfig    =    3,4,5,7,9,10,11,14,15     ; IRQ
+PcCardConfig =5(W)
+MfCardConfig =    00E0:05:0
+ConfigPriority = NORMAL
+
+[ASIC_REV5_1.mf.Override0]
+IOConfig     =    3F8-3FF(FFFF::)   ; Com1
+IRQConfig    =    3,4,5,7,9,10,11,14,15     ; IRQ
+PcCardConfig =5(W)
+MfCardConfig =    00E0:05:0
+ConfigPriority = NORMAL
+
+[ASIC_REV5_1.mf.Override1]
+IOConfig     =    2F8-2FF(FFFF::)   ; Com2
+IRQConfig    =    3,4,5,7,9,10,11,14,15     ; IRQ
+PcCardConfig =5(W)
+MfCardConfig =    00E0:05:0
+ConfigPriority = NORMAL
+
+[ASIC_REV5_1.mf.Override2]
+IOConfig     =    3E8-3EF(FFFF::)   ; Com3
+IRQConfig    =    3,4,5,7,9,10,11,14,15     ; IRQ
+PcCardConfig =5(W)
+MfCardConfig =    00E0:05:0
+ConfigPriority = NORMAL
+
+[ASIC_REV5_1.mf.Override3]
+IOConfig     =    2E8-2EF(FFFF::)  ; Com4
+IRQConfig    =    3,4,5,7,9,10,11,14,15     ; IRQ
+PcCardConfig =5(W)
+MfCardConfig =    00E0:05:0
+ConfigPriority = NORMAL
+
+[ASIC_REV5_1.mf.Override4]
+IOConfig     =    1A0-1A7(FFFF::)   ; Com5
+IRQConfig    =    3,4,5,7,9,10,11,14,15     ; IRQ
+PcCardConfig =5(W)
+MfCardConfig =    00E0:05:0
+ConfigPriority = NORMAL
+
+[ASIC_REV5_1.mf.Override5]
+IOConfig     =    1A8-1AF(FFFF::)   ; Com6
+IRQConfig    =    3,4,5,7,9,10,11,14,15     ; IRQ
+PcCardConfig =5(W)
+MfCardConfig =    00E0:05:0
+ConfigPriority = NORMAL
+
+[ASIC_REV5_1.mf.Override6]
+IOConfig     =    1B0-1B7(FFFF::)   ; Com7
+IRQConfig    =    3,4,5,7,9,10,11,14,15     ; IRQ
+PcCardConfig =5(W)
+MfCardConfig =    00E0:05:0
+ConfigPriority = NORMAL
+
+;*****************************************************************************************************
+
+[Uninstall.Reg]
+HKLM,Software\Microsoft\Windows\CurrentVersion\Uninstall\SerialSolutions
+HKLM,Software\Microsoft\Windows\CurrentVersion\Uninstall\SerialSolutions,"DisplayName",%ADDREG_SZ%,"Serial Solutions Device Driver Suite"
+HKLM,Software\Microsoft\Windows\CurrentVersion\Uninstall\SerialSolutions,"UninstallString",%ADDREG_EXPAND_SZ%,"SsUnist.exe"
+HKLM,Software\Microsoft\Windows\CurrentVersion\Uninstall\SerialSolutions,"Publisher",%ADDREG_SZ%,"Brainboxes Ltd"
+HKLM,Software\Microsoft\Windows\CurrentVersion\Uninstall\SerialSolutions,"URLInfoAbout",%ADDREG_SZ%,"http://www.brainboxes.com"
+HKLM,Software\Microsoft\Windows\CurrentVersion\Uninstall\SerialSolutions,"HelpLink",%ADDREG_EXPAND_SZ%,"http://www.brainboxes.com/support/index.asp"
+HKLM,Software\Microsoft\Windows\CurrentVersion\Uninstall\SerialSolutions,"URLUpdateInfo",%ADDREG_SZ%,"http://www.brainboxes.com/downloads/index.asp"
+HKLM,Software\Microsoft\Windows\CurrentVersion\Uninstall\SerialSolutions,"DisplayVersion",%ADDREG_SZ%,"8.1"
+
+;*****************************************************************************************************
+
+[Strings]
+CompanyName = "Brainboxes Limited"
+Installation_Disk_Name = "Brainboxes Installation Disk"
+MFClassName = "Multi-function adapters"
+MFCName ="Serial Solutions"
+String0 ="Serial Solutions"
+String10="Brainboxes Limited - 1 Port PCMCIA 232 Card"
+String11="Brainboxes Limited - 2 Port PCMCIA 232 Card"
+String12="Brainboxes Limited - 1 Port PCMCIA 422/485 Card"
+String13="Brainboxes Limited - 2 Port PCMCIA 422/485 Card"
+String14="Brainboxes Limited - 2 Port PCMCIA 232 Card Port 1"
+String15="Brainboxes Limited - 2 Port PCMCIA 232 Card Port 2"
+String16="Brainboxes Limited - 2 Port PCMCIA 422/485 Card Port 1"
+String17="Brainboxes Limited - 2 Port PCMCIA 422/485 Card Port 2"
+String18="Brainboxes Limited - 1 Port PCMCIA 422/485 Card"
+String19="Brainboxes Limited - 1 Port PCMCIA 232 Card"
+String20="Brainboxes Limited - 2 Port PCMCIA 232 Card"
+
+ADDREG_SZ = 0x00000000 			; The given value entry and/or value is of type REG_SZ. Note that this is the default type for a specified value entry, so the flags value can be omitted from any reg-root= line in an add-registry section that operates on a value entry of this type. 
+ADDREG_BINARY = 0x00000001		; The given value is "raw" data. (This value is identical to the Windows 2000-specific FLG_ADDREG_TYPE_BINARY.) 
+ADDREG_NOCLOBBER = 0x00000002		; Prevent a given value from replacing the value of an existing value entry. 
+ADDREG_DELVAL = 0x00000004		; Delete the given subkey from the registry, or delete the specified value-entry-name from the specified registry subkey. 
+ADDREG_KEYONLY = 0x00000010		; Create the given subkey, but ignore any supplied value-entry-name and/or value. 
+ADDREG_OVERWRITEONLY = 0x00000020	; Reset to the supplied value only if the specified value-entry-name already exists in the given subkey. 
+ADDREG_MULTI_SZ = 0x00010000		; The given value entry and/or value is of the registry type REG_MULTI_SZ. This specification does not require any NUL terminator for a given string value. 
+ADDREG_APPEND = 0x00000008		; Append a given value to that of an existing named value entry. This flag is valid only for value entries of type REG_MULTI_SZ. 
+ADDREG_EXPAND_SZ = 0x00020000		; The given value entry and/or value is of the registry type REG_EXPAND_SZ. 
+ADDREG_DWORD = 0x00010001		; The given value entry and/or value is of the registry type REG_DWORD. 
+ADDREG_NONE = 0x00020001		; The given value entry and/or value is of the Windows 2000 registry type REG_NONE.
+
+

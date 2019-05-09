@@ -1,0 +1,151 @@
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++								++
+++		Serial Solutions for Windows 95/98		++
+++			(c) 1995-2002				++
+++		    Version 2.65 JAN 2002			++
+++								++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Revision History Listed below cards supported.
+
+
+List of cards now supported in this revision...
+===============================================
+
+PCI Cards (ISA and PCMCIA Cards listed below)
+---------
+PCI Dual RS232 Card
+PCI Quad RS232 Card
+PCI Lynx RS232 Card
+PCI Velocity RS422/485 Card
+PCI 33k6 Modem Card
+PCI Velocity Dual RS232 Card
+PCI Opto-Isolated Velocity RS422/485 Card
+PCI 3 Port RS232 Card
+PCI 3+1 Port RS232 Card
+PCI LPT & RS232 Card
+PCI DUAL LPT & RS232 Card
+PCI 15MBaud Dual RS422/485 Autogating Card
+PCI 18MBaud Dual RS422/485 Autogating Card
+PCI Photon 2 Port Card
+PCI Photon 4 Port Card
+PCI Photon 8 Port Card
+PCI Quad Pos
+
+ISA Cards
+---------
+ISA 1-Port RS232
+ISA 2-Port RS232 (with printer)
+ISA 2-Port RS232 
+ISA 3-Port RS232
+ISA 4-Port RS232 
+ISA 8-Port RS232 
+ISA 4-Port RS232 (IRQ sharing)
+ISA 8-Port RS232 (IRQ sharing)
+ISA 4-Port RS232 (IRQ sharing) Quad Pos
+ISA 4-Port RS485 (IRQ sharing)
+ISA 2-Port RS485 
+ISA 2-Port Velocity RS232 (1MBaud)
+ISA 2-Port Velocity RS485 (1MBaud)
+ISA 4-Port Velocity RS485 (1MBaud)
+ISA 2-Port Velocity RS232/RS422 (1MBaud)
+ISA 2-Port Photon RS232 (230KBaud)
+ISA 4-Port Photon RS232 (230KBaud)
+ISA 8-Port Photon RS232 (230KBaud)
+
+PCMCIA Cards
+---------
+PCMCIA 1_PORT_RS232_CARD (1MBaud) 
+PCMCIA 1_PORT_RS422_CARD (1MBaud) 
+PCMCIA 2_PORT_RS232_CARD (1MBaud) 
+PCMCIA 2_PORT_RS422_CARD (1MBaud)
+
+Revision History (Newest First)
+===============================
+Release 2.65
+------------
+Incoporated Sscardut.dll for operation of 15M & 18M cards. Revised Sspcmcia.vxd to allow streaming of data to 115k with pcmcia cards. Updated Sscardui.dll and Ssenum.vxd.
+Known issues
+1.  Installation of cards both placed in the PC simultaneously (1 port PCI 422 and 2 port PCI 422) does not guarantee the correct port dll will be installed. 
+The work around for this is to install each card individually.
+2. Half duplex/ full duplex radio button defaults constantly to half duplex when opening ports in device manager for the 15M &18M 422 cards (sscardut.dll). 
+Full duplex does work but has to be set if ports in device manager is opened.
+3. 3port rs232 and 4 port rs232 display baud rate multiplier buttons in multifunction devices in device manager. The operation of these buttons will not affect the card but should not be present.
+5. ISA non-velocity 422/485 cards (cc-131, cc-057) should use archive version 1.0 for correct half duplex operation.
+
+Release 2.64
+------------
+Added support for the 18MBaud card. Its extended features have not been included yet. Added support for 1 port 422 Pcmcia card with PNPID=D101.
+
+Release 2.63
+------------
+Made installation single OS only.
+This revision has been seen (notably in Windows 98 v4.10.2150.4) to produce blue screen errors when installing printer ports in Windows98. The problem is still under investigation. the short term fix is to first take a backup copy of your lptenum.vxd file in the windows\system directory and then paste the supplied lptenum.vxd file in its place.
+This revision has been tested with 1 port PCMCIA cards in Windows Millenium Beta1 edition with no apparent problems
+
+Release 2.62
+------------
+Added support for 1-port velocity Pcmcia RS232 and 1-port Pcmcia RS422.
+
+Release 2.61
+------------
+Win98 blue screen bug cured by omitting vcd as a contention manager for Brainboxes ports, therefore 2 different directories exist for Win95 and 98. 
+With some versions of Win98 (notably 4.10.2150.4), installation of Brainboxes printer ports resulted in a blue screen, to overcome this problem an Lptenum.vxd
+is supplied in the Win98 directory with this installation. Copying this version of Lptenum.vxd into the system directory solves this problem.
+
+
+Release 2.60
+------------
+Added support for 2-port RS422 PCMCIA cards. 1MBaud support is per port basis. Automatic flow control feature also included.
+
+Release 2.59
+------------
+Completed support for 2-port PCMCIA RS232 cards. Both ports can now be opened separately. 
+
+Release 2.58
+------------
+Modified to remove workaround neccessity under Win98.  This version now allows proper plug and
+play into 95B (or higher) and Win98.  Velocity support not fully tested
+
+Release 2.57
+------------
+Added support for 2-port RS232 PCMCIA cards, both ports must be open simultaneously to transmit data. 1MBaud support included as separate feature, see readme txt file. Workarounds required for Win98 installation
+
+Release 2.56
+------------
+Added support for 1-port PCMCIA RS232 CARD.
+
+Release 2.55
+------------
+Added unistall utility v2.0.
+This utility detects all cards/ports and serial solutions software installed into registry and cleans up.
+It should be run to clean out all previous software settings when updating to a new revision of the driver software.
+
+Release 2.54
+------------
+Added support for the new revision of the AT Quad Velocity RS422/485 card. 
+Using old driver with new card only causes problems when more than 1 card is installed!
+
+Release 2.53
+------------
+PCI Photon 8 port driver amended to support changes in release product from initial prototype supported in 2.51
+
+Release 2.52
+------------
+Support for the DUAL LPT RS232 card was added.
+
+
+Release 2.51
+------------
+Support was added for the following cards:
+PCI Photon Dual RS232
+PCI Photon Quad RS232
+PCI Photon 8 Port RS232
+ISA Photon Dual RS232
+ISA Photon Quad RS232
+ISA Photon 8 Port RS232
+Three separate files were created for photon card support, i.e. ssphcard, ssphport and 
+ssphoton (driver). sscardui and ssportui were modified to allow for differences between multiport
+cards graphical user interface (GUI) and velocity cards GUI though both share 
+the same driver (vel.vxd). The multiport cards have been changed to use the velocity
+driver to erase the multiport bug.
